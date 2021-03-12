@@ -8,11 +8,10 @@ import NavBar from '../../Components/NavBar/NavBar.jsx'
 const Marketplace = () => {
 	const { activeData, activeDataHandler } = useContext(StateContext);
     return (
-        <div>
+        <div className='marketplace-body'>
         <div>Marketplace Page</div>
-        <NavBar></NavBar>
+        {/* <NavBar></NavBar> */}
         </div>
-
     )
 }
 
