@@ -1,44 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+#root {
+  overflow: auto;
+}
+
+body {
+  position: fixed;
+  overflow: hidden;
+  overscroll-behavior-y: none;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  color: black;
+  background: #090b1f;
+  background: radial-gradient(at 50% 70%, #200f20 40%, #090b1f 80%, #050523 100%);
+}
+
 .bounds {
-    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
     height: 100vh;
-    margin: 0;
-    background: black;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-canvas {
+    width: 100vw;
     position: absolute;
-    top:0;
-    left:0;
+    overflow: hidden !important;
+    background-color: black; 
+    z-index:0;
+  } 
+
+  .render {
+    position: absolute;
     z-index: -1;
+    height: 200vh;
+    width: 200vh;
   }
-.text-box {
-    font-size: 60px;
-    font-family: 'Raleway', sans-serif;
-    letter-spacing: 7px;
-    word-spacing: 12px;
-    text-transform: uppercase;
-    color:rgb(238, 238, 238);
-  }
-.button-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    flex-direction: row;
-  }
-.button {
-    display: inline-block;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 15px;
-    margin-left:20px;
-    margin-right:20px;
-    word-spacing: normal;
-    letter-spacing: 5px;
-    border: 1px solid white;
-    background: black;
-    cursor: pointer;
-  }
+
+.heading {
+  text-transform: uppercase;
+  font-size: 60px;
+  color: white
+}
+
+.button-landing-mm {
+  border: none;
+  background-color: #f2a034;
+  padding: 10px 20px 10px 20px;
+  margin: 20px 15px 10px 15px;
+  font-size: 20px;
+  border-radius: 2px;
+  font-weight: bolder;
+}
+
+.button-landing {
+  border: none;
+  background-color: white;
+  padding: 10px 20px 10px 20px;
+  margin: 20px 15px 10px 15px;
+  font-size: 20px;
+  border-radius: 2px;
+  font-weight: bolder;
+  
+}
+
+.button-landing-mm:hover {
+  background-color: black;
+  color: white;
+  transition: .5s;
+}
+
+.button-landing:hover {
+  border: none;
+  background-color: black;
+  color:rgb(255, 255, 255);
+  transition: 0.5s;
+}
+

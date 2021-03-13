@@ -11,9 +11,15 @@ const StateProvider = ({ children }) => {
     const activeDataHandler = (chosen) => { 
       setActiveData(chosen) };
 
+    const [userAddress, setUserAddress] = useState('')
+    const userAddressHandler = (address) => {
+      setUserAddress(address)
+    }
+
 return (
     <StateContext.Provider value = {{ 
-        activeData, activeDataHandler
+        activeData, activeDataHandler,
+        userAddress, userAddressHandler,
         }}>
       {children}
     </StateContext.Provider>
