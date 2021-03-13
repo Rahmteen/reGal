@@ -6,6 +6,7 @@ import { useContext } from 'react'
 import NavBar from '../../Components/NavBar/NavBar.jsx'
 import regeneratorRuntime from 'regenerator-runtime'
 import Button from '@material-ui/core/Button';
+import { motion, useAnimation } from "framer-motion"
 
 import * as THREE from 'three'
 
@@ -18,6 +19,7 @@ import { FXAAShader } from 'three/examples/jsm/shaders/FXAAShader'
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass'
 import { WaterPass } from './Waterpass'
 import { Effects } from '@react-three/drei/core/Effects'
+import { Opacity } from '@material-ui/icons';
 
 extend({ EffectComposer, ShaderPass, RenderPass, WaterPass, AfterimagePass, UnrealBloomPass })
 
@@ -103,26 +105,27 @@ const Landing = () => {
     
     let render = [
     <div className='render'>
-    <Canvas camera={{ fov: 80, position: [0, 0, 70] }}>
+    <Canvas camera={{ fov: 100, position: [10, 10, 70] }}>
       <pointLight intensity={3.0} color="#4f6fff" />
       <spotLight intensity={1} position={[70, 70, 70]} penumbra={1} color="white" />
       <spotLight intensity={1} position={[70, -70, 70]} penumbra={1} color="white" />
-      <Swarm count={500} />
+      <Swarm count={1000} />
       <Effects>
         {/* <waterPass attachArray="passes" factor={2} /> */}
-        <unrealBloomPass attachArray="passes" args={[undefined, 3, 1, 0]} />
+        <unrealBloomPass attachArray="passes" args={[undefined, 1, 1, 1]} />
       </Effects>
       <Dolly />
     </Canvas>
     </div>]
+
 
     if (!web3Auth) return (
     <div className="bounds">
       
 		<div className="text-box">
             <div className="heading">The future of Nfts</div>
-                <Link to='/marketplace'>
-                    <button className='button-landing'>explore</button>
+                <Link to='/marketplace'>                      
+                <button className='button-landing'>explore</button>
                 </Link>
             <button className='button-landing-mm' onClick={connectWallet}>connect wallet</button>
         </div>
@@ -137,7 +140,11 @@ const Landing = () => {
                         <button className='button-landing'>explore</button>
                     </Link>
             </div>
+            <motion.div className='render' 
+                        animate={{ scale: [0, 1, 0.5, 1] }}
+                        transition={{ times: [0, 0.1, 0.9, 1] }} >
             {render}
+            </motion.div>
         </div>  
     )
 }
