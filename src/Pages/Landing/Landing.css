@@ -28,8 +28,7 @@ body {
   overscroll-behavior-y: none;
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
   color: black;
-  background: #090b1f;
-  background: radial-gradient(at 50% 70%, #200f20 40%, #090b1f 80%, #050523 100%);
+  background: black;
 }
 
 .bounds {
