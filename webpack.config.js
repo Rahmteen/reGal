@@ -33,10 +33,11 @@ module.exports = {
     mode: 'development',
     devServer: {
         host: 'localhost',
+        hot: true,
         port: 8080,
         historyApiFallback: true,
         inline: true,
-        proxy: { "/": { target: 'http://localhost:3000', secure: false }
+        proxy: { "/": { target: 'http://localhost:8080', secure: false, "changeOrigin": true }
         },
       },
       plugins: [
