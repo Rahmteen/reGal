@@ -4,6 +4,7 @@ import { StateContext } from '../../Providers/StateProvider.jsx';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react'
 import NavBar from '../../Components/NavBar/NavBar.jsx'
+import { motion } from 'framer-motion'
 
 const Marketplace = () => {
 	const { activeData, activeDataHandler } = useContext(StateContext);
