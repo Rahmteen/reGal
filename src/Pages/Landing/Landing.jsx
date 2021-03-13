@@ -6,6 +6,7 @@ import { useContext } from 'react'
 import NavBar from '../../Components/NavBar/NavBar.jsx'
 import regeneratorRuntime from 'regenerator-runtime'
 import Button from '@material-ui/core/Button';
+import { motion } from "framer-motion"
 
 import * as THREE from 'three'
 
@@ -71,7 +72,7 @@ function Swarm({ count }) {
     })
     return (
       <>
-        <pointLight ref={light} distance={600} intensity={5.0} color="orange" />
+        <pointLight ref={light} distance={600} intensity={7.0} color="orange" />
         <instancedMesh ref={mesh} args={[null, null, count]}>
           <dodecahedronBufferGeometry args={[1, 1]} />
           <meshStandardMaterial color="black" />
@@ -84,7 +85,7 @@ function Swarm({ count }) {
     // This one makes the camera move in and out
     useFrame(({ clock, camera }) => {
         //number = distance of camera from center on z axis
-      camera.position.z = 60 + Math.sin(clock.getElapsedTime()) * 10
+      camera.position.z = 100 + Math.sin(clock.getElapsedTime()) * 10
     })
     return null
   }
@@ -104,41 +105,40 @@ const Landing = () => {
     let render = [
     <div className='render'>
     <Canvas camera={{ fov: 80, position: [0, 0, 70] }}>
-      <pointLight intensity={3.0} color="#4f6fff" />
-      <spotLight intensity={1} position={[70, 70, 70]} penumbra={1} color="white" />
-      <spotLight intensity={1} position={[70, -70, 70]} penumbra={1} color="white" />
-      <Swarm count={50} />
+      <pointLight intensity={1} color="#4f6fff" />
+      <spotLight intensity={.3} position={[70, 70, 70]} penumbra={1} color="white" />
+      <spotLight intensity={.3} position={[70, 70, 70]} penumbra={1} color="white" />
+      <Swarm count={500} />
       <Effects>
         {/* <waterPass attachArray="passes" factor={2} /> */}
-        <unrealBloomPass attachArray="passes" args={[undefined, 3, 1, 0]} />
+        <unrealBloomPass attachArray="passes" args={[undefined, 5, 1, 0]} />
       </Effects>
       <Dolly />
     </Canvas>
     </div>]
 
-    if (!web3Auth) return (
-    <div className="bounds">
-      
-		<div className="text-box">
-            <div className="heading">The future of Nfts</div>
-                <Link to='/marketplace'>
-                    <button className='button-landing'>explore</button>
-                </Link>
-            <button className='button-landing-mm' onClick={connectWallet}>connect wallet</button>
-        </div>
-        {render}
-	</div>  
+    if (window.ethereum.isConnected()) return (
+      <div className="bounds">
+      <div className="text-box">
+          <div className="heading">The future of Nfts</div>
+              <Link to='/marketplace'>
+                  <button className='button-landing'>explore</button>
+              </Link>
+      </div>
+      {render}
+  </div>  
     )
     else return (
-        <div className="bounds">
+            <div className="bounds">
+
             <div className="text-box">
-                <div className="heading">The future of Nfts</div>
-                    <Link to='/marketplace'>
-                        <button className='button-landing'>explore</button>
-                    </Link>
-            </div>
-            {render}
-        </div>  
+                    <div className="heading">The future of Nfts</div>
+                        <Link to='/marketplace'>
+                            <button className='button-landing'>explore</button>
+                        </Link>
+                    <button className='button-landing-mm' onClick={connectWallet}>connect wallet</button>
+                </div>
+          </div> 
     )
 }
 
