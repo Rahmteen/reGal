@@ -1,4 +1,38 @@
 .marketplace-body {
-    background-color: black;
+    display: flex;
+    background-color: rgb(0, 0, 0);
     height: 100vh;
+    width: 100wh;
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    color: #ffffff;
+    justify-content: center;
+}
+.marketplace-btn {
+    margin: 20px;
+}
+.apply-btn {
+    margin: 20px;
+}
+.logo {
+    margin:20px;
+}
+.feature {
+    z-index: index 1;
+    color:rgb(0, 0, 0);
+    height: 400px;
+    width: 600px;
+    background-color: white;
+}
+.scrollcontent {
+    flex-direction: column;
+}
+.headline {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
 }

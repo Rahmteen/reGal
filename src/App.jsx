@@ -5,6 +5,7 @@ import Marketplace from './Pages/Marketplace/Marketplace.jsx';
 import { AnimatePresence} from "framer-motion";
 
 
+
 const App = () => {
       return (
         <AnimatePresence >
