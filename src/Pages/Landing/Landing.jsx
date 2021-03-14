@@ -7,7 +7,7 @@ import NavBar from '../../Components/NavBar/NavBar.jsx'
 import regeneratorRuntime from 'regenerator-runtime'
 import Button from '@material-ui/core/Button';
 import { motion } from "framer-motion"
-
+import Network from '../../Components/Network/Network.jsx'
 import * as THREE from 'three'
 
 import { Canvas, extend, useFrame, useThree } from 'react-three-fiber'
@@ -17,10 +17,10 @@ import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
 import { AfterimagePass } from 'three/examples/jsm/postprocessing/AfterimagePass'
 import { FXAAShader } from 'three/examples/jsm/shaders/FXAAShader'
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass'
-import { WaterPass } from './Waterpass'
 import { Effects } from '@react-three/drei/core/Effects'
 
-extend({ EffectComposer, ShaderPass, RenderPass, WaterPass, AfterimagePass, UnrealBloomPass })
+
+extend({ EffectComposer, ShaderPass, RenderPass, AfterimagePass, UnrealBloomPass })
 
 function Swarm({ count }) {
     const mesh = useRef()
@@ -108,32 +108,34 @@ const Landing = () => {
       <pointLight intensity={1} color="#4f6fff" />
       <spotLight intensity={.3} position={[70, 70, 70]} penumbra={1} color="white" />
       <spotLight intensity={.3} position={[70, 70, 70]} penumbra={1} color="white" />
-      <Swarm count={500} />
-      <Effects>
+      <Swarm  count={500} />
+      <Effects >
         {/* <waterPass attachArray="passes" factor={2} /> */}
-        <unrealBloomPass attachArray="passes" args={[undefined, 5, 1, 0]} />
+        <unrealBloomPass key='5' attachArray="passes" args={[undefined, 5, 1, 0]} />
       </Effects>
       <Dolly />
     </Canvas>
     </div>]
 
-    if (window.ethereum.isConnected()) return (
-      <div className="bounds">
+    if (window.ethereum.selectedAddress !== null) return (
+      <div className="bounds-connected">
+        <Network/>
       <div className="text-box">
           <div className="heading">The future of Nfts</div>
-              <Link to='/marketplace'>
+              <Link to='/explore'>
                   <button className='button-landing'>explore</button>
               </Link>
+              {/* <button className='button-landing-mm' onClick={connectWallet}>connected</button> */}
       </div>
       {render}
   </div>  
     )
-    else return (
+    return (
             <div className="bounds">
-
+              <Network/>
             <div className="text-box">
                     <div className="heading">The future of Nfts</div>
-                        <Link to='/marketplace'>
+                        <Link to='/explore'>
                             <button className='button-landing'>explore</button>
                         </Link>
                     <button className='button-landing-mm' onClick={connectWallet}>connect wallet</button>

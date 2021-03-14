@@ -5,7 +5,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         publicPath: '/',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname + '/public'),
         filename: 'index_bundle.js'
     },
     module: {
@@ -35,9 +35,10 @@ module.exports = {
         host: 'localhost',
         hot: true,
         port: 8080,
+        headers: { 'Access-Control-Allow-Origin': '*' },
         historyApiFallback: true,
         inline: true,
-        proxy: { "/": { target: 'http://localhost:8080', secure: false, "changeOrigin": true }
+        proxy: { "/api": { target: 'http://localhost:3000', secure: false}
         },
       },
       plugins: [

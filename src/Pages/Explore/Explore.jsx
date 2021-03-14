@@ -1,18 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import './Marketplace.css';
+import './Explore.css';
 import { StateContext } from '../../Providers/StateProvider.jsx';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import NavBar from '../../Components/NavBar/NavBar.jsx';
 
-const Marketplace = () => {
-
-    // useEffect(() => {
-    //     if (window.ethereum.isConnected()) {
-
-    //     }
-    // })
-
+const Explore = () => {
 	const { activeData, activeDataHandler } = useContext(StateContext);
     return (
         <div className='marketplace'>
@@ -31,4 +24,4 @@ const Marketplace = () => {
     )  
 }
 
-export default Marketplace
+export default Explore
