@@ -1,0 +1,20 @@
+.profile {
+    color: white;
+}
+
+.profile-grid {
+    padding-left: 100px;
+    display: inline-flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-start !important; 
+}
+
+.card {
+    margin-left: 100px;
+}
+
+.row {
+    padding: 150px;
+    flex-grow: 1;
+} 
