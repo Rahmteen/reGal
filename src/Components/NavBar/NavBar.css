@@ -1,3 +1,7 @@
+*:focus {
+  outline: none;
+}
+
 .navbar {
     display: flex;
     text-decoration: none;
@@ -5,26 +9,44 @@
     /* align-items: center; */
     padding: 40px;
     background-color: black;
+    opacity: 1;
+    animation-name: nav;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+}
+
+
+@keyframes nav {
+0% {
+  opacity: 0;
+}
+100% {
+  opacity: 1;
+}
 }
 
 .button-nav {
-    border: solid 1px rgb(123, 66, 255);
+    border: solid 1px rgb(146, 102, 248);
     background-color: transparent;
     padding: 10px 20px 10px 20px;
-    color:rgb(149, 56, 255);
+    color:rgb(167, 101, 243);
     font-size: 16px;
     font-weight: 400;
+    outline: none !important;
     margin: 10px;
     border-radius: 2px;
+    transition: .5s;
     
   }
 
   .button-nav:hover {
     border: solid 1px rgb(212, 53, 218);
     background-color: transparent;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 30px 10px 30px;
     color:rgb(214, 53, 219);
     font-size: 16px;
+    outline: none !important;
     font-weight: 400;
     margin: 10px;
     border-radius: 2px;
@@ -34,15 +56,111 @@
 .profile-nav-button {
     display: flex;
     border: none;
+    text-decoration: none !important;
     background-color: transparent;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 10px 0px 20px;
+    margin-top: -11px;
     color:rgb(149, 56, 255);
     font-size: 16px;
     font-weight: 400;
     border-radius: 2px;
+    transition: 0.5s;
+}
+.profile-nav-button:hover {
+  display: flex;
+  border: none;
+  background-color: transparent;
+  padding: 10px 10px 0px 20px;
+  margin-top: -11px;
+  color:rgb(149, 56, 255);
+  font-weight: 400;
+  border-radius: 2px;
+  transition: 0.5s;
+}
+
+.profile-nav {
+  opacity: 80%;
+  transition: 0.5s;
+}
+
+.profile-nav:hover {
+  opacity: 100%;
+  transition: 0.5s;
 }
 
 .profile {
-    margin-left: auto
+    margin-left: auto;
+    text-decoration: none !important;
+}
+
+.button-landing-mm-nav {
+  border: none;
+  background-color: #b1701b;
+  padding: 10px 15px 10px 15px;
+  margin: 10px 10px 10px 0px;
+  font-size: 14px;
+  background-color: transparent;
+  border: solid 1px rgb(138, 92, 245);
+  color:rgb(160, 89, 240);
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 2px;
+  transition: .5s;
+}
+
+.button-landing-mm-nav:hover {
+  border: solid 1px rgb(209, 207, 91);
+  background-color: transparent;
+  padding: 10px 30px 10px 30px;
+  color:rgb(220, 223, 87);
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 2px;
+  transition: .5s;
+}
+
+.button-landing-acc-nav {
+  border: none;
+
+  background-color: #b1701b;
+  padding: 10px 15px 10px 15px;
+  margin: 10px 10px 10px 0px;
+  font-size: 14px;
+  background-color: transparent;
+  border: solid 1px rgb(138, 92, 245);
+  color:rgb(160, 89, 240);
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 2px;
+  transition: .5s;
+}
+
+.button-landing-test {
+  border: none;
+  background-color: transparent;
+  padding: 10px 15px 10px 15px;
+  margin: 10px 10px 10px 0px;
+  font-size: 14px;
+  background-color: transparent;
+  border: solid 1px rgb(218, 39, 39);
+  color:rgb(214, 55, 55);
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 2px;
+  transition: .5s;
+}
+
+.current {
+  text-decoration: none !important;
+  border: solid 1px rgb(212, 53, 218);
+  background-color: transparent;
+  padding: 10px 30px 10px 30px;
+  color:rgb(214, 53, 219);
+  font-size: 16px;
+  font-weight: 400;
+  margin: 10px;
+  border-radius: 2px;
+  transition: .5s;
+  
 }
 
