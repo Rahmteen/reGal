@@ -108,7 +108,7 @@ const Landing = () => {
       <pointLight intensity={1} color="#4f6fff" />
       <spotLight intensity={.3} position={[70, 70, 70]} penumbra={1} color="white" />
       <spotLight intensity={.3} position={[70, 70, 70]} penumbra={1} color="white" />
-      <Swarm  count={500} />
+      <Swarm  count={100} />
       <Effects >
         {/* <waterPass attachArray="passes" factor={2} /> */}
         <unrealBloomPass key='5' attachArray="passes" args={[undefined, 5, 1, 0]} />

@@ -4,13 +4,13 @@ import { StateContext } from '../../Providers/StateProvider.jsx';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react'
 import profile from '../../../assets/profile.png'
+import Circles from '../../../assets/crcle.gif'
 
 const NavBar = () => {
-    const { userAddressHandler } = useContext(StateContext);
+    const { userAddressHandler, userShortAddressHandler } = useContext(StateContext);
     const [web3Auth, setWeb3Auth] = useState(false)
     let accounts;
     let url = window.location.pathname
-
 
     const connectWallet = async () => { 
         accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
@@ -34,10 +34,15 @@ const NavBar = () => {
         displayAcc =<div className='button-landing-acc-nav'>{displayAcc}</div>
     }
 
+    useEffect(() => {
+        userShortAddressHandler(displayAcc)
+    },[])
+
     
     if (url.includes('explore')) {
         return (
             <div className='navbar'>
+                <img id='circles' src={Circles} loop='infinite'/>
                 <Link to='/explore'><button className='current'>explore</button></Link>
                 <Link to='/marketplace'><button className='button-nav'>marketplace</button></Link>
                 <Link to='/apply'><button className='button-nav'>apply</button></Link>
@@ -45,6 +50,7 @@ const NavBar = () => {
             </div>)
     } else if (url.includes('marketplace')){
         return (<div className='navbar'>
+        <img id='circles' src={Circles}/>
         <Link to='/explore'><button className='button-nav'>explore</button></Link>
         <Link to='/marketplace'><button className='current'>marketplace</button></Link>
         <Link to='/apply'><button className='button-nav'>apply</button></Link>
@@ -52,6 +58,7 @@ const NavBar = () => {
     </div>)
     } else if (url.includes('apply')){
         return (<div className='navbar'>
+        <img id='circles' src={Circles}/>
         <Link to='/explore'><button className='button-nav'>explore</button></Link>
         <Link to='/marketplace'><button className='button-nav'>marketplace</button></Link>
         <Link to='/apply'><button className='current'>apply</button></Link>
@@ -59,6 +66,7 @@ const NavBar = () => {
     </div>)
     } else return (
         <div className='navbar'>
+            <img id='circles' src={Circles}/>
             <Link to='/explore'><button className='button-nav'>explore</button></Link>
             <Link to='/marketplace'><button className='button-nav'>marketplace</button></Link>
             <Link to='/apply'><button className='button-nav'>apply</button></Link>

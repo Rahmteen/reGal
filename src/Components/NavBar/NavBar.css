@@ -13,9 +13,44 @@
     animation-name: nav;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
-    animation-duration: 2s;
+    animation-duration: 0.25s;
 }
 
+#circles {
+  width: 70px;
+  margin-right: 20px;
+  /* transition: 1s; */
+  transition-delay: s;
+  animation-name: circles;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+}
+#circles:hover {
+  animation-name: circles-hover;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+  transition-delay: 1s;
+}
+
+@keyframes circles {
+  0% {
+    transform:rotate3d(0, 0, 0, 0rad)
+  }
+  100% {
+    transform:rotate3d(0, 0, 10, 360deg)
+  }
+}
+
+@keyframes circles-hover {
+  0% {
+    transform:rotate3d(0, 0, 0, 0rad)
+  }
+  100% {
+    transform:rotate3d(0, 0, 10, 0deg)
+  }
+}
 
 @keyframes nav {
 0% {
@@ -90,6 +125,7 @@
 
 .profile {
     margin-left: auto;
+    padding-top: 4px;
     text-decoration: none !important;
 }
 
