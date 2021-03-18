@@ -41,7 +41,7 @@ body {
     width: 100vw;
     position: absolute;
     overflow: hidden !important;
-    background-color: black; 
+    background-color: rgb(65, 65, 65); 
     z-index:0;
   } 
 
@@ -89,35 +89,51 @@ opacity: 1;
 
 .button-landing-mm {
   border: none;
-  background-color: #e09c43;
+  background-color: #000000;
   padding: 10px 20px 10px 20px;
-  margin: 20px 15px 10px 15px;
+  margin: 20px 10px 10px 15px;
   font-size: 20px;
-  border-radius: 2px;
-  font-weight: bolder;
+  color: white;
+  border-radius: 4px;
+  font-weight: 400;
+  transition: 0.5s
 }
 
 .button-landing {
   border: none;
-  background-color: white;
+  background-color: #000000;
   padding: 10px 20px 10px 20px;
-  margin: 20px 15px 10px 15px;
+  margin: 20px 10px 10px 15px;
   font-size: 20px;
-  border-radius: 2px;
-  font-weight: bolder;
+  color: white;
+  border-radius: 4px;
+  font-weight: 400;
+  transition: 0.5s;
   
 }
 
 .button-landing-mm:hover {
-  background-color: black;
+  background-color: rgb(230, 146, 50);
   color: white;
+  padding: 10px 30px 10px 30px;
   transition: .5s;
 }
 
 .button-landing:hover {
-  border: none;
+  /* border: none; */
   background-color: black;
   color:rgb(255, 255, 255);
+  padding: 10px 30px 10px 30px;
   transition: 0.5s;
+  animation-name: example;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
 }
 
+@keyframes example {
+  0% {background-color: rgb(0, 0, 0);}
+  25% {background-color: rgb(214, 182, 0);}
+  50% {background-color: rgb(0, 188, 212);}
+  75% {background-color: rgb(250, 0, 0);}
+  100% {background-color: rgb(0, 0, 0);}
+}

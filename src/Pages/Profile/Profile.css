@@ -3,18 +3,22 @@
 }
 
 .profile-grid {
-    padding-left: 100px;
-    display: inline-flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    align-items: flex-start !important; 
+    display: grid;
+    grid-template-columns: 320px 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    padding: 50px 300px 50px 300px;
+    /* justify-content: center; */
+}
+
+#profile-card {
+    align-self:flex-start;
 }
 
 .card {
-    margin-left: 100px;
+    margin-bottom: 50px;
 }
 
-.row {
-    padding: 150px;
-    flex-grow: 1;
-} 
+.card-deck {
+    margin: 10px; 
+}
+

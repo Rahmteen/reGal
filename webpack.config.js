@@ -10,12 +10,10 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.(jpg|png)$/,
-                use: {
-                  loader: 'file-loader',
-                },
-              },
+          {
+            test: /\.(png|jpe?g|webm|mp4|gif)$/i,
+            use: 'file-loader'
+          },
             {
                 test: /.(js|jsx)$/,
                 exclude: /node_modules/,
