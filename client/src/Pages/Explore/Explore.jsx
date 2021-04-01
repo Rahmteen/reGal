@@ -11,7 +11,7 @@ const Explore = () => {
     //the main page after landing for relevant material - this will morph into a trending section as userbase increases.
     return (
         <Fragment>
-            <Jumbotron style={{position: "relative", zIndex: -101}}>
+            <Jumbotron style={{position: "relative"}}>
                 <div className="video-overlay">
                     <div className="d-block mb-1">
                         <span className="overlay-text">Current Bid: </span>
