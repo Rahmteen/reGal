@@ -49,78 +49,78 @@ const Footer = () => {
                     </p>
                 </section>
                     
-                <section className="">
-                    <div className="row">
-                        <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <section>
+                    <Row>
+                        <Col lg={3} md={6} className="mb-4 mb-md-0">
                             <h5 className="text-uppercase">Links</h5>
                             <ul className="list-unstyled mb-0">
                                 <li>
-                                <a href="#!" className="text-white">Link 1</a>
+                                    <Link to="" className="text-white">Link 1</Link>
                                 </li>
                                 <li>
-                                <a href="#!" className="text-white">Link 2</a>
+                                    <Link to="" className="text-white">Link 2</Link>
                                 </li>
                                 <li>
-                                <a href="#!" className="text-white">Link 3</a>
+                                    <Link to="" className="text-white">Link 3</Link>
                                 </li>
                                 <li>
-                                <a href="#!" className="text-white">Link 4</a>
+                                    <Link to="" className="text-white">Link 4</Link>
                                 </li>
                             </ul>
-                        </div>
-                        <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        </Col>
+                        <Col lg={3} md={6} className="mb-4 mb-md-0">
                             <h5 className="text-uppercase">Links</h5>
                             <ul className="list-unstyled mb-0">
                                 <li>
-                                <a href="#!" className="text-white">Link 1</a>
+                                    <Link to="" className="text-white">Link 1</Link>
                                 </li>
                                 <li>
-                                <a href="#!" className="text-white">Link 2</a>
+                                    <Link to="" className="text-white">Link 2</Link>
                                 </li>
                                 <li>
-                                <a href="#!" className="text-white">Link 3</a>
+                                    <Link to="" className="text-white">Link 3</Link>
                                 </li>
                                 <li>
-                                <a href="#!" className="text-white">Link 4</a>
+                                    <Link to="" className="text-white">Link 4</Link>
                                 </li>
                             </ul>
-                        </div>
-                        <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        </Col>
+                        <Col lg={3} md={6} className="mb-4 mb-md-0">
                             <h5 className="text-uppercase">Links</h5>
 
                             <ul className="list-unstyled mb-0">
                                 <li>
-                                <a href="#!" className="text-white">Link 1</a>
+                                    <Link to="" className="text-white">Link 1</Link>
                                 </li>
                                 <li>
-                                <a href="#!" className="text-white">Link 2</a>
+                                    <Link to="" className="text-white">Link 2</Link>
                                 </li>
                                 <li>
-                                <a href="#!" className="text-white">Link 3</a>
+                                    <Link to="" className="text-white">Link 3</Link>
                                 </li>
                                 <li>
-                                <a href="#!" className="text-white">Link 4</a>
+                                    <Link to="" className="text-white">Link 4</Link>
                                 </li>
                             </ul>
-                        </div>
-                        <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        </Col>
+                        <Col lg={3} md={6} className="mb-4 mb-md-0">
                             <h5 className="text-uppercase">Links</h5>
                             <ul className="list-unstyled mb-0">
                                 <li>
-                                <a href="#!" className="text-white">Link 1</a>
+                                    <Link to="" className="text-white">Link 1</Link>
                                 </li>
                                 <li>
-                                <a href="#!" className="text-white">Link 2</a>
+                                    <Link to="" className="text-white">Link 2</Link>
                                 </li>
                                 <li>
-                                <a href="#!" className="text-white">Link 3</a>
+                                    <Link to="" className="text-white">Link 3</Link>
                                 </li>
                                 <li>
-                                <a href="#!" className="text-white">Link 4</a>
+                                    <Link to="" className="text-white">Link 4</Link>
                                 </li>
                             </ul>
-                        </div>
-                    </div>
+                        </Col>
+                    </Row>
                 </section>
             </Container>
         </footer>
