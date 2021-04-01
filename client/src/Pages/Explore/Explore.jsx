@@ -1,10 +1,13 @@
-import React, { useState, useEffect, Fragment } from 'react';
-import './Explore.css';
-import { StateContext } from '../../Providers/StateProvider.jsx';
+//Modules
+import React, { useState, useEffect, useContext, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
 import { Col, Container, Image, Jumbotron, Row } from 'react-bootstrap';
+//Stores
+import { StateContext } from '../../Providers/StateProvider.jsx';
+//Media
 import sampleVid from "../../../assets/images/BMWEEER.mp4";
+//CSS
+import './Explore.css';
 
 const Explore = () => {
     const { userAddress, userAddressHandler } = useContext(StateContext);
@@ -36,25 +39,25 @@ const Explore = () => {
                     <h1 className="headline text-majesti d-inline-block">Live Activity</h1>
                     <Link to="" className="headline-nav float-right text-dark">view all</Link>
                 </div>
-                <Row className="mb-5 text-center">
-                    <Col md={4}>
+                <Row className="text-center">
+                    <Col md={4} className="mb-5">
                         <Image src="https://via.placeholder.com/300"/>
                     </Col>
-                    <Col md={4}>
+                    <Col md={4} className="mb-5">
                         <Image src="https://via.placeholder.com/300"/>
                     </Col>
-                    <Col md={4}>
+                    <Col md={4} className="mb-5">
                         <Image src="https://via.placeholder.com/300"/>
                     </Col>
                 </Row>
-                <Row className="mb-5 text-center">
-                    <Col md={4}>
+                <Row className="text-center">
+                    <Col md={4} className="mb-5">
                         <Image src="https://via.placeholder.com/300"/>
                     </Col>
-                    <Col md={4}>
+                    <Col md={4} className="mb-5">
                         <Image src="https://via.placeholder.com/300"/>
                     </Col>
-                    <Col md={4}>
+                    <Col md={4} className="mb-5">
                         <Image src="https://via.placeholder.com/300"/>
                     </Col>
                 </Row>
