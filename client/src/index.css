@@ -11,6 +11,18 @@ body {
 	animation-duration: 2s;
 }
 
+footer {
+	flex-shrink: 0!important;
+}
+
+.btn-circle {
+	border-radius: 50%;
+}
+
+#root {
+	flex: 1 0 auto;
+}
+
 @keyframes body {
 	0% {
 		opacity: 0;
