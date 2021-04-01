@@ -42,18 +42,17 @@ canvas {
 .rainbow-btn {
   background: linear-gradient(105deg,
     /* Base gradient stops */
-    #0088b6, #d307fc, #f5d64d, #fd3e3e,#3aff54,
+    #fa3a33, #d307fc, #1a5ef1, #3ed0fd,#3aff54, #f7fa50, #fd6a6a,
     /* Repeat your base gradient stops */
-    #0088b6, #d307fc, #f5d64d, #fd3e3e, #3aff54,
+    #fa3a33, #d307fc, #1a5ef1, #3ed0fd, #3aff54, #f7fa50, #fd6a6a,
     /* Repeat your first gradient stop */
-    #0088b6);
+    #fa3a33);
   
   background-size: 200% 200%;
   animation: rainbow 5s linear infinite;
   border: 0;
-  padding: 25px;
-  font-size: 40px;
   color: #fff;
+  
 }
 
 @keyframes rainbow {
