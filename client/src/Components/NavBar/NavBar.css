@@ -1,4 +1,12 @@
-*:focus {
+.navbar {
+  background: #000!important;
+}
+
+.navbar a {
+  color: #6c78df!important;
+}
+
+/* *:focus {
   outline: none;
 }
 
@@ -6,7 +14,7 @@
     display: flex;
     text-decoration: none;
     justify-content:flex-start;
-    /* align-items: center; */
+    align-items: center;
     padding: 40px;
     background-color: black;
     opacity: 1;
@@ -19,7 +27,7 @@
 #circles {
   width: 70px;
   margin-right: 20px;
-  /* transition: 1s; */
+  transition: 1s;
   transition-delay: s;
   animation-name: circles;
   animation-iteration-count: 1;
@@ -198,5 +206,5 @@
   border-radius: 2px;
   transition: .5s;
   
-}
+} */
 

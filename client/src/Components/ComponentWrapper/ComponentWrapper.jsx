@@ -2,16 +2,14 @@
 import React, { Fragment } from "react";
 import { Container } from "react-bootstrap";
 //Components
-import NavBar from "../NavBar";
+import Navigation from "../NavBar";
 import Footer from "../Footer";
 
 const ComponentWrapper = ({ children }) => {
   return (
     <Fragment>
-      <NavBar {...navbar}/>
-      <Container>
-        {children}
-      </Container>
+      <Navigation/>
+      {children}
       <Footer />
     </Fragment>
   )
