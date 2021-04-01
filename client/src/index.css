@@ -27,6 +27,14 @@ footer {
 	border-radius: 50%;
 }
 
+.text-primary {
+	color: #6c78df!important;
+}
+
+.text-secondary {
+	color: #6cb1df!important;
+}
+
 @keyframes body {
 	0% {
 		opacity: 0;

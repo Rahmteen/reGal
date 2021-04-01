@@ -12,7 +12,20 @@ const Explore = () => {
     return (
         <Fragment>
             <Jumbotron style={{position: "relative", zIndex: -101}}>
-                <h3 className="overlay-text">Featured</h3>
+                <div className="video-overlay">
+                    <div className="d-block mb-1">
+                        <span className="overlay-text">Current Bid: </span>
+                        <span className="overlay-values text-primary">1.02ETH</span>
+                    </div>
+                    <div className="d-block mb-1">
+                        <span className="overlay-text">Author: </span>
+                        <span className="overlay-values text-primary">Deffie Perry x Rahmteen</span> 
+                    </div>
+                    <div className="d-block mb-1">
+                        <Link className="overlay-values text-secondary" to="/test">Place a bid</Link>
+                    </div>
+                </div>
+                <h1 className="overlay-text text-majesti">Featured</h1>
                 <video id="feature-video" loop autoPlay muted>
                     <source src={sampleVid} type="video/mp4" />
                     Your browser does not support the video tag.
