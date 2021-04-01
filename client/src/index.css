@@ -4,23 +4,27 @@
 }
 
 body {
+	height: 100%;
+	margin: 0;
     opacity: 1;
 	animation-name: body;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
 	animation-duration: 2s;
+	display: flex;
+  	flex-direction: column;
+}
+
+.container {
+	flex: 1 0 auto;
 }
 
 footer {
-	flex-shrink: 0!important;
+	flex-shrink: 0;
 }
 
 .btn-circle {
 	border-radius: 50%;
-}
-
-#root {
-	flex: 1 0 auto;
 }
 
 @keyframes body {
