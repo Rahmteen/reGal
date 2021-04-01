@@ -1,0 +1,24 @@
+.profile {
+    color: white;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    padding: 50px 300px 50px 300px;
+    /* justify-content: center; */
+}
+
+#profile-card {
+    align-self:flex-start;
+}
+
+.card {
+    margin-bottom: 50px;
+}
+
+.card-deck {
+    margin: 10px; 
+}
+
