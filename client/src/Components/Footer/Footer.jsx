@@ -7,7 +7,7 @@ import './Footer.css';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
-    const { activeData, activeDataHandler } = useContext(StateContext);
+    //const { activeData, activeDataHandler } = useContext(StateContext);
     // empty module for future use - footer obviously
     return (
         <div>Footer</div>
