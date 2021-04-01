@@ -4,6 +4,14 @@
 
 .navbar a {
   color: #6c78df!important;
+  font-size: 20px;
+}
+
+.navbar:hover .nav-animation {
+  transition: all .1s linear;
+  transform: scale(3.5);
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 /* *:focus {
