@@ -12,13 +12,14 @@ const Explore = () => {
     return (
         <Fragment>
             <Jumbotron style={{position: "relative", zIndex: -101}}>
+                <h3 className="overlay-text">Featured</h3>
                 <video id="feature-video" loop autoPlay muted>
                     <source src={sampleVid} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </Jumbotron>
             <Container>
-                
+
             </Container>
         </Fragment>
     )  
