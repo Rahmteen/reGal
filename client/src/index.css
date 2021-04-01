@@ -19,3 +19,15 @@ body {
 		opacity: 1;
 	}
 }
+
+.text-majesti {
+	font-family: 'Majesti-Banner-BoldItalic', sans-serif;
+}
+
+@font-face {
+	font-family: 'Majesti-Banner-BoldItalic';
+	font-style: italic;
+	font-weight: bold;
+	src:
+	  url(../assets/fonts/Majesti-Banner/Majesti-Banner-BoldItalic.otf) format("opentype");
+  }

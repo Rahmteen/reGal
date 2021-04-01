@@ -142,13 +142,13 @@ const Landing = () => {
         <div className="landing-block mx-auto text-center">
         <Row>
             <Col md={12}>
-                <h1 className="text-white">Regal</h1>
+                <h1 className="text-white text-majesti">Regal</h1>
             </Col>
             <Col md={12} className="mb-3">
-                <Link className="btn btn-light" to="">Connect</Link>
+                <Link className="btn btn-light text-majesti" to="">Connect</Link>
             </Col>
             <Col md={12}>
-                <Link className="btn btn-light" to="/explore">Explore</Link>
+                <Link className="btn btn-light text-majesti rainbow-btn" to="/explore" >Explore</Link>
             </Col>
         </Row>
         </div>
