@@ -18,6 +18,10 @@
   z-index: 1;
 }
 
+.headline-wrapper {
+    border-bottom: 2px solid #000;
+}
+
 /* .marketplace-body {
     display: flex;
     justify-content: center;
