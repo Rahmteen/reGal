@@ -22,15 +22,43 @@ canvas {
 
 .landing-block h1 {
   font-size: 75px;
-  font-family: 'Majesti-Banner-BoldItalic', sans-serif;
 }
 
-@font-face {
-  font-family: 'Majesti-Banner-BoldItalic';
-  font-style: italic;
-  font-weight: bold;
-  src:
-    url(../../../assets/fonts/Majesti-Banner/Majesti-Banner-BoldItalic.otf) format("opentype");
+.btn.text-majesti {
+  font-size: 20px;
+  border-radius: 0px;
+  width: 7em;
+}
+
+.rainbow-btn {
+  background-image: linear-gradient(90deg, #025b79 0%, #fde578 49%, #fd6a6a 80%, #64fd78 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  animation:slidebg 3.9s linear infinite;
+}
+
+.rainbow-btn {
+  background: linear-gradient(105deg,
+    /* Base gradient stops */
+    #0088b6, #d307fc, #f5d64d, #fd3e3e,#3aff54,
+    /* Repeat your base gradient stops */
+    #0088b6, #d307fc, #f5d64d, #fd3e3e, #3aff54,
+    /* Repeat your first gradient stop */
+    #0088b6);
+  
+  background-size: 200% 200%;
+  animation: rainbow 5s linear infinite;
+  border: 0;
+  padding: 25px;
+  font-size: 40px;
+  color: #fff;
+}
+
+@keyframes rainbow {
+    0% { background-position: 100% 100% }
+  100% { background-position: 0% 0% }
 }
 
 /* * {
