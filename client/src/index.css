@@ -28,11 +28,13 @@ footer {
 }
 
 .text-primary {
-	color: #6c78df!important;
+	font-family: 'Majesti-Banner-BoldItalic', sans-serif;
+	color: #85ffd6!important;
 }
 
 .text-secondary {
-	color: #6cb1df!important;
+	font-family: 'Majesti-Banner-BoldItalic', sans-serif;
+	color: rgb(152, 250, 250)!important;
 }
 
 @keyframes body {
