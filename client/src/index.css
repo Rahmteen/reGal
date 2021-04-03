@@ -27,13 +27,16 @@ footer {
 	border-radius: 50%;
 }
 
+/* Removed font from coloring. These classes are used for coloring purposes only. Primary and secondary colors */
+/* The font class listed below ( .text-majesti ) will be added as well if that font is desired */
+/* It is best to keep these seperated in the case that you want coloring but different font or vise versa */
 .text-primary {
-	font-family: 'Majesti-Banner-BoldItalic', sans-serif;
+	/* font-family: 'Majesti-Banner-BoldItalic', sans-serif; */
 	color: #85ffd6!important;
 }
 
 .text-secondary {
-	font-family: 'Majesti-Banner-BoldItalic', sans-serif;
+	/* font-family: 'Majesti-Banner-BoldItalic', sans-serif; */
 	color: rgb(152, 250, 250)!important;
 }
 
