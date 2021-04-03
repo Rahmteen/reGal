@@ -1,10 +1,12 @@
 .navbar {
   background: #000!important;
+  font-family: 'Majesti-Banner-BoldItalic', sans-serif;
 }
 
 .navbar a {
-  color: #6c78df!important;
+  color: #85ffd6!important;
   font-size: 20px;
+  font-family: 'Majesti-Banner-BoldItalic', sans-serif;
 }
 
 .navbar:hover .nav-animation {

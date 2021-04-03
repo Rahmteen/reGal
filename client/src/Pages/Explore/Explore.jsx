@@ -25,7 +25,7 @@ const Explore = () => {
                         <span className="overlay-values text-primary">Deffie Perry x Rahmteen</span> 
                     </div>
                     <div className="d-block mb-1">
-                        <Link className="overlay-values text-secondary" to="/test">Place a bid</Link>
+                        <Link className="overlay-values text-secondary" to="/test">place a bid</Link>
                     </div>
                 </div>
                 <h1 className="overlay-text text-majesti">Featured</h1>
