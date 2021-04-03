@@ -31,15 +31,6 @@ canvas {
 }
 
 .rainbow-btn {
-  background-image: linear-gradient(90deg, #025b79 0%, #fde578 49%, #fd6a6a 80%, #64fd78 100%);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:bold;
-  animation:slidebg 3.9s linear infinite;
-}
-
-.rainbow-btn {
   background: linear-gradient(105deg,
     /* Base gradient stops */
     #fa3a33, #d307fc, #1a5ef1, #3ed0fd,#3aff54, #f7fa50, #fd6a6a,
