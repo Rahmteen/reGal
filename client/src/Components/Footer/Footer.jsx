@@ -1,12 +1,9 @@
+//Modules
 import React, { useState, useEffect } from 'react';
-// import of basic context state
-import { StateContext } from '../../Providers/StateProvider.jsx';
-// import of local styling
-import './Footer.css';
-// link for future routing
 import { Link } from 'react-router-dom';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
-import Particles from "react-particles-js";
+//CSS
+import './Footer.css';
 
 const Footer = () => {
     //const { activeData, activeDataHandler } = useContext(StateContext);

@@ -40,11 +40,18 @@ module.exports = {
             test: /\.css$/, 
             use: ['style-loader', 'css-loader'] 
         },
+        {
+          test: /\.(ts|tsx)$/,
+          exclude: /node_modules/,
+          use: {
+            loader: "ts-loader",
+          },
+        },
 
       ]
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: [".tsx", ".ts", ".js", ".jsx"],
     alias: {
         '@': path.resolve(__dirname, 'src/'),
     }

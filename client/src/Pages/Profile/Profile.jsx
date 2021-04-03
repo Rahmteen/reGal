@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from 'react';
+//Modules
+import React, { useContext } from 'react';
+import { observer } from "mobx-react-lite";
+import UserStore from "../../Stores/UserStore";
+//CSS
 import './Profile.css';
-import { StateContext } from '../../Providers/StateProvider.jsx';
-import { Link } from 'react-router-dom';
-import { useContext } from 'react';
 
 const Profile = () => {
-  const { userAddress, userAddressHandler } = useContext(StateContext);
+  const userStore = useContext(UserStore);
+  //const { user } = userStore;
   // individual profile pic pages
     return (
     <div>Profile</div>
     )  
 }
 
-export default Profile
+export default observer(Profile);
