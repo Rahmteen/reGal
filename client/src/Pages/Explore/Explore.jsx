@@ -41,24 +41,24 @@ const Explore = () => {
                 </div>
                 <Row className="text-center">
                     <Col md={4} className="mb-5">
-                        <Image src="https://via.placeholder.com/300"/>
+                        <Image fluid src="https://via.placeholder.com/300"/>
                     </Col>
                     <Col md={4} className="mb-5">
-                        <Image src="https://via.placeholder.com/300"/>
+                        <Image fluid src="https://via.placeholder.com/300"/>
                     </Col>
                     <Col md={4} className="mb-5">
-                        <Image src="https://via.placeholder.com/300"/>
+                        <Image fluid src="https://via.placeholder.com/300"/>
                     </Col>
                 </Row>
                 <Row className="text-center">
                     <Col md={4} className="mb-5">
-                        <Image src="https://via.placeholder.com/300"/>
+                        <Image fluid src="https://via.placeholder.com/300"/>
                     </Col>
                     <Col md={4} className="mb-5">
-                        <Image src="https://via.placeholder.com/300"/>
+                        <Image fluid src="https://via.placeholder.com/300"/>
                     </Col>
                     <Col md={4} className="mb-5">
-                        <Image src="https://via.placeholder.com/300"/>
+                        <Image fluid src="https://via.placeholder.com/300"/>
                     </Col>
                 </Row>
             </Container>
