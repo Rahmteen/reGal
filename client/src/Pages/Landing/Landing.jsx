@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 import Particles from "react-particles-js";
 import { Link } from "react-router-dom";
 import { Row, Col } from 'react-bootstrap';
-//CSS
-import "./Landing.css";
 
 const Landing = () => {
   const [particleCount, setParticleCount] = useState(20);

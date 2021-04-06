@@ -2,8 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
-//CSS
-import './Footer.css';
 
 const Footer = () => {
     //const { activeData, activeDataHandler } = useContext(StateContext);
