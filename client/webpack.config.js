@@ -60,8 +60,7 @@ module.exports = {
           use: {
             loader: "ts-loader",
           },
-        },
-
+        }
       ]
   },
   resolve: {
@@ -83,6 +82,6 @@ module.exports = {
     plugins: [
       new HtmlWebpackPlugin({
           template: 'src/index.html'
-      })
+      }),
   ]
 }
