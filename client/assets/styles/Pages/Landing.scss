@@ -1,0 +1,47 @@
+#landingPage {
+    background: #000;
+
+    canvas {
+        height: 100vh!important;
+        width: 100vh;
+        margin: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .landing-block {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
+
+    h1 {
+        font-size: 75px;
+    }
+
+    .btn {
+        font-size: 20px;
+        border:none;
+        width: 7em;
+        border-radius: 0;
+    }
+
+    .rainbow-btn {
+        background: linear-gradient(105deg,
+          /* Base gradient stops */
+          #fa3a33, #d307fc, #1a5ef1, #3ed0fd,#3aff54, #f7fa50, #fd6a6a,
+          /* Repeat your base gradient stops */
+          #fa3a33, #d307fc, #1a5ef1, #3ed0fd, #3aff54, #f7fa50, #fd6a6a,
+          /* Repeat your first gradient stop */
+          #fa3a33);
+        
+        background-size: 200% 200%;
+        animation: rainbow 5s linear infinite;
+        border: 0;
+        color: #fff;
+    }
+}

@@ -6,8 +6,6 @@ import { Link } from 'react-router-dom';
 //Media
 import sampleVid from "../../../assets/images/BMWEEER.mp4";
 import NftDisplay from '../../Components/NftDisplay/NftDisplay';
-//CSS
-import './Explore.css';
 
 const Explore = () => {
     //Sample data for testing will be set dynamically in the future;
