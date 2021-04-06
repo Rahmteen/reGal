@@ -1,4 +1,4 @@
-// mongorestore --uri " mongodb+srv://ramtin:1234@cluster0.tj2u4.mongodb.net/"
+// mongorestore --uri "mongodb+srv://ramtin:1234@cluster0.tj2u4.mongodb.net/"
 
 const path = require("path");
 const express = require("express");
