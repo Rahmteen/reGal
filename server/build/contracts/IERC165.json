@@ -27,9 +27,9 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.4.24;\n\n/**\n * @title IERC165\n * @dev https://github.com/ethereum/EIPs/blob/master/EIPS/eip-165.md\n */\ninterface IERC165 {\n\n  /**\n   * @notice Query if a contract implements an interface\n   * @param interfaceId The interface identifier, as specified in ERC-165\n   * @dev Interface identification is specified in ERC-165. This function\n   * uses less than 30,000 gas.\n   */\n  function supportsInterface(bytes4 interfaceId)\n    external\n    view\n    returns (bool);\n}\n",
-  "sourcePath": "/Users/ramtin/Desktop/reGal/server/contracts/ERC721/IERC165.sol",
+  "sourcePath": "D:\\Projects\\reGal\\server\\contracts\\ERC721\\IERC165.sol",
   "ast": {
-    "absolutePath": "/Users/ramtin/Desktop/reGal/server/contracts/ERC721/IERC165.sol",
+    "absolutePath": "/D/Projects/reGal/server/contracts/ERC721/IERC165.sol",
     "exportedSymbols": {
       "IERC165": [
         907
@@ -154,7 +154,7 @@
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/Users/ramtin/Desktop/reGal/server/contracts/ERC721/IERC165.sol",
+      "absolutePath": "/D/Projects/reGal/server/contracts/ERC721/IERC165.sol",
       "exportedSymbols": {
         "IERC165": [
           907
@@ -298,7 +298,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-04-06T05:05:51.798Z",
+  "updatedAt": "2021-04-06T18:52:36.744Z",
   "devdoc": {
     "methods": {
       "supportsInterface(bytes4)": {
