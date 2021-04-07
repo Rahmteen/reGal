@@ -1,5 +1,6 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 
 module.exports = {
   mode: 'development',
@@ -35,6 +36,10 @@ module.exports = {
           test: /.(js|jsx)$/,
           exclude: /node_modules/,
           loader: "babel-loader",
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: ["@babel/plugin-transform-runtime"]
+          }
         },
         {
           test: /\.(scss)$/,
@@ -70,18 +75,20 @@ module.exports = {
     }
   },
   devServer: {
-      host: 'localhost',
-      hot: true,
-      port: 8080,
-      headers: { 'Access-Control-Allow-Origin': '*' },
-      historyApiFallback: true,
-      inline: true,
-      proxy: { "/api": { target: 'http://localhost:3000', secure: false}
-      },
+    host: 'localhost',
+    hot: true,
+    port: 8080,
+    headers: { 'Access-Control-Allow-Origin': '*' },
+    historyApiFallback: true,
+    inline: true,
+    proxy: { "/api": { target: 'http://localhost:3000', secure: false}
     },
-    plugins: [
-      new HtmlWebpackPlugin({
-          template: 'src/index.html'
-      }),
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+        template: 'src/index.html',
+        favicon: 'assets/images/crcle.gif'
+    }),
+    new NodePolyfillPlugin()
   ]
 }
