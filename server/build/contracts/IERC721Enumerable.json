@@ -335,9 +335,9 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.4.24;\n\nimport \"./IERC721.sol\";\n\n/**\n * @title ERC-721 Non-Fungible Token Standard, optional enumeration extension\n * @dev See https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md\n */\ncontract IERC721Enumerable is IERC721 {\n  function totalSupply() public view returns (uint256);\n  function tokenOfOwnerByIndex(\n    address owner,\n    uint256 index\n  )\n    public\n    view\n    returns (uint256 tokenId);\n\n  function tokenByIndex(uint256 index) public view returns (uint256);\n}\n",
-  "sourcePath": "/Users/ramtin/Desktop/reGal/server/contracts/ERC721/IERC721Enumerable.sol",
+  "sourcePath": "D:\\Projects\\reGal\\server\\contracts\\ERC721\\IERC721Enumerable.sol",
   "ast": {
-    "absolutePath": "/Users/ramtin/Desktop/reGal/server/contracts/ERC721/IERC721Enumerable.sol",
+    "absolutePath": "/D/Projects/reGal/server/contracts/ERC721/IERC721Enumerable.sol",
     "exportedSymbols": {
       "IERC721Enumerable": [
         1037
@@ -358,7 +358,7 @@
         "src": "0:24:6"
       },
       {
-        "absolutePath": "/Users/ramtin/Desktop/reGal/server/contracts/ERC721/IERC721.sol",
+        "absolutePath": "/D/Projects/reGal/server/contracts/ERC721/IERC721.sol",
         "file": "./IERC721.sol",
         "id": 1013,
         "nodeType": "ImportDirective",
@@ -662,7 +662,7 @@
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/Users/ramtin/Desktop/reGal/server/contracts/ERC721/IERC721Enumerable.sol",
+      "absolutePath": "/D/Projects/reGal/server/contracts/ERC721/IERC721Enumerable.sol",
       "exportedSymbols": {
         "IERC721Enumerable": [
           1037
@@ -686,7 +686,7 @@
       {
         "attributes": {
           "SourceUnit": 1011,
-          "absolutePath": "/Users/ramtin/Desktop/reGal/server/contracts/ERC721/IERC721.sol",
+          "absolutePath": "/D/Projects/reGal/server/contracts/ERC721/IERC721.sol",
           "file": "./IERC721.sol",
           "scope": 1038,
           "symbolAliases": [
@@ -1024,7 +1024,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-04-06T18:38:37.200Z",
+  "updatedAt": "2021-04-06T18:52:36.747Z",
   "devdoc": {
     "methods": {
       "supportsInterface(bytes4)": {

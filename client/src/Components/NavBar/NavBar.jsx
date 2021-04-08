@@ -1,17 +1,15 @@
 //Modules
 import React from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Lines from "../../../assets/images/nav-lines.png"
 
 const Navigation = () => {
   return (
     <Navbar variant="dark">
-      <Navbar.Brand href="/" className="text-majesti" style={{fontSize: "2em"}}>R</Navbar.Brand>
-      <Nav className="mr-auto text-majesti">
-        <Nav.Link href="#explore">explore</Nav.Link>
-        <Nav.Link href="#gallery">gallery</Nav.Link>
-        <Nav.Link href="#apply">apply</Nav.Link>
-        <Nav.Link href="#learn">learn</Nav.Link>
+      <Navbar.Brand href="/" className="text-majesti" style={{fontSize: "3em", paddingLeft: "8px"}}>R</Navbar.Brand>
+      <Nav className="ml-auto text-majesti" pullRight>
+        <Nav.Link href="#dropdown"><img className='nav-lines' src={Lines} width={'30em'}/></Nav.Link>
       </Nav>
     </Navbar>
   )

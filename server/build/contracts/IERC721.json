@@ -279,9 +279,9 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.4.24;\n\nimport \"./IERC165.sol\";\n\n/**\n * @title ERC721 Non-Fungible Token Standard basic interface\n * @dev see https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md\n */\ncontract IERC721 is IERC165 {\n\n  event Transfer(\n    address indexed from,\n    address indexed to,\n    uint256 indexed tokenId\n  );\n  event Approval(\n    address indexed owner,\n    address indexed approved,\n    uint256 indexed tokenId\n  );\n  event ApprovalForAll(\n    address indexed owner,\n    address indexed operator,\n    bool approved\n  );\n\n  function balanceOf(address owner) public view returns (uint256 balance);\n  function ownerOf(uint256 tokenId) public view returns (address owner);\n\n  function approve(address to, uint256 tokenId) public;\n  function getApproved(uint256 tokenId)\n    public view returns (address operator);\n\n  function setApprovalForAll(address operator, bool _approved) public;\n  function isApprovedForAll(address owner, address operator)\n    public view returns (bool);\n\n  function transferFrom(address from, address to, uint256 tokenId) public;\n  function safeTransferFrom(address from, address to, uint256 tokenId)\n    public;\n\n  function safeTransferFrom(\n    address from,\n    address to,\n    uint256 tokenId,\n    bytes data\n  )\n    public;\n}\n",
-  "sourcePath": "/Users/ramtin/Desktop/reGal/server/contracts/ERC721/IERC721.sol",
+  "sourcePath": "D:\\Projects\\reGal\\server\\contracts\\ERC721\\IERC721.sol",
   "ast": {
-    "absolutePath": "/Users/ramtin/Desktop/reGal/server/contracts/ERC721/IERC721.sol",
+    "absolutePath": "/D/Projects/reGal/server/contracts/ERC721/IERC721.sol",
     "exportedSymbols": {
       "IERC721": [
         1010
@@ -302,7 +302,7 @@
         "src": "0:24:5"
       },
       {
-        "absolutePath": "/Users/ramtin/Desktop/reGal/server/contracts/ERC721/IERC165.sol",
+        "absolutePath": "/D/Projects/reGal/server/contracts/ERC721/IERC165.sol",
         "file": "./IERC165.sol",
         "id": 910,
         "nodeType": "ImportDirective",
@@ -1516,7 +1516,7 @@
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/Users/ramtin/Desktop/reGal/server/contracts/ERC721/IERC721.sol",
+      "absolutePath": "/D/Projects/reGal/server/contracts/ERC721/IERC721.sol",
       "exportedSymbols": {
         "IERC721": [
           1010
@@ -1540,7 +1540,7 @@
       {
         "attributes": {
           "SourceUnit": 908,
-          "absolutePath": "/Users/ramtin/Desktop/reGal/server/contracts/ERC721/IERC165.sol",
+          "absolutePath": "/D/Projects/reGal/server/contracts/ERC721/IERC165.sol",
           "file": "./IERC165.sol",
           "scope": 1011,
           "symbolAliases": [
@@ -2856,7 +2856,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-04-06T18:38:37.199Z",
+  "updatedAt": "2021-04-06T18:52:36.745Z",
   "devdoc": {
     "methods": {
       "supportsInterface(bytes4)": {

@@ -33,9 +33,9 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.4.24;\n\nimport \"./IERC165.sol\";\n\n/**\n * @title ERC165\n * @author Matt Condon (@shrugs)\n * @dev Implements ERC165 using a lookup table.\n */\ncontract ERC165 is IERC165 {\n\n  bytes4 private constant _InterfaceId_ERC165 = 0x01ffc9a7;\n  /**\n   * 0x01ffc9a7 ===\n   *   bytes4(keccak256('supportsInterface(bytes4)'))\n   */\n\n  /**\n   * @dev a mapping of interface id to whether or not it's supported\n   */\n  mapping(bytes4 => bool) private _supportedInterfaces;\n\n  /**\n   * @dev A contract implementing SupportsInterfaceWithLookup\n   * implement ERC165 itself\n   */\n  constructor()\n    internal\n  {\n    _registerInterface(_InterfaceId_ERC165);\n  }\n\n  /**\n   * @dev implement supportsInterface(bytes4) using a lookup table\n   */\n  function supportsInterface(bytes4 interfaceId)\n    external\n    view\n    returns (bool)\n  {\n    return _supportedInterfaces[interfaceId];\n  }\n\n  /**\n   * @dev internal method for registering an interface\n   */\n  function _registerInterface(bytes4 interfaceId)\n    internal\n  {\n    require(interfaceId != 0xffffffff);\n    _supportedInterfaces[interfaceId] = true;\n  }\n}\n",
-  "sourcePath": "/Users/ramtin/Desktop/reGal/server/contracts/ERC721/ERC165.sol",
+  "sourcePath": "D:\\Projects\\reGal\\server\\contracts\\ERC721\\ERC165.sol",
   "ast": {
-    "absolutePath": "/Users/ramtin/Desktop/reGal/server/contracts/ERC721/ERC165.sol",
+    "absolutePath": "/D/Projects/reGal/server/contracts/ERC721/ERC165.sol",
     "exportedSymbols": {
       "ERC165": [
         69
@@ -56,7 +56,7 @@
         "src": "0:24:1"
       },
       {
-        "absolutePath": "/Users/ramtin/Desktop/reGal/server/contracts/ERC721/IERC165.sol",
+        "absolutePath": "/D/Projects/reGal/server/contracts/ERC721/IERC165.sol",
         "file": "./IERC165.sol",
         "id": 21,
         "nodeType": "ImportDirective",
@@ -485,10 +485,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1520,
-                        1521
+                        1199,
+                        1200
                       ],
-                      "referencedDeclaration": 1520,
+                      "referencedDeclaration": 1199,
                       "src": "1020:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -656,7 +656,7 @@
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/Users/ramtin/Desktop/reGal/server/contracts/ERC721/ERC165.sol",
+      "absolutePath": "/D/Projects/reGal/server/contracts/ERC721/ERC165.sol",
       "exportedSymbols": {
         "ERC165": [
           69
@@ -680,7 +680,7 @@
       {
         "attributes": {
           "SourceUnit": 908,
-          "absolutePath": "/Users/ramtin/Desktop/reGal/server/contracts/ERC721/IERC165.sol",
+          "absolutePath": "/D/Projects/reGal/server/contracts/ERC721/IERC165.sol",
           "file": "./IERC165.sol",
           "scope": 70,
           "symbolAliases": [
@@ -1164,10 +1164,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1520,
-                                1521
+                                1199,
+                                1200
                               ],
-                              "referencedDeclaration": 1520,
+                              "referencedDeclaration": 1199,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1345,7 +1345,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-04-06T18:38:37.189Z",
+  "updatedAt": "2021-04-06T18:52:36.730Z",
   "devdoc": {
     "author": "Matt Condon (@shrugs)",
     "methods": {
