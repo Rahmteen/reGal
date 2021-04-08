@@ -1,11 +1,13 @@
 //Modules
 import React, { useState, Fragment } from 'react';
-import { Col, Container, Image, Jumbotron, Row } from 'react-bootstrap';
+import { Carousel, Col, Container, Image, Jumbotron, Row } from 'react-bootstrap';
 import { observer } from "mobx-react-lite";
 import { Link } from 'react-router-dom';
+//Components
+import NftDisplay from '../../Components/NftDisplay/NftDisplay';
 //Media
 import sampleVid from "../../../assets/images/BMWEEER.mp4";
-import NftDisplay from '../../Components/NftDisplay/NftDisplay';
+import demo from "../../../assets/images/demo-art.jpeg";
 
 const Explore = () => {
     //Sample data for testing will be set dynamically in the future;
@@ -13,61 +15,41 @@ const Explore = () => {
     const [nfts, setNfts] = useState([
         {
             id: 1,
-            image: "",
+            image: demo,
             likes: 27,
             comments: 8
         },
         {
             id: 2,
-            image: "",
+            image: demo,
             likes: 109,
             comments: 56
         },
         {
             id: 3,
-            image: "",
+            image: demo,
             likes: 89,
             comments: 17
         },
         {
             id: 4,
-            image: "",
+            image: demo,
             likes: 211,
             comments: 24
         },
         {
             id: 5,
-            image: "",
+            image: demo,
             likes: 32,
             comments: 10
         },
         {
             id: 6,
-            image: "",
+            image: demo,
             likes: 49,
             comments: 16
         },
     ]);
-    //Builds out featured list. Temporary solution will be changed to something more elegant.
-    const buildFeaturedList = nfts => {
-        let nftColumns = [];
-        nfts.forEach( (nft) => {
-            nftColumns.push(<NftDisplay key={nft.id} likes={nft.likes} comments={nft.comments} url={nft.image} />);
-        })
-        let rowOne = 
-            <Row key={0} className="text-center">
-                {nftColumns[0]}
-                {nftColumns[1]} 
-                {nftColumns[2]}
-            </Row>
-        let rowTwo = 
-            <Row key={1} className="text-center">
-                {nftColumns[3]} 
-                {nftColumns[4]}
-                {nftColumns[5]}
-            </Row>
-        return [rowOne, rowTwo];
-    }
 
     //the main page after landing for relevant material - this will morph into a trending section as userbase increases.
     return (
@@ -86,21 +68,25 @@ const Explore = () => {
                         <Link className="overlay-values text-secondary" to="/test">place a bid</Link>
                     </div>
                 </div>
-                <h1 className="overlay-text text-majesti">Featured</h1>
+                {/* <h1 className="overlay-text text-majesti">Featured</h1> */}
                 <video id="feature-video" loop autoPlay muted>
                     <source src={sampleVid} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </Jumbotron>
-            <Container>
-                <div className="headline-wrapper mb-5">
-                    <h1 className="headline text-majesti d-inline-block">Live Activity</h1>
-                    <Link to="" className="headline-nav float-right text-dark">view all</Link>
-                </div>
-                { 
-                    buildFeaturedList(nfts)
-                }
+            <Container fluid>
+                <Carousel touch>
+                    {
+                        nfts.map( (nft, i) => (
+                            <Carousel.Item key={i}>
+                                <NftDisplay likes={nft.likes} comments={nft.comments} image={nft.image} />
+                            </Carousel.Item>
+                        ))
+                    }
+                </Carousel >
             </Container>
+        
+            
         </Fragment>
     )  
 }

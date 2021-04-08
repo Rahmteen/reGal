@@ -11,6 +11,7 @@ const SimpleContract = new web3.eth.Contract(regalMinter, contractAddr);
 const NftMinter = () => {
     const [number, setNumber] = useState(0);
     const [getNumber, setGetNumber] = useState('0x00');
+    
 
     useEffect(() => {
       console.log(SimpleContract.methods)
@@ -18,7 +19,7 @@ const NftMinter = () => {
 
     const handleGet = async (e) => {
       e.preventDefault();
-      const result = await SimpleContract.methods.get().call();
+      const result = await NFTMintContract.methods.get().call();
       setGetNumber(result);
       console.log(result);
     }
