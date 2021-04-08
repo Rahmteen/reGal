@@ -12,10 +12,10 @@ const Navigation = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse>
         <Nav className="ml-auto text-majesti">
-          <Nav.Link href="">Explore</Nav.Link>
-          <Nav.Link href="">Gallery</Nav.Link>
-          <Nav.Link href="">Apply</Nav.Link>
-          <Nav.Link href="">Learn</Nav.Link>
+          <Nav.Link href="">explore</Nav.Link>
+          <Nav.Link href="">profile</Nav.Link>
+          <Nav.Link href="">apply</Nav.Link>
+          <Nav.Link href="">whiteboard</Nav.Link>
           {/* <Nav.Link href="#dropdown"><img className='nav-lines' src={Lines} width={'30em'}/></Nav.Link> */}
         </Nav>
       </Navbar.Collapse>
