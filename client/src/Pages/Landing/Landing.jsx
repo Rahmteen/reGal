@@ -1,16 +1,10 @@
 //Modules
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Particles from "react-particles-js";
 import { Link } from "react-router-dom";
-import { Row, Col, Button } from 'react-bootstrap';
-//Stores
-import { StateContext } from "../../Providers/StateProvider.jsx";
-//CSS
-import "./Landing.css";
+import { Row, Col } from 'react-bootstrap';
 
 const Landing = () => {
-  const { userAddress, userAddressHandler } = useContext(StateContext);
-  const [web3Auth, setWeb3Auth] = useState(false);
   const [particleCount, setParticleCount] = useState(20);
 
   useEffect(() => {
@@ -28,7 +22,7 @@ const Landing = () => {
   //   return setWeb3Auth(!web3Auth);
   // };
 
-  return (
+  return (  
     <div id="landingPage">
       <Particles 
         params={{
@@ -56,7 +50,7 @@ const Landing = () => {
                         }
                     },
                     opacity: {
-                        value: 0.9,
+                        value: 0.8,
                         random: true,
                         anim: {
                             enable: true,
@@ -70,26 +64,26 @@ const Landing = () => {
                         random: true,
                         anim: {
                             enable: false,
-                            speed: 40,
+                            speed: 20,
                             size_min: 2.1,
                             sync: false
                         }
                     },
                     line_linked: {
                         enable: true,
-                        distance: 356.5,
+                        distance: 200,
                         color: "#ffffff",
                         opacity: 0.9,
-                        width: 1
+                        width: 2
                     },
                     move: {
                         enable: true,
-                        speed: 6.206824121731046,
+                        speed: 1,
                         direction: "none",
                         random: false,
                         straight: false,
                         out_mode: "out",
-                        bounce: false,
+                        bounce: true,
                         attract: {
                             enable: false,
                             rotateX: 600,
@@ -145,7 +139,7 @@ const Landing = () => {
                 <h1 className="text-white text-majesti">Regal</h1>
             </Col>
             <Col md={12} className="mb-3">
-                <Link className="btn btn-light text-majesti" to="">Connect</Link>
+                <Link className="btn btn-light text-majesti enableEthereumButton" to="">Connect</Link>
             </Col>
             <Col md={12}>
                 <Link className="btn btn-light text-majesti rainbow-btn" to="/explore" >Explore</Link>

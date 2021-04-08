@@ -1,0 +1,68 @@
+import axios, { AxiosResponse } from "axios";
+import { INft } from "../Models/Nft";
+import { IUser } from "../Models/User";
+
+const apiURL = process.env.DATE_API_URL || "";
+
+axios.defaults.baseURL = `${apiURL}/api`;
+
+axios.interceptors.response.use(undefined, (error) => {
+  if (error.message === "Network Error" && !error.response) {
+    //toast.error("Network error!");
+  }
+
+  const { status, data, config } = error.response;
+
+  if (status == 401) {
+    window.location.href = "/";
+  }
+
+  if (
+    status === 400 &&
+    config.method === "get" &&
+    data.errors.hasOwnProperty("id")
+  ) {
+    window.location.href = "/";
+    return;
+  }
+
+  if (status === 500) {
+    throw error;
+  }
+
+  throw error;
+});
+
+const responseBody = (response: AxiosResponse) => response.data;
+
+const headers = {
+  "Content-Type": "application/json",
+};
+
+const requests = {
+  get: (url: string) => axios.get(url, { headers }).then(responseBody),
+  post: (url: string, body: {}) =>
+    axios.post(url, body, { headers }).then(responseBody),
+  put: (url: string, body: {}) =>
+    axios.put(url, body, { headers }).then(responseBody),
+  del: (url: string) => axios.delete(url, { headers }).then(responseBody),
+};
+
+const User = {
+  get: (id: number) => requests.get(`/user?=${id}`),
+  create: (user: IUser) => requests.post("/user", user),
+  update: (user: IUser) => requests.put("/user", user),
+  delete: (id: number) => requests.del(`/user?=${id}`)
+}
+
+const Nft = {
+  get: (id: number) => requests.get(`/user?=${id}`),
+  create: (nft: INft) => requests.post("/nft", nft),
+  update: (nft: INft) => requests.put("/nft", nft),
+  delete: (id: number) => requests.del(`/user?=${id}`)
+}
+
+export default {
+  User,
+  Nft
+}
