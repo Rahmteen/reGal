@@ -1,19 +1,12 @@
 import React from "react";
-import { Button, Col, Image, Carousel } from "react-bootstrap";
-import demo from "../../../assets/images/demo-art.jpeg";
+import { Image, Carousel } from "react-bootstrap";
 
-const NftDisplay = ({ likes, comments, url }) => {
-  //For testing purposes only. This function will be removed.
-  //Generates a random number for likes and comments count.
-  //Ultimately will be pulled from database.
-  const generateRandomNumber = () => {
-    return Math.random() * (100 - 0) + 0;
-  };
+const NftDisplay = ({ likes, comments, image }) => {
 
   return (
     // <Col fluid md={4} className="mb-5 nft-wrapper"></Col>
     <>
-        <Image fluid src={demo} />
+        <Image fluid src={image} />
         <Carousel.Caption>
           <div className="nft-activity pt-2">
             <span className="nft-likes float-left pl-4">
@@ -27,7 +20,7 @@ const NftDisplay = ({ likes, comments, url }) => {
             {/* <Button size="sm" className="float-right">Details</Button> */}
           </div>
         </Carousel.Caption>
-        </>
+    </>
   );
 };
 
