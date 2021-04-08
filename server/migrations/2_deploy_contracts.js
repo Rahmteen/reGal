@@ -1,5 +1,6 @@
 // Fetch the Storage contract data from the Storage.json file
 var RegalMinter = artifacts.require("./contracts/RegalMinter.sol");
+var SimpleStorage = artifacts.require("./contracts/SimpleStorage.sol");
 
 // JavaScript export
 module.exports = function(deployer) {
@@ -8,4 +9,5 @@ module.exports = function(deployer) {
 
     // Deploy the contract to the network
     deployer.deploy(RegalMinter);
+    deployer.deploy(SimpleStorage);
 }
