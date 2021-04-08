@@ -1,4 +1,5 @@
 /* JUMBOTRON */
+
 .jumbotron{
     position: relative;
     overflow: hidden;
@@ -43,7 +44,7 @@
         font-size: 50px!important;
     }
     #feature-video {
-        position: absolute;
+         position: absolute;
          height: auto;
          width: auto;
          min-height: 100%;
@@ -58,12 +59,30 @@
 
 /* HEADLINES */
 .headline-wrapper {
+    color: white;
     border-bottom: 2px solid #000;
     position: relative;
 
     .headline-nav {
+        color: white !important;
         position: absolute;
         bottom: 10px;
         right: 0;
     }
+  
+
+}
+
+.nft-flex {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel {
+    padding: 5px;
+}
+.carousel-item.active {   
+    display: flex !important;
+    justify-content: center;
 }
