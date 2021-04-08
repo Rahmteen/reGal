@@ -1,0 +1,35 @@
+.container {
+    .user-profile-data {
+        .user-profile-image {
+            padding: 75px;
+            border-radius: 75px;
+            background-color: #c05c64;
+            width: 50px;
+            text-align: center;
+        }
+        .user-profile-name {
+            font-size: 40px;
+        }
+        .user-profile-bio {
+            font-style: italic;
+        }
+    }
+    .nft-upload-form {
+        .nft-upload-placeholder {
+            height: 500px;
+            width: 500px;
+            border: 1px solid $primary;
+            border-radius: 10px;
+            .place-holder-text {
+                vertical-align: middle;
+                line-height: 500px;
+            }
+        }
+        .mint-submit {
+            background-color: $primary;
+            border-color: $primary;
+            border-radius: 0px;
+            padding: 15px 30px;
+        }
+    }
+}
