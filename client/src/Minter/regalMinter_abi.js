@@ -481,4 +481,4 @@ export const regalMinter = [
       "stateMutability": "view",
       "type": "function"
     }
-  ],
+  ]

@@ -1,6 +1,6 @@
 //Modules
 import React, { useState, Fragment } from 'react';
-import { Col, Container, Image, Jumbotron, Row } from 'react-bootstrap';
+import { Carousel, Col, Container, Image, Jumbotron, Row } from 'react-bootstrap';
 import { observer } from "mobx-react-lite";
 import { Link } from 'react-router-dom';
 //Media
@@ -51,22 +51,20 @@ const Explore = () => {
     //Builds out featured list. Temporary solution will be changed to something more elegant.
     const buildFeaturedList = nfts => {
         let nftColumns = [];
-        nfts.forEach( (nft) => {
+        nfts.forEach( (nft, i) => {
             nftColumns.push(<NftDisplay key={nft.id} likes={nft.likes} comments={nft.comments} url={nft.image} />);
         })
         let rowOne = 
-            <Row key={0} className="text-center">
-                {nftColumns[0]}
-                {nftColumns[1]} 
-                {nftColumns[2]}
-            </Row>
-        let rowTwo = 
-            <Row key={1} className="text-center">
-                {nftColumns[3]} 
-                {nftColumns[4]}
-                {nftColumns[5]}
-            </Row>
-        return [rowOne, rowTwo];
+            <Carousel key={0} touch>
+                <Carousel.Item>{nftColumns[0]}</Carousel.Item>
+                <Carousel.Item>{nftColumns[1]}</Carousel.Item> 
+                <Carousel.Item>{nftColumns[2]}</Carousel.Item>
+                <Carousel.Item>{nftColumns[3]}</Carousel.Item> 
+                <Carousel.Item>{nftColumns[4]}</Carousel.Item>
+                <Carousel.Item>{nftColumns[5]}</Carousel.Item>
+            </Carousel >
+
+        return [rowOne];
     }
 
     //the main page after landing for relevant material - this will morph into a trending section as userbase increases.
@@ -86,21 +84,21 @@ const Explore = () => {
                         <Link className="overlay-values text-secondary" to="/test">place a bid</Link>
                     </div>
                 </div>
-                <h1 className="overlay-text text-majesti">Featured</h1>
+                {/* <h1 className="overlay-text text-majesti">Featured</h1> */}
                 <video id="feature-video" loop autoPlay muted>
                     <source src={sampleVid} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </Jumbotron>
-            <Container>
-                <div className="headline-wrapper mb-5">
+            <Container fluid={true}>
+                {/* <div className="headline-wrapper mb-5">
                     <h1 className="headline text-majesti d-inline-block">Live Activity</h1>
                     <Link to="" className="headline-nav float-right text-dark">view all</Link>
-                </div>
-                { 
-                    buildFeaturedList(nfts)
-                }
+                </div> */}
             </Container>
+                {buildFeaturedList(nfts)}
+        
+            
         </Fragment>
     )  
 }
