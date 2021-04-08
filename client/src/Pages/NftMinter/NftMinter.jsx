@@ -6,7 +6,11 @@ import { regalMinter } from '../../Minter/regalMinter_abi';
 
 const web3 = new Web3(Web3.givenProvider|| "http://localhost:8080")
 const contractAddr = '0xf4D6196875D0867a712Bf176bDC64D79613a9B01';
+<<<<<<< HEAD
 const NFTMintContract = new web3.eth.Contract(regalMinter, contractAddr);
+=======
+const SimpleContract = new web3.eth.Contract(regalMinter, contractAddr);
+>>>>>>> a0fb512407d885c863f7a3f5cf9b785df480227e
 
 const NftMinter = () => {
     const [number, setNumber] = useState(0);
