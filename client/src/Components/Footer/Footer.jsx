@@ -1,9 +1,5 @@
+//Modules
 import React, { useState, useEffect } from 'react';
-// import of basic context state
-import { StateContext } from '../../Providers/StateProvider.jsx';
-// import of local styling
-import './Footer.css';
-// link for future routing
 import { Link } from 'react-router-dom';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 
@@ -11,14 +7,14 @@ const Footer = () => {
     //const { activeData, activeDataHandler } = useContext(StateContext);
     // empty module for future use - footer obviously
     return (
-        <footer className="bg-dark text-center text-white">
+        <footer className="text-center text-white footer">
+            
             <Container className="p-4 pb-0">
                 <section className="mb-4">
-                    <Button variant="outline-light floating" className="m-2"><i className="fab fw fa-facebook-f"></i></Button>
                     <Button variant="outline-light floating" className="m-2"><i className="fab fw fa-twitter"></i></Button>
                     <Button variant="outline-light floating" className="m-2"><i className="fab fw fa-instagram"></i></Button>
-                    <Button variant="outline-light floating" className="m-2"><i className="fab fw fa-linkedin-in"></i></Button>
-                    <Button variant="outline-light floating" className="m-2"><i className="fab fw fa-github"></i></Button>
+                    <Button variant="outline-light floating" className="m-2"><i className="fab fw fa-discord"></i></Button>
+                    <Button variant="outline-light floating" className="m-2"><i className="fab fw fa-medium"></i></Button>
                 </section>
 
                 <section>
@@ -43,82 +39,24 @@ const Footer = () => {
 
                 <section className="mb-4">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-                        repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-                        eum harum corrupti dicta, aliquam sequi voluptate quas.
+                        We're creators who decided to build a platform for creators, without taking a massive percentage of the sales. Join the cause
+                        by submitting an application.
                     </p>
                 </section>
                     
                 <section>
                     <Row>
                         <Col lg={3} md={6} className="mb-4 mb-md-0">
-                            <h5 className="text-uppercase">Links</h5>
-                            <ul className="list-unstyled mb-0">
-                                <li>
-                                    <Link to="" className="text-white">Link 1</Link>
-                                </li>
-                                <li>
-                                    <Link to="" className="text-white">Link 2</Link>
-                                </li>
-                                <li>
-                                    <Link to="" className="text-white">Link 3</Link>
-                                </li>
-                                <li>
-                                    <Link to="" className="text-white">Link 4</Link>
-                                </li>
-                            </ul>
+                            <h5 className="text-uppercase">FAQ</h5>
                         </Col>
                         <Col lg={3} md={6} className="mb-4 mb-md-0">
-                            <h5 className="text-uppercase">Links</h5>
-                            <ul className="list-unstyled mb-0">
-                                <li>
-                                    <Link to="" className="text-white">Link 1</Link>
-                                </li>
-                                <li>
-                                    <Link to="" className="text-white">Link 2</Link>
-                                </li>
-                                <li>
-                                    <Link to="" className="text-white">Link 3</Link>
-                                </li>
-                                <li>
-                                    <Link to="" className="text-white">Link 4</Link>
-                                </li>
-                            </ul>
+                            <h5 className="text-uppercase">T.O.S.</h5>
                         </Col>
                         <Col lg={3} md={6} className="mb-4 mb-md-0">
-                            <h5 className="text-uppercase">Links</h5>
-
-                            <ul className="list-unstyled mb-0">
-                                <li>
-                                    <Link to="" className="text-white">Link 1</Link>
-                                </li>
-                                <li>
-                                    <Link to="" className="text-white">Link 2</Link>
-                                </li>
-                                <li>
-                                    <Link to="" className="text-white">Link 3</Link>
-                                </li>
-                                <li>
-                                    <Link to="" className="text-white">Link 4</Link>
-                                </li>
-                            </ul>
+                            <h5 className="text-uppercase">Apply</h5>
                         </Col>
                         <Col lg={3} md={6} className="mb-4 mb-md-0">
-                            <h5 className="text-uppercase">Links</h5>
-                            <ul className="list-unstyled mb-0">
-                                <li>
-                                    <Link to="" className="text-white">Link 1</Link>
-                                </li>
-                                <li>
-                                    <Link to="" className="text-white">Link 2</Link>
-                                </li>
-                                <li>
-                                    <Link to="" className="text-white">Link 3</Link>
-                                </li>
-                                <li>
-                                    <Link to="" className="text-white">Link 4</Link>
-                                </li>
-                            </ul>
+                            <h5 className="text-uppercase">Careers</h5>
                         </Col>
                     </Row>
                 </section>
