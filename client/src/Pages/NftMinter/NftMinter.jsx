@@ -1,17 +1,21 @@
 //Modules
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Web3 from 'web3';
 //Contracts
 import { regalMinter } from '../../Minter/regalMinter_abi';
 
 const web3 = new Web3(Web3.givenProvider|| "http://localhost:8080")
-const contractAddr = '0xf4D6196875D0867a712Bf176bDC64D79613a9B01';
-const NFTMintContract = new web3.eth.Contract(regalMinter, contractAddr);
+const contractAddr = '0x08106e01F94402DF79199eE9fb339540a243C79B';
+const SimpleContract = new web3.eth.Contract(regalMinter, contractAddr);
 
 const NftMinter = () => {
     const [number, setNumber] = useState(0);
     const [getNumber, setGetNumber] = useState('0x00');
     
+
+    useEffect(() => {
+      console.log(SimpleContract.methods)
+    },[])
 
     const handleGet = async (e) => {
       e.preventDefault();
@@ -24,9 +28,8 @@ const NftMinter = () => {
       e.preventDefault();    
       const accounts = await window.ethereum.enable();
       const account = accounts[0];
-      const gas = await NFTMintContract.methods.set(number)
-                          .estimateGas();
-      const result = await NFTMintContract.methods.set(number).send({
+      const gas = await SimpleContract.methods.set(number).estimateGas();
+      const result = await SimpleContract.methods.set(number).send({
         from: account,
         gas 
       })
