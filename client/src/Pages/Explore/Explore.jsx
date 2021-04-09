@@ -75,11 +75,11 @@ const Explore = () => {
                 </video>
             </Jumbotron>
             <Container fluid>
-                <Carousel touch>
+                <Carousel touch hover interval={9999999}>
                     {
                         nfts.map( (nft, i) => (
                             <Carousel.Item key={i}>
-                                <NftDisplay likes={nft.likes} comments={nft.comments} image={nft.image} />
+                                <NftDisplay likes={nft.likes} comments={nft.comments} image={nft.image} id={nft.id} />
                             </Carousel.Item>
                         ))
                     }

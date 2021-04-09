@@ -1,4 +1,4 @@
-.container {
+.container-fluid {
     .user-profile-data {
         .user-profile-image {
             padding: 75px;
@@ -17,7 +17,7 @@
     .nft-upload-form {
         .nft-upload-placeholder {
             height: 500px;
-            width: 500px;
+            max-width: 500px;
             border: 1px solid $primary;
             border-radius: 10px;
             .place-holder-text {
