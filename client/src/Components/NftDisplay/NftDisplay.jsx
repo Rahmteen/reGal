@@ -9,16 +9,16 @@ const NftDisplay = ({ likes, comments, image, id }) => {
     <>
         <Image fluid src={image} />
         <Carousel.Caption>
-          <div className="nft-activity pt-2">
-            <span className="nft-likes float-left pl-4">
+          <div className="nft-activity mx-auto pt-2">
+            <span className="nft-likes pl-4">
               <span className="fa fa-lg fa-heart-o pr-1"></span>
               {likes}
             </span>
-            <span className="nft-comments float-left pl-3">
+            <span className="nft-comments pl-3">
               <span className="fa fa-lg fa-comment-o pr-1"></span>
               {comments}
             </span>
-            <span className="nft-details float-left pl-3">
+            <span className="nft-details pl-3 d-inline-block">
               <Link to={`/details/${id}`} className="text-white" >Details</Link>
             </span>
             {/* <Button size="sm" className="float-right">Details</Button> */}
