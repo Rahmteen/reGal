@@ -258,11 +258,6 @@ export const regalMinter = [
       },
       {
         "indexed": false,
-        "name": "location",
-        "type": "string"
-      },
-      {
-        "indexed": false,
         "name": "description",
         "type": "string"
       },
@@ -350,10 +345,6 @@ export const regalMinter = [
       },
       {
         "name": "title",
-        "type": "string"
-      },
-      {
-        "name": "location",
         "type": "string"
       },
       {
@@ -455,10 +446,6 @@ export const regalMinter = [
       {
         "name": "",
         "type": "address[]"
-      },
-      {
-        "name": "",
-        "type": "string"
       },
       {
         "name": "",
