@@ -15,7 +15,7 @@ const Navigation = () => {
           <Nav.Link href="/explore">explore</Nav.Link>
           <Nav.Link href="/profile">profile</Nav.Link>
           <Nav.Link href="#apply">apply</Nav.Link>
-          <Nav.Link href="#whiteboard">whiteboard</Nav.Link>
+          <Nav.Link href="#whiteboard">whitepaper</Nav.Link>
           {/* <Nav.Link href="#dropdown"><img className='nav-lines' src={Lines} width={'30em'}/></Nav.Link> */}
         </Nav>
       </Navbar.Collapse>
