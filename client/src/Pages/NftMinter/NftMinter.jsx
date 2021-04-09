@@ -87,7 +87,7 @@ const NftMinter = () => {
     // }
 
     return (
-      <Container>
+      <Container fluid>
         <Row className="user-profile-data">
           <Col md={12}>
             {/* Image will be used in the future..using default circle for testing */}
@@ -110,7 +110,7 @@ const NftMinter = () => {
               <span className="text-white place-holder-text">Placeholder</span>
             </div>
           </Col>
-          <Col md={6} className="mt-4 md-offset-3 mx-auto">
+          <Col md={6} sm={12} className="mt-4 offset-md-3 offset-sm-0">
             <Form>
               <Form.Group>
                 <Form.Label className="text-white">Name</Form.Label>

@@ -1,0 +1,45 @@
+.nft-title-details {
+    h1 {
+        font-size: 60px;
+    }
+}
+
+.nft-bids {
+    .currency-value {
+        font-size: 18px;
+    }
+}
+
+.nft-records {
+    border: none!important;
+    thead {
+        border: none!important;
+        th {
+            border: none!important;
+        }
+    }
+    tbody {
+        border: none!important;
+        td {
+            border: none!important;
+        }
+    }
+}
+
+.total-value-summary {
+    font-size: 25px;
+}
+
+@media only screen and (max-width: 767px) {
+    .nft-title-details {
+        .font-italic {
+            display: block!important;
+        }
+    }
+    .list-group {
+        justify-content: center;
+    }
+    .nft-records {
+        margin-top: 3em;
+    }
+}
