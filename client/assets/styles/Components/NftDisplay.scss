@@ -2,3 +2,14 @@
     border-radius: 10px;
     width: 1000px;
 }
+
+.nft-details {
+    a {
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        &:hover {
+            color: $primary!important;
+        }
+    }
+}
