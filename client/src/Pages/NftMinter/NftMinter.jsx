@@ -1,6 +1,16 @@
 //Modules
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col, Image, Form, Button } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Image,
+  Form,
+  Button,
+  ToggleButtonGroup,
+  ToggleButton,
+  FormControl,
+} from "react-bootstrap";
 import Web3 from "web3";
 import ipfs from "../../ipfs";
 var Buffer = require("buffer/").Buffer;
@@ -9,15 +19,14 @@ var Buffer = require("buffer/").Buffer;
 import { regalMinter } from "../../Minter/regalMinter_abi";
 
 const web3 = new Web3(Web3.givenProvider || "http://127.0.0.1:7545");
-const contractAddr = "0xaA0eC25450C61E09ba34da304B47AC2e23C7db30";
+const contractAddr = "0x7c449e8777A37Ec5F7B4F936593C18931917f526";
 const regalMinterContract = new web3.eth.Contract(regalMinter, contractAddr);
 
 const initialState = {
   nftName: "",
-  nftArtist: "",
-  nftPrice: "",
+  nftArtist: "@artistName",
   nftDescription: "",
-  nftHash: null,
+  nftRawFile: null,
   nftThumbnail: null,
 };
 
@@ -33,13 +42,22 @@ const handleMint = async () => {
 
 const NftMinter = () => {
   const [
-    { nftName, nftArtist, nftPrice, nftDescription, nftHash, nftThumbnail },
+    { nftName, nftArtist, nftDescription, nftRawFile, nftThumbnail },
     setState,
   ] = useState(initialState);
 
+  const [renderInput, setRenderInput] = useState([<div key={"empty"}></div>]);
+
   useEffect(() => {
-    //console.log(SimpleContract.methods)
+    console.log(initialState);
   }, []);
+
+  const validateMint = () => {
+    if (nftName && nftArtist && nftDescription && nftRawFile && nftThumbnail) {
+      return true;
+    }
+    return false;
+  };
 
   const handleInputChange = (event) => {
     let name = event.target.name;
@@ -50,34 +68,43 @@ const NftMinter = () => {
     }));
   };
 
-  const handleFileChange = (event) => {
-    let name = event.target.name;
-    console.log(event.target.files[0]);
-    setState((prevState) => ({
-      ...prevState,
-      [name]: event.target.files[0],
-    }));
+  const handleRenderInput = (event, bool) => {
+    event.preventDefault();
+    console.log(bool);
+    if (bool === true) {
+      setRenderInput([
+        <FormControl
+          key={"input"}
+          placeholder="https://www.dropbox.com/s/ymhg..."
+          aria-label="https://www.dropbox.com/s/ymhg..."
+          aria-describedby="basic-addon1"
+        />,
+      ]);
+    } else setRenderInput([<div key={"empty"}></div>]);
   };
 
   const handleFileUpload = (file) => {
-    console.log(file)
+    console.log(file);
     const reader = new FileReader();
     const fileData = new Blob([file]);
-    console.log(fileData)
+    console.log(fileData);
     reader.readAsArrayBuffer(file);
     reader.onloadend = () => uploadToIPFS(reader);
-    
   };
 
   const uploadToIPFS = async (reader) => {
     const buffer = await Buffer.from(reader.result);
     console.log(buffer);
-    const result = await ipfs.add(buffer); 
-    const ipfsLink = "'https://gateway.ipfs.io/ipfs/" + result.path;
+    const result = await ipfs.add(buffer);
+    const ipfsLink = "https://gateway.ipfs.io/ipfs/" + result.path;
     // document.getElementById("link").innerHTML = ipfsLink;
     console.log(result);
-    console.log(ipfsLink)
-    };
+    console.log(ipfsLink);
+    setState((prevState) => ({
+      ...prevState,
+      nftThumbnail: ipfsLink,
+    }));
+  };
 
   return (
     <Container>
@@ -102,18 +129,24 @@ const NftMinter = () => {
           </p>
         </Col>
       </Row>
-      <Row className="nft-upload-form">
+      <Row className="nft-upload-form justify-content-md-center">
         <Col md={12}>
           <div className="nft-upload-placeholder text-center mx-auto">
             <span className="text-white place-holder-text">
-              <i>1000 x 1000</i>
+              <br />
+              <img
+                className="image-border-box my-auto"
+                loop="infinite"
+                src={nftThumbnail || null}
+                alt=""
+              />
             </span>
           </div>
         </Col>
         <Col md={6} className="mt-4 md-offset-3 mx-auto">
           <Form>
             <Form.Group>
-              <Form.Label className="text-white">Name</Form.Label>
+              <Form.Label className="text-white">Name*</Form.Label>
               <Form.Control
                 type="text"
                 name="nftName"
@@ -123,27 +156,18 @@ const NftMinter = () => {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Label className="text-white">Artist</Form.Label>
+              <Form.Label className="text-white">Artist*</Form.Label>
               <Form.Control
                 type="text"
+                disabled={true}
                 name="nftArtist"
-                placeholder="NFT Artist"
+                placeholder="@artistName"
                 value={nftArtist}
                 onChange={handleInputChange}
               />
             </Form.Group>
             <Form.Group>
-              <Form.Label className="text-white">Price</Form.Label>
-              <Form.Control
-                type="text"
-                name="nftPrice"
-                placeholder="NFT Price"
-                value={nftPrice}
-                onChange={handleInputChange}
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label className="text-white">Description</Form.Label>
+              <Form.Label className="text-white">Description*</Form.Label>
               <Form.Control
                 as="textarea"
                 row={3}
@@ -156,7 +180,7 @@ const NftMinter = () => {
             <Form.Group>
               <Form.File
                 className="text-primary"
-                label="Upload raw file"
+                label="Upload raw file*"
                 name="nftHash"
                 onChange={(e) => handleFileUpload(e.target.files[0])}
               />
@@ -164,14 +188,51 @@ const NftMinter = () => {
             <Form.Group>
               <Form.File
                 className="text-primary"
-                label="Upload thumbnail"
+                label="Upload thumbnail*"
                 name="nftThumbnail"
                 onChange={(e) => handleFileUpload(e)}
               />
-              {nftThumbnail}
             </Form.Group>
+            <Form.Group>
+              <Form.Label className="text-white">
+                Provide Downloadable Link?
+              </Form.Label>
+              <div></div>
+              <ToggleButtonGroup type="checkbox">
+                <ToggleButton
+                  variant="success"
+                  size={"sm"}
+                  value={true}
+                  onClick={(e) => {
+                    handleRenderInput(e, true);
+                  }}
+                >
+                  Yes
+                </ToggleButton>
+                <ToggleButton
+                  variant="danger"
+                  size={"sm"}
+                  onClick={(e) => {
+                    handleRenderInput(e, false);
+                  }}
+                >
+                  No
+                </ToggleButton>
+              </ToggleButtonGroup>
+            </Form.Group>
+            <Form.Group>{renderInput}</Form.Group>
             <Form.Group className="text-center mt-5 mb-5">
-              <Button className="mint-submit" onClick={handleMint}>
+              <Button
+                className="mint-submit"
+                variant="success"
+                onClick={handleMint}
+                disabled={
+                    nftName &&
+                    nftArtist &&
+                    nftDescription &&
+                    nftThumbnail
+                  ? false : true}
+              >
                 Mint
               </Button>
             </Form.Group>
@@ -179,28 +240,6 @@ const NftMinter = () => {
         </Col>
       </Row>
     </Container>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <form onSubmit={handleSet}>
-    //       <label>
-    //         Set Number:
-    //         <input
-    //           type="text"
-    //           name="name"
-    //           value={number}
-    //           onChange={ e => setNumber(e.target.value) } />
-    //       </label>
-    //       <input type="submit" value="Set Number" />
-    //     </form>
-    //     <br/>
-    //     <button
-    //       onClick={handleGet}
-    //       type="button" >
-    //       Get Number
-    //     </button>
-    //     { getNumber }
-    //   </header>
-    // </div>
   );
 };
 
