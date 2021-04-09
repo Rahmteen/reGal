@@ -311,7 +311,7 @@ const DetailedView = (props) => {
                                 loadedNft.transactionHistory && loadedNft.transactionHistory.map( (transaction, index) => (
                                     <tr key={index}>
                                         <td>{transaction.date}</td>
-                                        <td>{transaction.price}</td>
+                                        <td>{transaction.value}</td>
                                         <td>{transaction.from}</td>
                                         <td>{transaction.to}</td>
                                     </tr>
