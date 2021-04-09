@@ -59,9 +59,25 @@ const NftMinter = () => {
     }));
   };
 
-  const handleFileUpload = (e) => {
-
+  const handleFileUpload = (file) => {
+    console.log(file)
+    const reader = new FileReader();
+    const fileData = new Blob([file]);
+    console.log(fileData)
+    reader.readAsArrayBuffer(file);
+    reader.onloadend = () => uploadToIPFS(reader);
+    
   };
+
+  const uploadToIPFS = async (reader) => {
+    const buffer = await Buffer.from(reader.result);
+    console.log(buffer);
+    const result = await ipfs.add(buffer); 
+    const ipfsLink = "'https://gateway.ipfs.io/ipfs/" + result.path;
+    // document.getElementById("link").innerHTML = ipfsLink;
+    console.log(result);
+    console.log(ipfsLink)
+    };
 
   return (
     <Container>
@@ -142,7 +158,7 @@ const NftMinter = () => {
                 className="text-primary"
                 label="Upload raw file"
                 name="nftHash"
-                onChange={(e) => handleFileUpload(e)}
+                onChange={(e) => handleFileUpload(e.target.files[0])}
               />
             </Form.Group>
             <Form.Group>
