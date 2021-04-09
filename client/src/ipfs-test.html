@@ -24,9 +24,11 @@
             reader.onload = function (e) {
 
                 const magic_array_buffer_converted_to_buffer = buffer.Buffer(reader.result); // honestly as a web developer I do not fully appreciate the difference between buffer and arrayBuffer 
+                console.log(reader.result);
+                console.log(magic_array_buffer_converted_to_buffer)
                 ipfs.add(magic_array_buffer_converted_to_buffer, (err, result) => {
-                    console.log(err, result);
-
+                    // console.log(err, result);
+                  console.log(result)
               let ipfsLink = "<a href='https://gateway.ipfs.io/ipfs/" + result[0].hash + "'>gateway.ipfs.io/ipfs/" + result[0].hash + "</a>";
               document.getElementById("link").innerHTML = ipfsLink;
                 })
