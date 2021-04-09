@@ -8,6 +8,11 @@ import NftDisplay from '../../Components/NftDisplay/NftDisplay';
 //Media
 import sampleVid from "../../../assets/images/BMWEEER.mp4";
 import demo from "../../../assets/images/demo-art.jpeg";
+import demo2 from "../../../assets/images/nft-1.jpg";
+import demo3 from "../../../assets/images/nft-2.jpg";
+import demo4 from "../../../assets/images/nft-3.jpg";
+import demo5 from "../../../assets/images/nft-5.jpg";
+import demo6 from "../../../assets/images/nft-6.jpg";
 
 const Explore = () => {
     //Sample data for testing will be set dynamically in the future;
@@ -21,31 +26,31 @@ const Explore = () => {
         },
         {
             id: 2,
-            image: demo,
+            image: demo2,
             likes: 109,
             comments: 56
         },
         {
             id: 3,
-            image: demo,
+            image: demo3,
             likes: 89,
             comments: 17
         },
         {
             id: 4,
-            image: demo,
+            image: demo4,
             likes: 211,
             comments: 24
         },
         {
             id: 5,
-            image: demo,
+            image: demo5,
             likes: 32,
             comments: 10
         },
         {
             id: 6,
-            image: demo,
+            image: demo6,
             likes: 49,
             comments: 16
         },
@@ -65,7 +70,7 @@ const Explore = () => {
                         <span className="overlay-values text-primary">Deffie Perry x Rahmteen</span> 
                     </div>
                     <div className="d-block mb-1">
-                        <Link className="overlay-values text-secondary" to="/test">place a bid</Link>
+                        <Link className="overlay-values text-secondary" to="/test">Place A Bid</Link>
                     </div>
                 </div>
                 {/* <h1 className="overlay-text text-majesti">Featured</h1> */}
@@ -75,15 +80,24 @@ const Explore = () => {
                 </video>
             </Jumbotron>
             <Container fluid>
-                <Carousel touch hover interval={9999999}>
-                    {
-                        nfts.map( (nft, i) => (
-                            <Carousel.Item key={i}>
-                                <NftDisplay likes={nft.likes} comments={nft.comments} image={nft.image} id={nft.id} />
-                            </Carousel.Item>
-                        ))
-                    }
-                </Carousel >
+                <Row>
+                    <Col md={12}>
+                        <Carousel touch>
+                        {
+                            nfts.map( (nft, i) => (
+                                <Carousel.Item key={i}>
+                                    <NftDisplay likes={nft.likes} comments={nft.comments} image={nft.image} id={nft.id} />
+                                </Carousel.Item>
+                            ))
+                        }
+                        </Carousel >
+                    </Col>
+                </Row>
+                <Row>
+                    <Col md={12} className="mt-5 mb-5 text-center">
+                        <p className="text-white about-section">Regal was founded to <span className="text-primary">disrupt the power imbalances</span> that exist in the art industry today. We do not take a cut from your work, and <span className="text-primary">we never will.</span></p>
+                    </Col>
+                </Row>
             </Container>
         
             
