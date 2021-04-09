@@ -2,6 +2,9 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Image, Form, Button } from "react-bootstrap";
 import Web3 from "web3";
+import ipfs from "../../ipfs";
+var Buffer = require("buffer/").Buffer;
+
 //Contracts
 import { regalMinter } from "../../Minter/regalMinter_abi";
 
@@ -14,7 +17,7 @@ const initialState = {
   nftArtist: "",
   nftPrice: "",
   nftDescription: "",
-  nftFile: null,
+  nftHash: null,
   nftThumbnail: null,
 };
 
@@ -30,7 +33,7 @@ const handleMint = async () => {
 
 const NftMinter = () => {
   const [
-    { nftName, nftArtist, nftPrice, nftDescription, nftFile, nftThumbnail },
+    { nftName, nftArtist, nftPrice, nftDescription, nftHash, nftThumbnail },
     setState,
   ] = useState(initialState);
 
@@ -49,40 +52,16 @@ const NftMinter = () => {
 
   const handleFileChange = (event) => {
     let name = event.target.name;
+    console.log(event.target.files[0]);
     setState((prevState) => ({
       ...prevState,
       [name]: event.target.files[0],
     }));
   };
 
-  const handleFileUpload = () => {
-    const formData = new FormData();
+  const handleFileUpload = (e) => {
 
-    formData.append("nftFile", nftFile, nftFile.name);
-
-    //upload file with data
   };
-
-  //OLD - used for testing
-
-  // const handleGet = async (e) => {
-  //   e.preventDefault();
-  //   const result = await NFTMintContract.methods.get().call();
-  //   setGetNumber(result);
-  //   console.log(result);
-  // }
-
-  // const handleSet = async (e) => {
-  //   e.preventDefault();
-  //   const accounts = await window.ethereum.enable();
-  //   const account = accounts[0];
-  //   const gas = await SimpleContract.methods.set(number).estimateGas();
-  //   const result = await SimpleContract.methods.set(number).send({
-  //     from: account,
-  //     gas
-  //   })
-  //   console.log(result);
-  // }
 
   return (
     <Container>
@@ -110,7 +89,9 @@ const NftMinter = () => {
       <Row className="nft-upload-form">
         <Col md={12}>
           <div className="nft-upload-placeholder text-center mx-auto">
-              <span className="text-white place-holder-text"><i>1000 x 1000</i></span>
+            <span className="text-white place-holder-text">
+              <i>1000 x 1000</i>
+            </span>
           </div>
         </Col>
         <Col md={6} className="mt-4 md-offset-3 mx-auto">
@@ -160,8 +141,8 @@ const NftMinter = () => {
               <Form.File
                 className="text-primary"
                 label="Upload raw file"
-                name="nftFile"
-                onChange={handleFileChange}
+                name="nftHash"
+                onChange={(e) => handleFileUpload(e)}
               />
             </Form.Group>
             <Form.Group>
@@ -169,8 +150,9 @@ const NftMinter = () => {
                 className="text-primary"
                 label="Upload thumbnail"
                 name="nftThumbnail"
-                onChange={handleFileChange}
+                onChange={(e) => handleFileUpload(e)}
               />
+              {nftThumbnail}
             </Form.Group>
             <Form.Group className="text-center mt-5 mb-5">
               <Button className="mint-submit" onClick={handleMint}>
