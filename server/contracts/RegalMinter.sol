@@ -5,16 +5,15 @@ import "./ERC721/ERC721Enumerable.sol";
 
 contract regalMinter is ERC721, ERC721Enumerable {
 
-    event NFTUploaded (uint256 indexed tokenId, bytes photo, string title, string location, string description, uint256 timestamp);
+    event NFTUploaded (uint256 indexed tokenId, string photo, string title, string description, uint256 timestamp);
 
     mapping (uint256 => NFTData) private _nftList;
 
     struct NFTData {
         uint256 tokenId;                       // Unique token id
         address[] ownerHistory;                // History of all previous owners
-        bytes photo;                           // Image source encoded in uint 8 array format
+        string photo;                           // Image source encoded in uint 8 array format
         string title;                          // Title of photo
-        string location;                       // Location where photo is taken
         string description;                    // Short description about the photo
         uint256 timestamp;                     // Uploaded time
     }
@@ -22,7 +21,7 @@ contract regalMinter is ERC721, ERC721Enumerable {
   /**
    * @notice _mint() is from ERC721.sol
    */
-    function uploadNFT(bytes photo, string title, string location, string description) public {
+    function uploadNFT(string photo, string title, string description) public {
         uint256 tokenId = totalSupply() + 1;
 
         _mint(msg.sender, tokenId);
@@ -34,7 +33,6 @@ contract regalMinter is ERC721, ERC721Enumerable {
             ownerHistory : ownerHistory,
             photo : photo,
             title: title,
-            location : location,
             description : description,
             timestamp : now
         });
@@ -42,7 +40,7 @@ contract regalMinter is ERC721, ERC721Enumerable {
         _nftList[tokenId] = newNFTData;
         _nftList[tokenId].ownerHistory.push(msg.sender);
 
-        emit NFTUploaded(tokenId, photo, title, location, description, now);
+        emit NFTUploaded(tokenId, photo, title, description, now);
     }
 
   /**
@@ -50,6 +48,7 @@ contract regalMinter is ERC721, ERC721Enumerable {
    *  and then it will call transferFrom function defined below
    */
     function transferOwnership(uint256 tokenId, address to) public returns(uint, address, address, address) {
+
         safeTransferFrom(msg.sender, to, tokenId);
         uint ownerHistoryLength = _nftList[tokenId].ownerHistory.length;
         return (
@@ -77,14 +76,13 @@ contract regalMinter is ERC721, ERC721Enumerable {
     }
 
     function getNFT (uint tokenId) public view 
-    returns(uint256, address[], bytes, string, string, string, uint256) {
+    returns(uint256, address[], string, string, string, uint256) {
         require(_nftList[tokenId].tokenId != 0, "Photo does not exist");
         return (
             _nftList[tokenId].tokenId, 
             _nftList[tokenId].ownerHistory, 
             _nftList[tokenId].photo, 
             _nftList[tokenId].title, 
-            _nftList[tokenId].location, 
             _nftList[tokenId].description,
             _nftList[tokenId].timestamp);
     }
