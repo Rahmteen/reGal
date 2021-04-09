@@ -308,14 +308,14 @@ const DetailedView = (props) => {
                         </thead>
                         <tbody>
                             {
-                                loadedNft.transactionHistory && loadedNft.transactionHistory.map( (transaction, index) => (
-                                    <tr key={index}>
-                                        <td>{transaction.date}</td>
-                                        <td>{transaction.value}</td>
-                                        <td>{transaction.from}</td>
-                                        <td>{transaction.to}</td>
-                                    </tr>
-                                ))
+                            loadedNft.transactionHistory && loadedNft.transactionHistory.map( (transaction, index) => (
+                                <tr key={index}>
+                                    <td>{transaction.date}</td>
+                                    <td>{transaction.value}</td>
+                                    <td>{transaction.from}</td>
+                                    <td>{transaction.to}</td>
+                                </tr>
+                            ))
                             }
                         </tbody>
                     </Table>
