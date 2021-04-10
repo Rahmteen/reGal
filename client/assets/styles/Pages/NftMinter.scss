@@ -1,12 +1,6 @@
 .container-fluid {
     .user-profile-data {
-        .user-profile-image {
-            padding: 75px;
-            border-radius: 75px;
-            background-color: #c05c64;
-            width: 50px;
-            text-align: center;
-        }
+
         .user-profile-name {
             font-size: 40px;
         }
@@ -32,4 +26,20 @@
             padding: 15px 30px;
         }
     }
+}
+
+.user-profile-image {
+    padding: 75px;
+    border-radius: 75px;
+    background-color: #c05c64;
+    width: 50px;
+    text-align: center;
+}
+
+.image-border-box {
+    height: 400px;
+    width: 400px;
+    margin: 0 auto;
+    border: solid 2px #ac676a;
+    border-radius: 10px;
 }
