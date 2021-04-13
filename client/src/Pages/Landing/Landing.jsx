@@ -110,6 +110,7 @@ const Landing = () => {
               className="btn btn-light text-majesti enableEthereumButton"
               to=""
             >
+              {/* Set up link to profile creation */}
               Connect
             </Link>
           </Col>

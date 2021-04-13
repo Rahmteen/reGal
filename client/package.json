@@ -16,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@metamask/detect-provider": "^1.2.0",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "buffer": "^5.2.1",
