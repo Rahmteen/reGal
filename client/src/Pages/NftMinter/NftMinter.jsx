@@ -28,17 +28,10 @@ const initialState = {
   nftDescription: "",
   nftRawFile: null,
   nftThumbnail: null,
+  nftLink: null,
 };
 
-const handleMint = async () => {
-  const result = await regalMinterContract.methods
-    .uploadNFT()
-    .send({ from: web3.eth.accounts[0] });
-  console.log(result);
 
-  // const result = await regalMinterContract.methods.getNFT(3).call()
-  // console.log(result)
-};
 
 const NftMinter = () => {
   const [
@@ -59,6 +52,14 @@ const NftMinter = () => {
     return false;
   };
 
+  const handleMint = async () => {
+    
+    const result = await regalMinterContract.methods
+      .uploadNFT(nftThumbnail, nftName, nftDescription,)
+      .send({ from: '0x0f17dC202D879979b6017243d127F50B3C3075b5' });
+    console.log(result);
+  };
+
   const handleInputChange = (event) => {
     let name = event.target.name;
     let value = event.target.value;
@@ -67,6 +68,15 @@ const NftMinter = () => {
       [name]: value,
     }));
   };
+  
+  const handleNftLink = (e) => {
+    e.preventDefault();
+    const value = e.target.value
+    setState((prevState) => ({
+      ...prevState,
+      nftLink: value,
+    }));
+  }
 
   const handleRenderInput = (event, bool) => {
     event.preventDefault();
@@ -78,28 +88,22 @@ const NftMinter = () => {
           placeholder="https://www.dropbox.com/s/ymhg..."
           aria-label="https://www.dropbox.com/s/ymhg..."
           aria-describedby="basic-addon1"
+          onChange={(e) => handleNftLink(e)}
         />,
       ]);
     } else setRenderInput([<div key={"empty"}></div>]);
   };
 
   const handleFileUpload = (file) => {
-    console.log(file);
     const reader = new FileReader();
-    const fileData = new Blob([file]);
-    console.log(fileData);
     reader.readAsArrayBuffer(file);
     reader.onloadend = () => uploadToIPFS(reader);
   };
 
   const uploadToIPFS = async (reader) => {
     const buffer = await Buffer.from(reader.result);
-    console.log(buffer);
     const result = await ipfs.add(buffer);
     const ipfsLink = "https://gateway.ipfs.io/ipfs/" + result.path;
-    // document.getElementById("link").innerHTML = ipfsLink;
-    console.log(result);
-    console.log(ipfsLink);
     setState((prevState) => ({
       ...prevState,
       nftThumbnail: ipfsLink,
