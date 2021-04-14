@@ -14,7 +14,7 @@ body {
 	animation-duration: 2s;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: black;
+	background-color: $black;
 }
 
 .container {
@@ -35,10 +35,61 @@ footer {
 	color: $secondary!important;
 }
 
+.text-info {
+	color: $info!important;
+}
+
+.text-green {
+	color: $green!important;
+}
+
 .btn-circle {
 	border-radius: 50%;
 }
 
 .text-majesti {
 	font-family: $primary-font;
+}
+
+.btn-fix {
+	min-width: 100px;
+	border-radius: 0px;
+}
+// Bootstrap Overrides
+.btn-outline-primary {
+	color: $primary!important;
+	border-color: $primary!important;
+	&:hover {
+		color: #fff!important;
+		background-color: $primary!important;
+	}
+}
+
+.btn-success {
+	background-color: $info!important;
+	border-color: $info!important;
+	color: $white!important;
+	&:hover {
+		background-color: $info-hover!important;
+		border-color: $info-hover!important;
+	}
+}
+
+.btn-danger {
+	background-color: $secondary!important;
+	border-color: $secondary!important;
+	color: $white!important;
+	&:hover {
+		background-color: $secondary-hover!important;
+		border-color: $secondary-hover!important;
+	}
+}
+
+.list-group-horizontal {
+	border: none!important;
+	border-radius: 0!important;
+	.list-group-item {
+		background-color: transparent!important;
+		padding: 5px!important;
+	}
 }
