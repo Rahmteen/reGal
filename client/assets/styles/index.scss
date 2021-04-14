@@ -65,6 +65,26 @@ footer {
 	}
 }
 
+.btn-success {
+	background-color: $info!important;
+	border-color: $info!important;
+	color: $white!important;
+	&:hover {
+		background-color: $info-hover!important;
+		border-color: $info-hover!important;
+	}
+}
+
+.btn-danger {
+	background-color: $secondary!important;
+	border-color: $secondary!important;
+	color: $white!important;
+	&:hover {
+		background-color: $secondary-hover!important;
+		border-color: $secondary-hover!important;
+	}
+}
+
 .list-group-horizontal {
 	border: none!important;
 	border-radius: 0!important;

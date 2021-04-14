@@ -1,25 +1,31 @@
 //Modules
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Particles from "react-particles-js";
 import { Link } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
+import UserStore from "../../Stores/UserStore";
 
 const Landing = () => {
-  const [particleCount, setParticleCount] = useState(20);
+
+  const userStore = useContext(UserStore);
+
+  const { loadUser } = userStore;
 
   useEffect(() => {
-    //checks for small window and reduces particle count
-    if (window.matchMedia("screen and (max-width: 500px)").matches) {
-      setParticleCount(10);
-    }
+    connectWallet();
   }, []);
 
   // functionality to connect wallet on the user window when "logging into" the site.
-  // const connectWallet = async () => {
-  //   accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
-  //   userAddressHandler(accounts[0]);
-  //   return setWeb3Auth(!web3Auth);
-  // };
+  const connectWallet = async () => {
+    let accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+    if(accounts.length) {
+      loadUser(accounts[0]).then( response => {
+        console.log("response: ", response);
+      })
+    }
+    // userAddressHandler(accounts[0]);
+    // return setWeb3Auth(!web3Auth);
+  };
 
   return (
     <div id="landingPage">
