@@ -136,15 +136,16 @@ const NftMinter = () => {
       <Row className="nft-upload-form justify-content-md-center">
         <Col md={12}>
           <div className="nft-upload-placeholder text-center mx-auto">
-            <span className="text-white place-holder-text">
-              <br />
-              <img
-                className="image-border-box my-auto"
-                loop="infinite"
-                src={nftThumbnail || null}
-                alt=""
-              />
-            </span>
+              {
+                nftThumbnail && (
+                  <Image
+                    className="image-border-box my-auto"
+                    loop="infinite"
+                    src={nftThumbnail}
+                    alt="Nft thumbnail preview"
+                  />
+                )
+              }
           </div>
         </Col>
         <Col md={6} className="mt-4 md-offset-3 mx-auto">
@@ -228,7 +229,6 @@ const NftMinter = () => {
             <Form.Group className="text-center mt-5 mb-5">
               <Button
                 className="mint-submit"
-                variant="success"
                 onClick={handleMint}
                 disabled={
                     nftName &&
