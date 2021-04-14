@@ -49,17 +49,17 @@ const requests = {
 };
 
 const User = {
-  get: (id: number) => requests.get(`/user?=${id}`),
-  create: (user: IUser) => requests.post("/user", user),
-  update: (user: IUser) => requests.put("/user", user),
-  delete: (id: number) => requests.del(`/user?=${id}`)
+  get: (id: number) => requests.get(`/user/get/${id}`),
+  create: (user: IUser) => requests.post("/user/create", user),
+  update: (user: IUser) => requests.put("/user/update", user),
+  delete: (id: number) => requests.del(`/user/delete?id=${id}`)
 }
 
 const Nft = {
-  get: (id: number) => requests.get(`/user?=${id}`),
+  get: (id: number) => requests.get(`/user?id=${id}`),
   create: (nft: INft) => requests.post("/nft", nft),
   update: (nft: INft) => requests.put("/nft", nft),
-  delete: (id: number) => requests.del(`/user?=${id}`)
+  delete: (id: number) => requests.del(`/user?id=${id}`)
 }
 
 export default {

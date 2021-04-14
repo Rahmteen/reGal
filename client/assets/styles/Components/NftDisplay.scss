@@ -2,3 +2,20 @@
     border-radius: 10px;
     width: 1000px;
 }
+
+.nft-activity {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 250px;
+    padding: 15px 0px 10px 0px;
+    .nft-details {
+        display: block;
+        a {
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            &:hover {
+                color: $primary!important;
+            }
+        }
+    }
+}
