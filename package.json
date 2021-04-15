@@ -12,7 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@metamask/detect-provider": "^1.2.0",
     "@openzeppelin/contracts": "^4.0.0",
+    "@walletconnect/react-native-dapp": "^1.4.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "ganache-cli": "^6.12.2",
