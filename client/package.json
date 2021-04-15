@@ -10,7 +10,7 @@
     ]
   },
   "scripts": {
-    "start": "webpack serve --hot --open",
+    "start": "npm install && webpack serve --hot --open",
     "build": "webpack"
   },
   "author": "",
