@@ -1,12 +1,16 @@
 //Modules
 import React, { useState } from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Button, Modal, Container, Row, Col } from "react-bootstrap";
 //Components
 import Web3 from "web3";
-import WalletConnect from '@walletconnect/client';
 import WalletConnectProvider from "@walletconnect/web3-provider";
+import MetaMaskIcon from '../../../assets/images/metamask.svg'
+import WalletConnectIcon from '../../../assets/walletconnect.svg'
 
-let web3 = new Web3(Web3.givenProvider)
+
+
+
+let web3 = new Web3(Web3.givenProvider);
 const provider = new WalletConnectProvider({
   infuraId: "27e484dcd9e3efcfd25a83a78777cdf1",
 });
@@ -23,11 +27,11 @@ const ConnectWallet = () => {
 
   const metaMaskConnect = async () => {
     ethereum
-    .request({ method: 'eth_requestAccounts' })
-    .then((result) => console.log(result))
-    .catch((err) => {
-    console.error(err);
-    });
+      .request({ method: "eth_requestAccounts" })
+      .then((result) => console.log(result))
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   return (
@@ -44,13 +48,26 @@ const ConnectWallet = () => {
           <Modal.Title>Connect Wallet</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {" "}
-          <Button variant="dark" onClick={metaMaskConnect}>
-            MetaMask
-          </Button>
-          <Button variant="dark" onClick={walletConnect}>
-            WalletConnect
-          </Button>
+          <Container fluid>
+            <Row>
+              <Col>
+                <MetaMaskIcon/>
+                {" "}
+                <Button variant="dark" size="lg" block onClick={metaMaskConnect}>
+                  MetaMask
+                </Button>
+              </Col>
+            </Row>
+            <Row>
+            <Col>
+              <WalletConnectIcon/>
+                {" "}
+                <Button variant="dark" size="lg" block onClick={walletConnect}>
+                  WalletConnect
+                </Button>
+              </Col>
+            </Row>
+          </Container>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
