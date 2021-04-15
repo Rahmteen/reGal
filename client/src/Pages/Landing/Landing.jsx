@@ -1,4 +1,3 @@
-//Modules
 import React, { useState, useEffect, useContext } from "react";
 import Particles from "react-particles-js";
 import { Link } from "react-router-dom";
@@ -12,8 +11,6 @@ const Landing = () => {
   const { loadUser } = userStore;
   useEffect(() => {
   }, []);
-  const connectWallet = async () => {
-  };
 
   return (
     <div id="landingPage">
@@ -26,15 +23,7 @@ const Landing = () => {
             <h1 className="text-white text-majesti">Regal</h1>
           </Col>
           <Col md={12} className="mb-3">
-            <ConnectWallet></ConnectWallet>
-            {/* <Link
-              className="btn btn-light text-majesti enableEthereumButton"
-              onClick={connectWallet}
-              to=""
-            > */}
-              {/* Set up link to profile creation */}
-              {/* Connect
-            </Link> */}
+            <ConnectWallet/>
           </Col>
           <Col md={12}>
             <Link
