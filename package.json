@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "heroku-prebuild": "cd client && npm install --dev",
+    "heroku-prebuild": "cd client && npm install",
+    "deploy": "npm run build && git add . && git commit -m \"Building for dev\" && git push heroku main",
     "start": "concurrently \"nodemon server.js\" \"npm run client\"",
     "client": "npm start --prefix ./client",
     "build": "npm run build --prefix ./client",
