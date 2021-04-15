@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 //Contracts
-import { regalMinter } from '../../Minter/regalMinter_abi';
+import { regalMinter } from '../../Abi/regalMinter_abi';
 //Media
 import demo from "../../../assets/images/demo-art.jpeg";
 import demo2 from "../../../assets/images/nft-1.jpg";

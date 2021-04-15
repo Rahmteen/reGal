@@ -16,7 +16,7 @@ import ipfs from "../../ipfs";
 var Buffer = require("buffer/").Buffer;
 
 //Contracts
-import { regalMinter } from "../../Minter/regalMinter_abi";
+import { regalMinter } from "../../Abi/regalMinter_abi";
 
 const web3 = new Web3(Web3.givenProvider || "http://127.0.0.1:7545");
 const contractAddr = "0x7c449e8777A37Ec5F7B4F936593C18931917f526";

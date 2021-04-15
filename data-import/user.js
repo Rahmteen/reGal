@@ -74,10 +74,10 @@ module.exports = {
             'date_created': "2020-04-13T08:00:00Z"
         },
         {
-            'username': "Test User 2",
+            'username': "Ramtin",
             'first_name': "User 2",
             'last_name': "Test",
-            'wallet_id': "0xB8B96039de4B680D4236147186f80C2bE6EBD421",
+            'wallet_id': "0x0f17dC202D879979b6017243d127F50B3C3075b5",
             'bio': "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             'profile_image': "https://i.pravatar.cc/200",
             'email_address': "test@gmail.com",
