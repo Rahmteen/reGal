@@ -1,12 +1,10 @@
 const Seeder = require("mongoose-seed");
-const env = require('dotenv').config();
+
 const userCollections = require("./data-import/user.js");
 const nftCollections = require("./data-import/nft.js");
 const tagCollections = require("./data-import/tags.js");
 
-require("./models/User.js");
-require("./models/Nft.js");
-require("./models/Tag.js");
+require('dotenv').config();
 
 const data = [
     userCollections,
