@@ -5,12 +5,7 @@ import { Link } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
 import UserStore from "../../Stores/UserStore";
 import { particle_params } from './particle_params'
-import Web3 from "web3";
-import WalletConnectProvider from "@walletconnect/web3-provider";
-
-const provider = new WalletConnectProvider({
-  infuraId: "27e484dcd9e3efcfd25a83a78777cdf1" // Required
-});
+import ConnectWallet from '../../Components/ConnectWallet'
 
 const Landing = () => {
   const userStore = useContext(UserStore);
@@ -19,7 +14,7 @@ const Landing = () => {
   }, []);
   const connectWallet = async () => {
   };
-  
+
   return (
     <div id="landingPage">
       <Particles

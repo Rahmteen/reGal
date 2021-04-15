@@ -4,6 +4,12 @@ import { Button, Modal } from "react-bootstrap";
 //Components
 import Navigation from "../NavBar";
 import Footer from "../Footer";
+import Web3 from "web3";
+import WalletConnectProvider from "@walletconnect/web3-provider";
+
+const provider = new WalletConnectProvider({
+  infuraId: "27e484dcd9e3efcfd25a83a78777cdf1" // Required
+});
 
 const ConnectWallet = () => {
   const [show, setShow] = useState(false);
@@ -35,4 +41,4 @@ const ConnectWallet = () => {
   );
 }
 
-export default ComponentWrapper;
+export default ConnectWallet;
