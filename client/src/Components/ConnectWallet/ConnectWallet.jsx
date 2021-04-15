@@ -9,6 +9,7 @@ import WalletConnectIcon from "../../../assets/images/walletconnect.svg";
 
 let web3 = new Web3(Web3.givenProvider);
 const provider = new WalletConnectProvider({
+  // default, not my ID
   infuraId: "27e484dcd9e3efcfd25a83a78777cdf1",
 });
 
