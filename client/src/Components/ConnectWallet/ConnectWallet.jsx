@@ -9,7 +9,7 @@ import WalletConnectIcon from "../../../assets/images/walletconnect.svg";
 
 let web3 = new Web3(Web3.givenProvider);
 const provider = new WalletConnectProvider({
-  // default, not my ID
+  // default, not my 
   infuraId: "27e484dcd9e3efcfd25a83a78777cdf1",
 });
 
@@ -49,7 +49,7 @@ const ConnectWallet = () => {
           <Container>
             <Row style={{ alignItems: "baseline" }}>
               <Col>
-                <Image src={MetaMaskIcon} rounded style={{ width: "35%" }} />{" "}
+                <Image src={MetaMaskIcon} rounded style={{ width: "35%" }}/>{" "}
               </Col>
               <Col>
                 <Button
@@ -62,13 +62,12 @@ const ConnectWallet = () => {
                 </Button>
               </Col>
             </Row>
-            <Row fluid style={{ paddingTop: "20px" }}></Row>
+            <Row className='pt-3'></Row>
             <Row style={{ alignItems: "baseline" }}>
               <Col>
                 <Image
                   src={WalletConnectIcon}
                   rounded
-                  fluid
                   style={{ width: "35%" }}
                 />{" "}
               </Col>
@@ -78,7 +77,6 @@ const ConnectWallet = () => {
                   size="lg"
                   block
                   onClick={walletConnect}
-                  fluid
                 >
                   WalletConnect
                 </Button>
