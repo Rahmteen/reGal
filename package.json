@@ -9,7 +9,7 @@
   },
   "scripts": {
     "heroku-prebuild": "cd client && npm install --dev",
-    "deploy": "git add . && git commit -m \"Building for prod\" && git push heroku main",
+    "deploy": "npm run build && git add . && git commit -m \"Building for prod\" && git push heroku main",
     "start": "concurrently \"nodemon server.js\" \"npm run client\"",
     "client": "npm start --prefix ./client",
     "build": "npm run build --prefix ./client",
