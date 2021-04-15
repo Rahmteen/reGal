@@ -19,7 +19,7 @@ module.exports = {
           }
         },
         {
-          test: /\.(png|jpe?g|webm|mp4|gif)$/,
+          test: /\.(pdf|png|jpe?g|webm|mp4|gif)$/,
           use: {
             loader: 'file-loader',
           }
