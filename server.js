@@ -10,7 +10,7 @@ require('dotenv').config()
 const app = express();
 const PORT = process.env.PORT;
 
-const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI = process.env.MONGO_DEV_URI;
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
@@ -25,7 +25,7 @@ mongoose.connection.on('connected', function () {
     ? 
       console.log(`Mongoose default connection open to ${process.env.MONGO_MLAB}`) 
     : 
-      console.log(`Mongoose default connection open to ${process.env.MONGO_URI}`);
+      console.log(`Mongoose default connection open to ${MONGO_URI}`);
 }); 
 
 mongoose.connection.on('error',function (err) {
