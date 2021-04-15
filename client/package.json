@@ -15,8 +15,7 @@
   },
   "scripts": {
     "start": "webpack serve --hot --open",
-    "build": "webpack",
-    "package-install": "npm install --dev"
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
