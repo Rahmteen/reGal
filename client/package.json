@@ -10,7 +10,8 @@
     ]
   },
   "scripts": {
-    "start": "npm install && webpack serve --hot --open",
+    "heroku-prebuild": "npm install",
+    "start": "webpack serve --hot --open",
     "build": "webpack"
   },
   "author": "",
