@@ -16,7 +16,7 @@
   "scripts": {
     "start": "webpack serve --hot --open",
     "build": "webpack",
-    "package-install": "npm install && npm install --dev"
+    "package-install": "npm install --dev"
   },
   "author": "",
   "license": "ISC",
