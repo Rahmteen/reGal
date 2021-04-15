@@ -1,14 +1,11 @@
 //Modules
 import React, { useState } from "react";
-import { Button, Modal, Container, Row, Col } from "react-bootstrap";
+import { Button, Modal, Container, Row, Col, Image } from "react-bootstrap";
 //Components
 import Web3 from "web3";
 import WalletConnectProvider from "@walletconnect/web3-provider";
-import MetaMaskIcon from '../../../assets/images/metamask.svg'
-import WalletConnectIcon from '../../../assets/walletconnect.svg'
-
-
-
+import MetaMaskIcon from "../../../assets/images/metamask.svg";
+import WalletConnectIcon from "../../../assets/images/walletconnect.svg";
 
 let web3 = new Web3(Web3.givenProvider);
 const provider = new WalletConnectProvider({
@@ -48,21 +45,40 @@ const ConnectWallet = () => {
           <Modal.Title>Connect Wallet</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Container fluid>
-            <Row>
+          <Container>
+            <Row style={{ alignItems: "baseline" }}>
               <Col>
-                <MetaMaskIcon/>
-                {" "}
-                <Button variant="dark" size="lg" block onClick={metaMaskConnect}>
+                <Image src={MetaMaskIcon} rounded style={{ width: "35%" }} />{" "}
+              </Col>
+              <Col>
+                <Button
+                  variant="outline-dark"
+                  size="lg"
+                  block
+                  onClick={metaMaskConnect}
+                >
                   MetaMask
                 </Button>
               </Col>
             </Row>
-            <Row>
-            <Col>
-              <WalletConnectIcon/>
-                {" "}
-                <Button variant="dark" size="lg" block onClick={walletConnect}>
+            <Row fluid style={{ paddingTop: "20px" }}></Row>
+            <Row style={{ alignItems: "baseline" }}>
+              <Col>
+                <Image
+                  src={WalletConnectIcon}
+                  rounded
+                  fluid
+                  style={{ width: "35%" }}
+                />{" "}
+              </Col>
+              <Col>
+                <Button
+                  variant="outline-dark"
+                  size="lg"
+                  block
+                  onClick={walletConnect}
+                  fluid
+                >
                   WalletConnect
                 </Button>
               </Col>
@@ -72,9 +88,6 @@ const ConnectWallet = () => {
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
           </Button>
         </Modal.Footer>
       </Modal>
