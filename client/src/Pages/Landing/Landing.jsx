@@ -26,14 +26,15 @@ const Landing = () => {
             <h1 className="text-white text-majesti">Regal</h1>
           </Col>
           <Col md={12} className="mb-3">
-            <Link
+            <ConnectWallet></ConnectWallet>
+            {/* <Link
               className="btn btn-light text-majesti enableEthereumButton"
               onClick={connectWallet}
               to=""
-            >
+            > */}
               {/* Set up link to profile creation */}
-              Connect
-            </Link>
+              {/* Connect
+            </Link> */}
           </Col>
           <Col md={12}>
             <Link
