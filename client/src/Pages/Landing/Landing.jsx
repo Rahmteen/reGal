@@ -4,12 +4,13 @@ import Particles from "react-particles-js";
 import { Link } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
 import UserStore from "../../Stores/UserStore";
+import { observer } from "mobx-react-lite";
 
 const Landing = () => {
 
   const userStore = useContext(UserStore);
 
-  const { loadUser } = userStore;
+  const { loadUser, user } = userStore;
 
   useEffect(() => {
     connectWallet();
@@ -134,4 +135,4 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+export default observer(Landing);
