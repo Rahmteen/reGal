@@ -7,7 +7,11 @@ import WhitepaperViewer from "../../Components/WhitepaperViewer"
 
 const Whitepaper = () => {
     return (
+        <Container>
+        <Row>
         <WhitepaperViewer></WhitepaperViewer>
+        </Row>
+        </Container>
     )
 }
 
