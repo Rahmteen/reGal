@@ -1,27 +1,29 @@
 pragma solidity ^0.4.24;
 
-import "./ERC721/ERC721.sol";
-import "./ERC721/ERC721Enumerable.sol";
+import "./Tools/ERC721.sol";
+import "./Tools/ERC721Enumerable.sol";
 
 contract regalMinter is ERC721, ERC721Enumerable {
 
-    event NFTUploaded (uint256 indexed tokenId, string photo, string title, string description, uint256 timestamp);
+
+    event NFTUploaded (uint256 indexed tokenId, string photo, string title, string description, string rawfile, uint256 timestamp);
 
     mapping (uint256 => NFTData) private _nftList;
 
     struct NFTData {
         uint256 tokenId;                       // Unique token id
-        address[] ownerHistory;                // History of all previous owners
-        string photo;                           // Image source encoded in uint 8 array format
+        address[] ownerHistory;                // History of all previous owners                          
         string title;                          // Title of photo
+        string artist;                         // artist name
         string description;                    // Short description about the photo
-        uint256 timestamp;                     // Uploaded time
+        string rawfile;                         // Uploaded raw file
+        uint256 timestamp;                    
     }
 
   /**
    * @notice _mint() is from ERC721.sol
    */
-    function uploadNFT(string photo, string title, string description) public {
+    function uploadNFT(string title, string artist, string description, string rawfile) public {
         uint256 tokenId = totalSupply() + 1;
 
         _mint(msg.sender, tokenId);
@@ -31,16 +33,17 @@ contract regalMinter is ERC721, ERC721Enumerable {
         NFTData memory newNFTData = NFTData({
             tokenId : tokenId,
             ownerHistory : ownerHistory,
-            photo : photo,
             title: title,
+            artist: artist,
             description : description,
+            rawfile: rawfile,
             timestamp : now
         });
 
         _nftList[tokenId] = newNFTData;
         _nftList[tokenId].ownerHistory.push(msg.sender);
 
-        emit NFTUploaded(tokenId, photo, title, description, now);
+        emit NFTUploaded(tokenId, title, artist, description, rawfile, now);
     }
 
   /**
@@ -81,9 +84,9 @@ contract regalMinter is ERC721, ERC721Enumerable {
         return (
             _nftList[tokenId].tokenId, 
             _nftList[tokenId].ownerHistory, 
-            _nftList[tokenId].photo, 
             _nftList[tokenId].title, 
             _nftList[tokenId].description,
+            _nftList[tokenId].rawfile,
             _nftList[tokenId].timestamp);
     }
 }
