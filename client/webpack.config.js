@@ -19,7 +19,7 @@ module.exports = {
           }
         },
         {
-          test: /\.(png|jpe?g|webm|mp4|gif)$/,
+          test: /\.(pdf|png|jpe?g|webm|mp4|gif)$/,
           use: {
             loader: 'file-loader',
           }
@@ -57,7 +57,18 @@ module.exports = {
           use: {
             loader: "ts-loader",
           },
-        }
+        },
+        {
+          test: /\.svg$/,
+          use: [
+            {
+              loader: "svg-url-loader",
+              options: {
+                limit: 10000,
+              },
+            },
+          ],
+        },
       ]
   },
   resolve: {
