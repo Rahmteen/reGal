@@ -10,6 +10,9 @@ class UserStore {
 
     @action loadUser = async (id: number) => {
         this.loadingInitial = true;
+        if(this.user) {
+            return this.user;
+        }
         try {
             let user = await agent.User.get(id);
             runInAction(() => {

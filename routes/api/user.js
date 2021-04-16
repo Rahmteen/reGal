@@ -1,22 +1,22 @@
 const router = require("express").Router();
 const userController = require("../../controllers/userController.js");
 
-// @route GET api/users/get
+// @route GET api/user/get
 // @desc Retrieve user
 // @access Public
 router.route("/get/:id").get(userController.get);
 
-// @route POST api/users/create
+// @route POST api/user/create
 // @desc Register user
 // @access Public
 router.route("/create").post(userController.create);
 
-// @route PUT api/users/update
+// @route PUT api/user/update
 // @desc Update user records
 // @access Public
 router.route("/update").put(userController.update);
 
-// @route DELETE api/users/delete
+// @route DELETE api/user/delete
 // @desc Remove user from database
 // @access Public
 router.route("/delete").delete(userController.delete);
