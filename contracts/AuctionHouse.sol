@@ -5,10 +5,6 @@ import "./ERC721/ERC721.sol";
 import { RegalAuction } from './RegalAuction.sol';
 
 contract AuctionHouse is ERC721TokenReceiver, RegalAuction {
-    // uint public startBlock;
-    // uint public endBlock;
-    // address public owner;
-    // uint public bidIncrement;
 
     event AuctionCreated(address owner, uint256 auctionId);
     
