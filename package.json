@@ -8,7 +8,7 @@
     "npm": "6.14.11"
   },
   "scripts": {
-    "heroku-prebuild": "cd client && npm install --dev",
+    "heroku-prebuild": "cd client && npm install",
     "deploy": "git add . && git commit -m \"Building for prod\" && git push heroku main",
     "start": "concurrently \"nodemon server.js\" \"npm run client\"",
     "client": "npm start --prefix ./client",
