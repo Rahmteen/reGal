@@ -63,25 +63,25 @@
 
 @media (max-width: 865px) {
   .jumbotron {
-    height: 24vh;
+    height: 35vh;
   }
 }
 
 @media (max-width: 650px) {
    .jumbotron {
-    height: 19vh;
+    height: 25vh;
    }
 }
 
 @media (max-width: 500px) {
    .jumbotron {
-    height: 8vh;
+    height: 20vh;
    }
 }
 
-@media (min-width: 100px) and (max-width: 500px) {
+@media (min-width: 100px) and (max-width: 400px) {
     .jumbotron {
-        height: 130px !important;
+        height: 140px !important;
     }
 
 }
