@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import NftDisplay from "../../Components/NftDisplay/NftDisplay";
 //Media
 import sampleVid from "../../../assets/images/BMWEEER.gif";
+import cube from "../../../assets/images/Cubegif.gif";
 import demo from "../../../assets/images/demo-art.jpeg";
 import demo2 from "../../../assets/images/nft-1.jpg";
 import demo3 from "../../../assets/images/nft-2.jpg";
@@ -85,19 +86,51 @@ const Explore = () => {
           </div>
         </div>
         {/* <h1 className="overlay-text text-majesti">Featured</h1> */}
-        <img id="feature-video" src={sampleVid}/>
+        <img id="feature-video" src={sampleVid} />
       </Jumbotron>
       <Container>
+        <Row>
+          <Col
+            md={6}
+            className="ml-auto mr-auto mt-5 mb-5 pt-5 pb-5 text-center"
+          >
+            <p className="about-section text-white">
+              Media on the internet is about to be flipped upside down. We're
+              here to push the{" "}
+              <span className="text-primary">
+                decentralization of ownership in global media.
+              </span>{" "}
+            </p>
+          </Col>
+        </Row>
+        <Row>
+          <Col className="h6 text-white mb-4" md={12}>
+            <div
+              className="pb-2 text-end"
+              style={{
+                borderBottom: "solid 1px white",
+                borderColor: "#ac676a",
+              }}
+            >
+              view all
+            </div>
+          </Col>
+        </Row>
         <Row className="nft-display-rows">
           {nfts.length &&
             nfts.map((nft, index) => (
               <Col md={4} sm={6} key={index} className="mb-5">
-                <NftDisplay likes={nft.likes} comments={nft.comments} image={nft.image} id={nft.id}/>
+                <NftDisplay
+                  likes={nft.likes}
+                  comments={nft.comments}
+                  image={nft.image}
+                  id={nft.id}
+                />
               </Col>
             ))}
         </Row>
         <Row>
-          <Col md={12} className="mt-5 mb-5 text-center">
+          <Col md={7} className="ml-auto mr-auto mt-5 mb-5 text-center">
             <p className="text-white about-section">
               Regal was founded to{" "}
               <span className="text-primary">disrupt the power imbalances</span>{" "}
@@ -105,6 +138,19 @@ const Explore = () => {
               your work, and{" "}
               <span className="text-primary">we never will.</span>
             </p>
+          </Col>
+        </Row>
+        <Row className="mb-5 pb-5">
+          <Col md={4} className="ml-auto mr-auto mt-5 mb-5 text-center pb-5">
+            <div className="footer-cube-text">
+              <img id="cube-gif" src={cube} />
+              <div className="cube-overlay-text">
+                <p className="h3 text-white text-center">$69,420</p>
+                <p className="h6 text-white text-center">
+                  TOTAL VALUE ($USD) PAID TO ARTISTS
+                </p>
+              </div>
+            </div>
           </Col>
         </Row>
       </Container>
