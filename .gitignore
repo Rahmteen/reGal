@@ -2,4 +2,9 @@ node_modules/
 package-lock.json
 .env
 dump
+<<<<<<< HEAD
 .DS_Store
+client/assets/images/BMWEEER.gif
+=======
+.DS_Store
+>>>>>>> dcca9e2633b37a7981233838ffae72af320d4590
