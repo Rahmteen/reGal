@@ -1,20 +1,22 @@
-.img-fluid {
+.nft-card-image {
     border-radius: 10px;
-    width: 1000px;
 }
 
 .nft-activity {
     background-color: rgba(0, 0, 0, 0.6);
-    width: 250px;
+    color: #c27e81;
+    width: 100%;
     padding: 15px 0px 10px 0px;
     .nft-details {
         display: block;
+        align-items: center;
         a {
-            font-size: 18px;
+            font-size: 15px;
             font-weight: bold;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
             &:hover {
                 color: $primary!important;
+                text-decoration: none;
             }
         }
     }

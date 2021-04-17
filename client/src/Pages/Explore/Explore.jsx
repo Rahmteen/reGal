@@ -87,12 +87,12 @@ const Explore = () => {
         {/* <h1 className="overlay-text text-majesti">Featured</h1> */}
         <img id="feature-video" src={sampleVid}/>
       </Jumbotron>
-      <Container fluid>
-        <Row>
+      <Container>
+        <Row className="nft-display-rows">
           {nfts.length &&
             nfts.map((nft, index) => (
               <Col md={4} sm={6} key={index} className="mb-5">
-                <Image src={nft.image} fluid />
+                <NftDisplay likes={nft.likes} comments={nft.comments} image={nft.image} id={nft.id}/>
               </Col>
             ))}
         </Row>

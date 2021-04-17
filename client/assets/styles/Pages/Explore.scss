@@ -59,6 +59,12 @@
   }
 }
 
+.nft-display-row {
+  width: 1000px;
+  height: 300px;
+  overflow: hidden;
+}
+
 // Media queries size adjustment for gifs on mobile and smaller/adjusted screens
 
 @media (max-width: 865px) {
