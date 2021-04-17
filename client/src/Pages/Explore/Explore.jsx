@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 //Components
 import NftDisplay from "../../Components/NftDisplay/NftDisplay";
 //Media
-import sampleVid from "../../../assets/images/BMWEEER.mp4";
+import sampleVid from "../../../assets/images/BMWEEE.mp4";
 import cube from "../../../assets/images/Cubegif.gif";
 import footerImg from "../../../assets/images/b4footer.png";
 import demo from "../../../assets/images/demo-art.jpeg";
