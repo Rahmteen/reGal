@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 //Components
 import NftDisplay from "../../Components/NftDisplay/NftDisplay";
 //Media
-import sampleVid from "../../../assets/images/BMWEEER.gif";
+import sampleVid from "../../../assets/images/BMWEEER.mp4";
 import cube from "../../../assets/images/Cubegif.gif";
 import footerImg from "../../../assets/images/b4footer.png";
 import demo from "../../../assets/images/demo-art.jpeg";
@@ -87,7 +87,10 @@ const Explore = () => {
           </div>
         </div>
         {/* <h1 className="overlay-text text-majesti">Featured</h1> */}
-        <img id="feature-video" src={sampleVid} />
+        <video id="feature-video" loop playsInline autoPlay muted>
+                    <source src={sampleVid} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
       </Jumbotron>
       <Container>
         <Row>
