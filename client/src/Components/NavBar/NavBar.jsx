@@ -15,7 +15,7 @@ const Navigation = () => {
           <Nav.Link href="/explore">explore</Nav.Link>
           <Nav.Link href="/profile">profile</Nav.Link>
           {/* template for google form link */}
-          <Nav.Link href="https://forms.gle/R1tCLf24bhgK8t7AA">apply</Nav.Link>
+          <Nav.Link target='_blank' href="https://forms.gle/R1tCLf24bhgK8t7AA">apply</Nav.Link>
           <Nav.Link href="/whitepaper">whitepaper</Nav.Link>
           {/* <Nav.Link href="#dropdown"><img className='nav-lines' src={Lines} width={'30em'}/></Nav.Link> */}
         </Nav>
