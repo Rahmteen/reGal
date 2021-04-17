@@ -29,7 +29,7 @@ const Landing = () => {
             <h1 className="text-white text-majesti">Regal</h1>
           </Col>
           <Col md={12} className="mb-3">
-            {window.ethereum.selectedAddress ? null : <ConnectWallet/>}
+            {window.ethereum.selectedAddress !== null ? null : <ConnectWallet/>}
           </Col>
           <Col md={12}>
             <Link
