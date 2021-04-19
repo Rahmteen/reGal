@@ -6,6 +6,7 @@ import Web3 from "web3";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import MetaMaskIcon from "../../../assets/images/metamask.svg";
 import WalletConnectIcon from "../../../assets/images/walletconnect.svg";
+import SignIn from "../../../assets/images/sign-in.png"
 
 let web3 = new Web3(Web3.givenProvider);
 const provider = new WalletConnectProvider({
@@ -35,10 +36,11 @@ const ConnectWallet = () => {
   return (
     <>
       <Button
-        className="btn btn-light text-majesti enableEthereumButton"
+        className="btn-regal enableEthereumButton"
         onClick={handleShow}
       >
-        Connect
+        connect{"  "}
+        <img src={SignIn} width="20px" style={{marginLeft: "3px", marginBottom: "2px"}}/>
       </Button>
 
       <Modal show={show} onHide={handleClose}>

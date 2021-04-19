@@ -17,7 +17,7 @@ import Profile from "../../../assets/images/profile-icon.png";
 const Navigation = () => {
   return (
     <Navbar expand="lg">
-      <Container className="pt-5" fluid>
+      <Container className="pt-5 pb-5" fluid>
           <Nav className="nav-top">
         <Navbar.Brand
           href="/explore"
@@ -33,8 +33,8 @@ const Navigation = () => {
           </Nav.Link>
           <Nav.Link href="/whitepaper">whitepaper</Nav.Link>
         </Nav>
-        <Nav.Item className="" style={{ paddingRight: "15px" }}>
-          {window.ethereum.selectedAddress ?  <img src={Profile} className="profile-pic"></img> : <ConnectWallet />}
+        <Nav.Item className="" style={{ marginTop: "9px", paddingLeft: "5px" }}>
+          {window.ethereum.selectedAddress ?  <Link to='/profile'><img src={Profile} className="profile-pic"></img></Link> : <ConnectWallet />}
         </Nav.Item>
       </Container>
     </Navbar>

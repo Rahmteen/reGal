@@ -3,8 +3,12 @@
 .jumbotron{
     position: relative;
     overflow: hidden;
-    height: 500px;
-    border-radius: 0px!important;
+    height: 450px;
+    margin-right: 15%;
+    margin-left: 15%;
+    border-radius: 10px!important;
+    border: solid 1px $primary;
+    object-fit: contain;
     &:hover {
         .video-overlay {
             right: 0;
