@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 //Components
 import NftDisplay from "../../Components/NftDisplay/NftDisplay";
 //Media
-import sampleVid from "../../../assets/images/BMWEEE.mp4";
+import sampleVid from "../../../assets/images/BMWEEER.mp4";
 import cube from "../../../assets/images/Cubegif.gif";
 import footerImg from "../../../assets/images/b4footer.png";
 import demo from "../../../assets/images/demo-art.jpeg";
@@ -68,7 +68,7 @@ const Explore = () => {
   //the main page after landing for relevant material - this will morph into a trending section as userbase increases.
   return (
     <Fragment>
-      {/* <Jumbotron style={{ position: "relative" }}>
+      <Jumbotron style={{ position: "relative" }}>
         <div className="video-overlay">
           <div className="d-block mb-1">
             <span className="overlay-text">Current Bid: </span>
@@ -86,12 +86,12 @@ const Explore = () => {
             </Link>
           </div>
         </div>
-        /* <h1 className="overlay-text text-majesti">Featured</h1> 
-        <video id="feature-video" loop playsInline autoPlay muted>
+        {/* <h1 className="overlay-text text-majesti">Featured</h1> */}
+        <video id="feature-video" loop playsinline autoplay muted>
                     <source src={sampleVid} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
-      </Jumbotron> */}
+      </Jumbotron>
       <Container>
         <Row>
           <Col
