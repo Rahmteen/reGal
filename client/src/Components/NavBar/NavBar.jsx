@@ -22,7 +22,7 @@ const Navigation = () => {
         <Navbar.Brand
           href="/explore"
           className="text-majesti mr-5"
-          style={{ fontSize: "4em"}}
+          style={{ fontSize: "4.5em"}}
         >
           REGAL
         </Navbar.Brand>
@@ -33,7 +33,7 @@ const Navigation = () => {
           </Nav.Link>
           <Nav.Link href="/whitepaper">whitepaper</Nav.Link>
         </Nav>
-        <Nav.Item className="" style={{ marginTop: "9px", paddingLeft: "5px" }}>
+        <Nav.Item className="" style={{ marginTop: "9px", paddingLeft: "0px" }}>
           {window.ethereum.selectedAddress ?  <Link to='/profile'><img src={Profile} className="profile-pic"></img></Link> : <ConnectWallet />}
         </Nav.Item>
       </Container>

@@ -1,103 +1,143 @@
 /* JUMBOTRON */
 
-.jumbotron{
-    position: relative;
-    overflow: hidden;
-    height: 450px;
-    margin-right: 15%;
-    margin-left: 15%;
-    border-radius: 10px!important;
-    border: solid 1px $primary;
-    object-fit: contain;
-    &:hover {
-        .video-overlay {
-            right: 0;
-        }
-    }
+.jumbotron {
+  position: relative;
+  overflow: hidden;
+  height: 310px;
+//   margin-right: 15%;
+//   margin-left: 15%;
+  border-radius: 10px !important;
+  border: solid 2px black;
+  object-fit: contain;
+  &:hover {
     .video-overlay {
-        z-index: 2;
-        position: absolute;
-        bottom: 10px;
-        right: -350px;
-        background-color: rgba( 0, 0, 0, 0.7);
-        padding: 15px;
-        -webkit-transition-duration: 0.3s;
-        -moz-transition-duration: 0.3s;
-        -o-transition-duration: 0.3s;
-        transition-duration: 0.3s;
+      right: 0;
+    }
+  }
+  .video-overlay {
+    z-index: 2;
+    position: absolute;
+    bottom: 10px;
+    right: -350px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
 
-        a {
-            position: relative;
-            z-index: 4;
-        }
+    a {
+      position: relative;
+      z-index: 4;
+    }
 
-        .overlay-values {
-            font-weight: bold;
-            font-size: 18px;
-        }
+    .overlay-values {
+      font-weight: bold;
+      font-size: 18px;
     }
-    .overlay-text {
-        color: #ffffff;
-        font-size: 18px;
-        margin-top: -20px;
-        font-family: 'Majesti-Banner-BoldItalic', sans-serif;
-    }
-    h1 {
-        position: relative;
-        z-index: 2;
-        font-size: 50px!important;
-    }
-    #feature-video {
-         position: absolute;
-         height: auto;
-         width: auto;
-         min-height: 100%;
-         min-width: 100%;
-         left: 50%;
-         top: 50%;
-         -webkit-transform: translate3d(-50%, -50%, 0);
-         transform: translate3d(-50%, -50%, 0);
-         z-index: 1;
-    }
- }
-
-/* HEADLINES */
-// .headline-wrapper {
-//     color: white;
-//     border-bottom: 2px solid #000;
-//     position: relative;
-
-//     .headline-nav {
-//         color: white !important;
-//         position: absolute;
-//         bottom: 10px;
-//         right: 0;
-//     }
-  
-
-// }
-
-.container-fluid {
-    .nft-flex {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .carousel {
-        padding: 5px;
-        .carousel-item {
-            &.active {   
-                display: flex !important;
-                justify-content: center;
-            }
-            img {
-                max-height: 800px;
-                min-width: auto;
-            }
-        }
-    }
-    .about-section {
-        font-size: 25px;
-    }
+  }
+  .overlay-text {
+    color: #ffffff;
+    font-size: 18px;
+    margin-top: -20px;
+    font-family: "Majesti-Banner-BoldItalic", sans-serif;
+  }
+  h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 50px !important;
+  }
+  #feature-video {
+    position: absolute;
+    height: auto;
+    width: auto;
+    min-height: 105%;
+    min-width: 105%;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 1;
+  }
 }
+
+.container {
+  max-width: 72vw !important;
+  .nft-grid-flex {
+    justify-content: center;
+  }
+
+  .carousel {
+    padding: 5px;
+    .carousel-item {
+      &.active {
+        display: flex !important;
+        justify-content: center;
+      }
+      img {
+        max-height: 800px;
+        min-width: auto;
+      }
+    }
+  }
+  .about-section {
+    font-size: 100px;
+    font-weight: 800;
+    text-align: left;
+  }
+  .premium-row {
+      border-right: solid 3px white;
+      border-image: 
+      linear-gradient(
+        to bottom, 
+        #000000, 
+        #cb6367,
+        rgba(0, 0, 0, 0)
+      ) 1 100%;
+  }
+
+  .premium {
+    background-image: -webkit-linear-gradient(
+      90deg,
+      rgba(255, 136, 124, 1) 0%,
+      rgba(182, 50, 95, 1) 35%,
+      rgba(255, 173, 0, 1) 100%
+    ); /* For Chrome and Safari */
+    background-image: -moz-linear-gradient(
+      90deg,
+      rgba(255, 136, 124, 1) 0%,
+      rgba(182, 50, 95, 1) 35%,
+      rgba(255, 173, 0, 1) 100%
+    ); /* For old Fx (3.6 to 15) */
+    background-image: -ms-linear-gradient(
+      90deg,
+      rgba(255, 136, 124, 1) 0%,
+      rgba(182, 50, 95, 1) 35%,
+      rgba(255, 173, 0, 1) 100%
+    ); /* For pre-releases of IE 10*/
+    background-image: -o-linear-gradient(
+      90deg,
+      rgba(255, 136, 124, 1) 0%,
+      rgba(182, 50, 95, 1) 35%,
+      rgba(255, 173, 0, 1) 100%
+    ); /* For old Opera (11.1 to 12.0) */
+    background-image: linear-gradient(
+      90deg,
+      rgba(255, 136, 124, 1) 0%,
+      rgba(182, 50, 95, 1) 35%,
+      rgba(255, 173, 0, 1) 100%
+    ); /* Standard syntax; must be last */
+    color: transparent !important;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: 900;
+    font-size: 30px;
+    letter-spacing: 5px;
+  }
+  .btn-regal {
+      font-size: 30px;
+      margin: 40px 15px 40px 0px;
+  }
+}
+
+
