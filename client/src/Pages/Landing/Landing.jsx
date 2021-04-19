@@ -12,12 +12,21 @@ import { observer } from "mobx-react-lite";
 const Landing = () => {
   const userStore = useContext(UserStore);
   const { loadUser, user } = userStore;
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
+    loadUser
   }, []);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <div id="landingPage">
+      <ConnectWallet
+        show={show}
+        handleClose={handleClose}
+      />
       <Particles
         params={particle_params}
       />
@@ -27,7 +36,12 @@ const Landing = () => {
             <h1 className="text-white text-majesti">Regal</h1>
           </Col>
           <Col md={12} className="mb-3">
-            <ConnectWallet/>
+          <Button
+            className="btn btn-light text-majesti enableEthereumButton"
+            onClick={handleShow}
+          >
+            Connect
+          </Button>
           </Col>
           <Col md={12}>
             <Link
