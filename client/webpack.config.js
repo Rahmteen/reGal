@@ -90,7 +90,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
         template: 'src/index.html',
-        favicon: 'assets/images/crcle.gif'
+        // favicon: 'assets/images/crcle.gif'
     }),
     new NodePolyfillPlugin()
   ]

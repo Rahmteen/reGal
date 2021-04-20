@@ -28,7 +28,7 @@ const Navigation = () => {
         </Navbar.Brand>
           <Nav.Link href="/explore">explore</Nav.Link>
           <Nav.Link href="/profile">profile</Nav.Link>
-          <Nav.Link target="_blank" href="https://forms.gle/R1tCLf24bhgK8t7AA">
+          <Nav.Link rel="noopener" target="_blank" href="https://forms.gle/R1tCLf24bhgK8t7AA">
             apply
           </Nav.Link>
           <Nav.Link href="/whitepaper">whitepaper</Nav.Link>

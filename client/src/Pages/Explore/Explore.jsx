@@ -11,6 +11,7 @@ import {
 } from "react-bootstrap";
 import { observer } from "mobx-react-lite";
 import { Link } from "react-router-dom";
+import { Parallax } from 'react-scroll-parallax';
 //Components
 import NftDisplay from "../../Components/NftDisplay/NftDisplay";
 //Media
@@ -106,7 +107,9 @@ const Explore = () => {
 
   //the main page after landing for relevant material - this will morph into a trending section as userbase increases.
   return (
-    <Fragment>
+    <Fragment >
+<div className="background-div">
+       <Parallax className="custom-class" y={[-30, 0]} tagOuter="figure">
       <div className="scroll-div animate__animated animate__fadeOutDown pl-5">
         <h2 className="scroll animate__animated animate__fadeInDown text-white h4">
           scroll <br />
@@ -137,9 +140,6 @@ const Explore = () => {
               your work, and{" "}
               <span style={{ color: "#ed7779" }}>we never will.</span>
             </p>
-            {/* <div className="text-end">
-              <Button className="btn-regal">whitepaper</Button>
-            </div> */}
           </Col>
           <Col
             md={6}
@@ -165,8 +165,10 @@ const Explore = () => {
           </Col>
         </Row>
         </Container>
+        </Parallax>
         <Container className="nft-container">
-        <Row className="nft-grid-flex">
+       <Row className="nft-grid-flex">
+          <Parallax className="featured-parallax" y={[-20, 0]} tagOuter="figure">
           <Jumbotron style={{ position: "relative" }}>
             <div className="video-overlay">
               <div className="d-block mb-1">
@@ -189,7 +191,10 @@ const Explore = () => {
               <source src={sampleVid} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-          </Jumbotron>
+          </Jumbotron> 
+          </Parallax>
+          {/* <Row className="h3 text-white text-center">Featured Collectable</Row> */}
+          <Parallax className="custom-class" y={[20, -10]} tagOuter="figure">
           <Col className="h6 text-white mb-4" md={12}>
             <div className="h1 text-white text-start text-majesti mb-n3">
               Live Activity
@@ -204,9 +209,11 @@ const Explore = () => {
               view all
             </div>
           </Col>
+          <Parallax className="custom-class" tagOuter="figure">  
           <Row className="nft-display-rows pb-5">
             {nfts.length &&
               nfts.map((nft, index) => (
+        
                 <Col md={4} sm={6} key={index} className="mb-5">
                   <NftDisplay
                     likes={nft.likes}
@@ -221,15 +228,40 @@ const Explore = () => {
                     previous={nft.previous}
                   />
                 </Col>
+              
               ))}
           </Row>
+          </Parallax> 
+          </Parallax>
         </Row>
+        <Parallax y={[-30, 0]} x={[-20, 0]}>
         <Row>
           <Col
             md={7}
             className="pb-5 ml-auto mr-auto mt-5 mb-5 text-center"
           ></Col>
         </Row>
+        <Row>
+          <Col md={12}>
+            <Image className="b4-footer" src={footerImg} fluid></Image>
+          </Col>
+        </Row>
+        </Parallax>
+      </Container>
+      </div>
+    </Fragment>
+  );
+};
+
+export default observer(Explore);
+
+
+
+
+
+
+
+
         {/* <Row className="mb-5 pb-5">
           <Col md={4} className="ml-auto mr-auto mt-5 mb-5 text-center pb-5">
             <div className="footer-cube-text">
@@ -243,14 +275,3 @@ const Explore = () => {
             </div>
           </Col>
         </Row> */}
-        <Row>
-          <Col md={12}>
-            <Image className="b4-footer" src={footerImg} fluid></Image>
-          </Col>
-        </Row>
-      </Container>
-    </Fragment>
-  );
-};
-
-export default observer(Explore);
