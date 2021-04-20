@@ -11,16 +11,8 @@ import {
   ToggleButton,
   FormControl,
 } from "react-bootstrap";
-import Web3 from "web3";
 import ipfs from "../../ipfs";
 var Buffer = require("buffer/").Buffer;
-
-//Contracts
-import { regalMinter } from "../../Abi/regalMinter_abi";
-
-const web3 = new Web3(Web3.givenProvider || "http://127.0.0.1:7545");
-const contractAddr = "0x7c449e8777A37Ec5F7B4F936593C18931917f526";
-const regalMinterContract = new web3.eth.Contract(regalMinter, contractAddr);
 
 const initialState = {
   nftName: "",
@@ -29,20 +21,19 @@ const initialState = {
   nftRawFile: null,
   nftThumbnail: null,
   nftLink: null,
+  accounts: []
 };
 
-
-
-const NftMinter = () => {
+const NftMinter = ({web3}) => {
   const [
-    { nftName, nftArtist, nftDescription, nftRawFile, nftThumbnail },
+    { nftName, nftArtist, nftDescription, nftRawFile, nftThumbnail, accounts },
     setState,
   ] = useState(initialState);
 
   const [renderInput, setRenderInput] = useState([<div key={"empty"}></div>]);
 
   useEffect(() => {
-    console.log(initialState);
+    console.log(web3);
   }, []);
 
   const validateMint = () => {
@@ -57,7 +48,7 @@ const NftMinter = () => {
     const result = await regalMinterContract.methods
       .uploadNFT(nftThumbnail, nftName, nftDescription,)
       .send({ from: '0x0f17dC202D879979b6017243d127F50B3C3075b5' });
-    console.log(result);
+      console.log(result);
   };
 
   const handleInputChange = (event) => {

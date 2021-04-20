@@ -12,7 +12,7 @@ import Whitepaper from "./Pages/Whitepaper"
 //CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const App = () => {
+const App = ({web3}) => {
 
     return (
         <Switch>
@@ -22,7 +22,9 @@ const App = () => {
                 <Route exact path='/explore' component={Explore}/>
                 <Route exact path='/whitepaper' component={Whitepaper} />
                 <Route exact path="/details/:id" component={DetailedView} />
-                <Route exact path='/minter' component={NftMinter} />
+                <Route exact path='/minter'>
+                    <NftMinter web3={web3} />
+                </Route>
             </ComponentWrapper>
         </Switch>
     )
