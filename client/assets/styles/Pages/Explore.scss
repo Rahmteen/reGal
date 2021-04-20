@@ -1,12 +1,23 @@
 /* JUMBOTRON */
-
-<<<<<<< HEAD
+.scroll-div {
+    animation-delay: 10s;
+    position: static;
+}
+.scroll {
+    animation-delay: 5s;
+    animation-iteration-count: 2;
+    animation-duration: 2s;
+}
 .jumbotron {
-  border-bottom: solid 5px $primary;
   position: relative;
   overflow: hidden;
-  height: 50vh;
-  border-radius: 0px !important;
+  height: 310px;
+//   margin-right: 7%;
+//   margin-left: 7%;
+//   border-radius: 10px !important;
+  border: solid 2px black;
+  object-fit: contain;
+
   &:hover {
     .video-overlay {
       right: 0;
@@ -38,7 +49,7 @@
     color: #ffffff;
     font-size: 18px;
     margin-top: -20px;
-    font-family: "Majesti-Banner-BoldItalic", sans-serif;
+    // font-family: "Majesti-Banner-BoldItalic", sans-serif;
   }
   h1 {
     position: relative;
@@ -49,7 +60,6 @@
     position: absolute;
     height: auto;
     width: auto;
-    object-fit: contain;
     min-height: 100%;
     min-width: 100%;
     left: 50%;
@@ -60,175 +70,117 @@
   }
 }
 
-// Media queries size adjustment for gifs on mobile and smaller/adjusted screens
+.explore {
+  max-width: 85vw !important;
 
-@media (max-width: 865px) {
-  .jumbotron {
-    height: 35vh;
-  }
-}
-
-@media (max-width: 650px) {
-   .jumbotron {
-    height: 25vh;
-   }
-}
-
-@media (max-width: 500px) {
-   .jumbotron {
-    height: 20vh;
-   }
-}
-
-@media (min-width: 100px) and (max-width: 400px) {
-    .jumbotron {
-        height: 140px !important;
-    }
-
-}
-
-  .container-fluid {
-    .nft-flex {
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .carousel {
-      padding: 5px;
-      .carousel-item {
-        &.active {
-          display: flex !important;
-          justify-content: center;
-        }
-        img {
-          max-height: 800px;
-          min-width: auto;
-        }
+  .carousel {
+    padding: 5px;
+    .carousel-item {
+      &.active {
+        display: flex !important;
+        justify-content: center;
+      }
+      img {
+        max-height: 800px;
+        min-width: auto;
       }
     }
   }
-
   .about-section {
+    font-size: 70px;
+    font-weight: 800;
+    text-align: left;
+    &.regal {
+        padding-top: 30px;
+        font-size: 30px;
+        font-weight: 800;
+        text-align: right;
+    }
+  }
+  .premium-row {
+      border-right: solid 3px white;
+      opacity: 0;
+      animation: fadeIn linear forwards 1s;
+      -webkit-animation: fadeIn linear forwards 1s;
+      -moz-animation: fadeIn linear forwards 1s;
+      -o-animation: fadeIn linear forwards 1s;
+      -ms-animation: fadeIn linear forwards 1s;
+      &:nth-child(1) {
+        animation-delay: 1s;
+        color: $light-grey !important;
+    }
+      border-image: 
+      linear-gradient(
+        to bottom, 
+        #000000, 
+        #cb6367,
+        rgba(0, 0, 0, 0)
+      ) 1 100%;
+  }
+
+  .premium {
+    background-image: -webkit-linear-gradient(
+      90deg,
+      rgba(255, 136, 124, 1) 0%,
+      rgba(182, 50, 95, 1) 35%,
+      rgba(255, 173, 0, 1) 100%
+    ); /* For Chrome and Safari */
+    background-image: -moz-linear-gradient(
+      90deg,
+      rgba(255, 136, 124, 1) 0%,
+      rgba(182, 50, 95, 1) 35%,
+      rgba(255, 173, 0, 1) 100%
+    ); /* For old Fx (3.6 to 15) */
+    background-image: -ms-linear-gradient(
+      90deg,
+      rgba(255, 136, 124, 1) 0%,
+      rgba(182, 50, 95, 1) 35%,
+      rgba(255, 173, 0, 1) 100%
+    ); /* For pre-releases of IE 10*/
+    background-image: -o-linear-gradient(
+      90deg,
+      rgba(255, 136, 124, 1) 0%,
+      rgba(182, 50, 95, 1) 35%,
+      rgba(255, 173, 0, 1) 100%
+    ); /* For old Opera (11.1 to 12.0) */
+    background-image: linear-gradient(
+      90deg,
+      rgba(255, 136, 124, 1) 0%,
+      rgba(182, 50, 95, 1) 35%,
+      rgba(255, 173, 0, 1) 100%
+    ); /* Standard syntax; must be last */
+    color: transparent !important;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: 900;
     font-size: 30px;
-    font-weight: 300;
+    letter-spacing: 5px;
   }
-
-  #cube-gif {
-    width: 100%;
-    display: flex;
-    z-index: -2;
-    // margin-top: -175px;
+  .btn-regal {
+      font-size: 26px;
+      margin: 40px 15px 40px 0px;
   }
-
-  .footer-cube-text {
-    position: relative;
-    .cube-overlay-text {
-      z-index: 1;
-      margin-top: -60%;
-      padding-bottom: 80px;
-    }
+  .tournament-row {
+    opacity: 0;
+    animation: fadeIn linear forwards 1s;
+    -webkit-animation: fadeIn linear forwards 1s;
+    -moz-animation: fadeIn linear forwards 1s;
+    -o-animation: fadeIn linear forwards 1s;
+    -ms-animation: fadeIn linear forwards 1s;
+    &:nth-child(2) {
+      animation-delay: 2s;
   }
-
-.b4-footer {
-  margin-left: 2%;
-
-=======
-.jumbotron{
-    position: relative;
-    overflow: hidden;
-    height: 500px;
-    border-radius: 0px!important;
-    &:hover {
-        .video-overlay {
-            right: 0;
-        }
-    }
-    .video-overlay {
-        z-index: 2;
-        position: absolute;
-        bottom: 10px;
-        right: -350px;
-        background-color: rgba( 0, 0, 0, 0.7);
-        padding: 15px;
-        -webkit-transition-duration: 0.3s;
-        -moz-transition-duration: 0.3s;
-        -o-transition-duration: 0.3s;
-        transition-duration: 0.3s;
-
-        a {
-            position: relative;
-            z-index: 4;
-        }
-
-        .overlay-values {
-            font-weight: bold;
-            font-size: 18px;
-        }
-    }
-    .overlay-text {
-        color: #ffffff;
-        font-size: 18px;
-        margin-top: -20px;
-        font-family: 'Majesti-Banner-BoldItalic', sans-serif;
-    }
-    h1 {
-        position: relative;
-        z-index: 2;
-        font-size: 50px!important;
-    }
-    #feature-video {
-         position: absolute;
-         height: auto;
-         width: auto;
-         min-height: 100%;
-         min-width: 100%;
-         left: 50%;
-         top: 50%;
-         -webkit-transform: translate3d(-50%, -50%, 0);
-         transform: translate3d(-50%, -50%, 0);
-         z-index: 1;
-    }
- }
-
-/* HEADLINES */
-// .headline-wrapper {
-//     color: white;
-//     border-bottom: 2px solid #000;
-//     position: relative;
-
-//     .headline-nav {
-//         color: white !important;
-//         position: absolute;
-//         bottom: 10px;
-//         right: 0;
-//     }
-  
-
-// }
-
-.container-fluid {
-    .nft-flex {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .carousel {
-        padding: 5px;
-        .carousel-item {
-            &.active {   
-                display: flex !important;
-                justify-content: center;
-            }
-            img {
-                max-height: 800px;
-                min-width: auto;
-            }
-        }
-    }
-    .about-section {
-        font-size: 25px;
-    }
->>>>>>> dcca9e2633b37a7981233838ffae72af320d4590
+  }
 }
+
+.nft-container {
+    max-width: 100vw;
+    .nft-display-rows {
+        justify-content: center;
+    }
+    .nft-grid-flex {
+        justify-content: center;
+    }
+}
+
+
