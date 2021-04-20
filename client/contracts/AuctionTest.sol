@@ -20,9 +20,9 @@ contract AuctionTest {
     event LogCanceled();
 
     constructor(address _owner, uint _bidIncrement, uint _startBlock, uint _endBlock, string _ipfsHash) {
-        if (_startBlock >= _endBlock) throw;
-        if (_startBlock < block.number) throw;
-        if (_owner == 0) throw;
+        require(_startBlock < _endBlock);
+        require(_startBlock > block.number);
+        require(_owner);
 
         owner = _owner;
         bidIncrement = _bidIncrement;
@@ -32,11 +32,14 @@ contract AuctionTest {
     }
 
     function getHighestBid()
+        public
+        returns (uint)                  
     {
         return fundsByBidder[highestBidder];
     }
 
     function placeBid()
+        public
         payable
         onlyAfterStart
         onlyBeforeEnd
@@ -45,7 +48,7 @@ contract AuctionTest {
         returns (bool success)
     {
         // reject payments of 0 ETH
-        if (msg.value == 0) throw;
+        require(msg.value);
 
         // calculate the user's total bid based on the current amount they've sent to the contract
         // plus whatever has been sent with this transaction
@@ -53,7 +56,7 @@ contract AuctionTest {
 
         // if the user isn't even willing to overbid the highest binding bid, there's nothing for us
         // to do except revert the transaction.
-        if (newBid <= highestBindingBid) throw;
+        require(newBid > highestBindingBid);
 
         // grab the previous highest bid (before updating fundsByBidder, in case msg.sender is the
         // highestBidder and is just increasing their maximum bid).
@@ -88,12 +91,20 @@ contract AuctionTest {
     }
 
     function min(uint a, uint b)
+        private
+        constant
+        returns (uint)
     {
-        if (a < b) return a;
+        if (a < b) return a;    
         return b;
     }
 
     function cancelAuction()
+        public
+        onlyOwner
+        onlyBeforeEnd
+        onlyNotCanceled
+        returns (bool success)
     {
         canceled = true;
         LogCanceled();
@@ -137,12 +148,12 @@ contract AuctionTest {
             }
         }
 
-        if (withdrawalAmount == 0) throw;
+        require(withdrawalAmount);
 
         fundsByBidder[withdrawalAccount] -= withdrawalAmount;
 
         // send the funds
-        if (!msg.sender.send(withdrawalAmount)) throw;
+        require(msg.sender.send(withdrawalAmount));
 
         LogWithdrawal(msg.sender, withdrawalAccount, withdrawalAmount);
 
@@ -150,32 +161,32 @@ contract AuctionTest {
     }
 
     modifier onlyOwner {
-        if (msg.sender != owner) throw;
+        require(msg.sender == owner);
         _;
     }
 
     modifier onlyNotOwner {
-        if (msg.sender == owner) throw;
+        require(msg.sender != owner);
         _;
     }
 
     modifier onlyAfterStart {
-        if (block.number < startBlock) throw;
+        require(block.number > startBlock);
         _;
     }
 
     modifier onlyBeforeEnd {
-        if (block.number > endBlock) throw;
+        require(block.number < endBlock);
         _;
     }
 
     modifier onlyNotCanceled {
-        if (canceled) throw;
+        require(!canceled);
         _;
     }
 
     modifier onlyEndedOrCanceled {
-        if (block.number < endBlock && !canceled) throw;
+        require(block.number > endBlock && !canceled);
         _;
     }
 }

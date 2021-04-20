@@ -1,13 +1,42 @@
+<<<<<<< HEAD
 .img-fluid {
     border-radius: 10px;
     width: 1000px;
+=======
+.card-img {
+    border-radius: 15px 15px 0px 0px;
+    padding: 3px;
+    width: 1200px;
+    object-fit:cover;
+    height: 400px;
 }
+.card-link {
+    a:hover, a:visited, a:link, a:active
+    {
+        text-decoration: none;
+    }
+>>>>>>> 51e9f2433e5c2efaccf933ba1fd48adf1ebf69e3
+}
+.nft-caption {
+
+
 
 .nft-activity {
+<<<<<<< HEAD
     background-color: rgba(0, 0, 0, 0.6);
     width: 250px;
     padding: 15px 0px 10px 0px;
+=======
+    // background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    // justify-content: flex-end;
+    // align-items: center;
+    color: black;
+    width: 100%;
+    // padding: 10px 10px 10px 10px;
+>>>>>>> 51e9f2433e5c2efaccf933ba1fd48adf1ebf69e3
     .nft-details {
+
         display: block;
         a {
             font-size: 18px;
@@ -18,4 +47,44 @@
             }
         }
     }
+}
+}
+
+.nft-footer {
+    font-size: 10px;
+    display: flex;
+    // display: flex;
+    justify-content:flex-start;
+}
+.nft-body {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.nft-overlay {
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 2;
+    position: absolute;
+    bottom: 250px;
+    right: 8px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 4px 4px 0px 4px;
+    padding: 10px 15px 10px 15px;
+
+}
+.negative {
+    color: red !important;
+}
+.positive {
+    color: green !important;
+}
+.first {
+    color: yellow !important;
+}
+.card {
+    border-radius: 15px;
 }

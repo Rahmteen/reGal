@@ -1,30 +1,90 @@
 import React from "react";
-import { Image, Carousel } from "react-bootstrap";
+import { Image, Card, Button, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
-const NftDisplay = ({ likes, comments, image, id }) => {
-
+import Profile from "../../../assets/images/profile.png";
+const NftDisplay = ({
+  likes,
+  comments,
+  image,
+  id,
+  bid,
+  title,
+  creator,
+  date_mint,
+  current,
+  previous,
+}) => {
   return (
     // <Col fluid md={4} className="mb-5 nft-wrapper"></Col>
-    <>
-        <Image fluid src={image} />
-        <Carousel.Caption>
-          <div className="nft-activity mx-auto pt-2">
-            <span className="nft-likes pl-4">
-              <span className="fa fa-lg fa-heart-o pr-1"></span>
-              {likes}
-            </span>
-            <span className="nft-comments pl-3">
-              <span className="fa fa-lg fa-comment-o pr-1"></span>
-              {comments}
-            </span>
-            <span className="nft-details pl-3 d-inline-block">
-              <Link to={`/details/${id}`} className="text-white" >Details</Link>
-            </span>
-            {/* <Button size="sm" className="float-right">Details</Button> */}
+    <Link className="card-link" to={`/details/${id}`}>
+      <Card>
+        <Card.Img src={image} />
+        <div className="nft-overlay">
+          <div className="d-block mb-1">
+            {previous == null ? (
+              <div className="text-right">
+                <span className="overlay-values text-white ">
+                  {current} Ξ
+                </span>{" "}
+                <br />
+                <span className="overlay-values text-white first">First Sale</span>
+              </div>
+            ) : (
+              <div className="text-right">
+                <span className="overlay-values text-white ">
+                  {current} Ξ
+                </span>{" "}
+                <br />
+                {previous / current > 1 ? (
+                  <span className="overlay-values text-white positive">
+                    + {Number((previous / current).toFixed(4) * 100)} %
+                  </span>
+                ) : (
+                  <span className="overlay-values text-white negative">
+                    - {Number((previous / current).toFixed(4) * 100)} %
+                  </span>
+                )}
+              </div>
+            )}
           </div>
-        </Carousel.Caption>
-    </>
+        </div>
+
+        <Card.Body>
+          <Card.Text className="nft-caption">
+            <Row className="nft-activity mx-auto">
+              <Col className="nft-user">
+                <img src={Profile} />
+              </Col>
+              <Col className="nft-body">
+                <span>
+                  <b> name:</b> <br />
+                  <span style={{ fontSize: "16px" }}> {title}</span>
+                </span>
+                <span>
+                  <b>artist:</b> <br />
+                  <span style={{ fontSize: "16px" }}> {creator}</span>
+                </span>
+                <span>
+                  <b>date created: </b> <br />
+                  <span style={{ fontSize: "16px" }}> {date_mint}</span>
+                </span>
+              </Col>
+            </Row>
+          </Card.Text>
+        </Card.Body>
+        <Card.Footer className="nft-footer">
+          <div className="pr-3">
+            <div className="fa fa-lg fa-heart-o text-center pr-1"></div>
+            {likes}
+          </div>
+          <div className="pr-4">
+            <div className="fa fa-lg fa-comment-o text-center pr-1"></div>
+            {comments}
+          </div>
+          <span className="">{`Last bid ${bid} mins ago`}</span>
+        </Card.Footer>
+      </Card>
+    </Link>
   );
 };
 

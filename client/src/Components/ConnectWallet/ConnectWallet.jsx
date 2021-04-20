@@ -6,6 +6,7 @@ import Web3 from "web3";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import MetaMaskIcon from "../../../assets/images/metamask.svg";
 import WalletConnectIcon from "../../../assets/images/walletconnect.svg";
+import SignIn from "../../../assets/images/sign-in.png"
 
 let web3 = new Web3(Web3.givenProvider);
 const provider = new WalletConnectProvider({

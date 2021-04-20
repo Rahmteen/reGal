@@ -36,6 +36,24 @@ const NftMinter = ({web3}) => {
     console.log(web3);
   }, []);
 
+  const getAllAuctions = () => {
+    return new Promise((resolve, reject) => {
+      return AuctionFactory.deployed().allAuctions.call().then(result => {
+          return Promise.all( result.map(auctionAddr => this.getAuction(auctionAddr)) )
+      }).then(auctions => {
+
+          let auctionEventListeners = Object.assign({}, this.state.auctionEventListeners)
+          const unloggedAuctions = auctions.filter(auction => this.state.auctionEventListeners[auction.address] === undefined)
+          for (let auction of unloggedAuctions) {
+              auctionEventListeners[auction.address] = auction.contract.LogBid({ fromBlock: 0, toBlock: 'latest' })
+              auctionEventListeners[auction.address].watch(this.onLogBid)
+          }
+
+          this.setState({ auctions, auctionEventListeners }, resolve)
+      })
+  })
+  }
+
   const validateMint = () => {
     if (nftName && nftArtist && nftDescription && nftRawFile && nftThumbnail) {
       return true;
