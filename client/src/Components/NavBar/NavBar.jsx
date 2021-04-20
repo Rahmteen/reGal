@@ -17,7 +17,7 @@ import Profile from "../../../assets/images/profile-icon.png";
 const Navigation = () => {
   return (
     <Navbar expand="lg">
-      <Container className="pt-5 pb-5" fluid>
+      <Container className="pt-4 pb-4" fluid>
           <Nav className="nav-top">
         <Navbar.Brand
           href="/explore"

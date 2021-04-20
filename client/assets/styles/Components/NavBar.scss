@@ -2,7 +2,13 @@
   // padding: 15px 10px 15px 10px;
   background: transparent;
   font-family: "Majesti-Banner-BoldItalic", sans-serif;
-  margin: 0% 14% 0% 14%;
+  margin: 0% 8% 0% 8%;
+  animation: fadeIn linear forwards 2s;
+    -webkit-animation: fadeIn linear forwards 2s;
+    -moz-animation: fadeIn linear forwards 2s;
+    -o-animation: fadeIn linear forwards 2s;
+    -ms-animation: fadeIn linear forwards 2s;
+
   &:hover {
     .nav-animation {
       transition: all 0.1s linear;
@@ -55,6 +61,7 @@
 .nav-container {
   align-items: flex-end;
   background-color: transparent;
+
 }
 
 .profile-pic {
