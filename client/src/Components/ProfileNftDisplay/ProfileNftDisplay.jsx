@@ -19,7 +19,7 @@ const ProfileNftDisplay = ({
     <Fragment>
     {/* <Link className="card-link" to={`/details/${id}`}> */}
       <Card className="nft-card">
-        <Card.Img  src={image} style={{borderRadius: "15px"}} />
+        <Card.Img className="profile-card-img"  src={image} style={{borderRadius: "15px"}} />
         {/* <div className="nft-overlay">
           <div className="d-block mb-1">
             {previous == null ? (

@@ -18,8 +18,8 @@ const NftDisplay = ({
     // <Col fluid md={4} className="mb-5 nft-wrapper"></Col>
     <Fragment>
     <Link className="card-link" to={`/details/${id}`}>
-      <Card>
-        <Card.Img src={image} />
+      <Card className="nft-display">
+        <Card.Img className="explore-card-image" src={image} />
         <div className="nft-overlay">
           <div className="d-block mb-1">
             {previous == null ? (

@@ -142,9 +142,6 @@ const Profile = () => {
   return (
     <Fragment>
       <Container>
-        <Row className="user-profile-data"></Row>
-      </Container>
-      <Container>
         <Row className="nft-display-rows pb-5 mb-5 mt-5">
           <Col md={4} lg={4}>
             <Col md={6}>
@@ -172,8 +169,10 @@ const Profile = () => {
               </Link>
             </Col>
           </Col>
-          <Col>
-            <Col className="h5 gradient text-center mt-3"><i>FEATURED</i></Col>
+          <Col className="mt-5">
+            <Col className="h1 gradient text-start">
+              <i>FEATURED</i>
+            </Col>
             <Col lg={12} md={12} className="profile-featured-nft">
               <ProfileNftDisplay
                 likes={nfts[5].likes}
@@ -189,9 +188,11 @@ const Profile = () => {
               />
             </Col>
           </Col>
+        </Row>
+        <Row className="mb-5">
           {nfts.length &&
             nfts.map((nfts, index) => (
-              <Col lg={4} md={3} sm={12} key={index} className="mt-5">
+              <Col lg={2} md={2} sm={12} key={index} className="mt-4">
                 <ProfileNftDisplay
                   likes={nfts.likes}
                   comments={nfts.comments}
