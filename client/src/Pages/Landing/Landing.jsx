@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, Fragment } from "react";
 import Particles from "react-particles-js";
 import { Link } from "react-router-dom";
 import { Row, Col, Button } from "react-bootstrap";
@@ -17,7 +17,9 @@ const Landing = () => {
 
 
   useEffect(() => {
-    loadUser
+    //get wallet id
+    //pass to load user
+    loadUser();
   }, []);
 
   const handleClose = () => setShow(false);
@@ -38,16 +40,18 @@ const Landing = () => {
             <h1 className="text-white text-majesti">Regal</h1>
           </Col>
           <Col md={12} className="mb-3">
-          <Button
-            className="btn btn-light text-majesti enableEthereumButton"
-            onClick={handleShow}
-          >
-            Connect
-          </Button>
             {
-              !window.ethereum.selectedAddress
-              ? 
-                <ConnectWallet handleClose={handleClose} show={show}/> 
+              !user
+              ?
+              <Fragment>
+                <Button
+                  className="btn btn-light text-majesti enableEthereumButton"
+                  onClick={handleShow}
+                >
+                  Connect
+                </Button>
+                <ConnectWallet handleClose={handleClose} show={show}/>
+              </Fragment>
               : null
             }
           </Col>

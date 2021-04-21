@@ -1,44 +1,4 @@
 /* JUMBOTRON */
-<<<<<<< HEAD
-
-.jumbotron{
-    position: relative;
-    overflow: hidden;
-    height: 500px;
-    border-radius: 0px!important;
-    &:hover {
-        .video-overlay {
-            right: 0;
-        }
-    }
-    .video-overlay {
-        z-index: 2;
-        position: absolute;
-        bottom: 10px;
-        right: -350px;
-        background-color: rgba( 0, 0, 0, 0.7);
-        padding: 15px;
-        -webkit-transition-duration: 0.3s;
-        -moz-transition-duration: 0.3s;
-        -o-transition-duration: 0.3s;
-        transition-duration: 0.3s;
-
-        a {
-            position: relative;
-            z-index: 4;
-        }
-
-        .overlay-values {
-            font-weight: bold;
-            font-size: 18px;
-        }
-    }
-    .overlay-text {
-        color: #ffffff;
-        font-size: 18px;
-        margin-top: -20px;
-        font-family: 'Majesti-Banner-BoldItalic', sans-serif;
-=======
 .scroll-div {
     animation-delay: 10s;
     position: static;
@@ -217,7 +177,6 @@
     max-width: 100vw;
     .nft-display-rows {
         justify-content: center;
->>>>>>> 51e9f2433e5c2efaccf933ba1fd48adf1ebf69e3
     }
     .nft-grid-flex {
         justify-content: center;
@@ -225,30 +184,3 @@
 }
 
 
-<<<<<<< HEAD
-.container-fluid {
-    .nft-flex {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .carousel {
-        padding: 5px;
-        .carousel-item {
-            &.active {   
-                display: flex !important;
-                justify-content: center;
-            }
-            img {
-                max-height: 800px;
-                min-width: auto;
-            }
-        }
-    }
-    .about-section {
-        font-size: 25px;
-    }
-}
-=======
->>>>>>> 51e9f2433e5c2efaccf933ba1fd48adf1ebf69e3

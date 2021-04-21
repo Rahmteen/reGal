@@ -72,7 +72,7 @@ const NftMinter = () => {
     },[])
 
     return (
-      <Container fluid>
+      <Container>
         <Row className="user-profile-data">
           <Col md={12}>
             {/* Image will be used in the future..using default circle for testing */}

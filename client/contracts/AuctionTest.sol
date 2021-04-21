@@ -92,7 +92,6 @@ contract AuctionTest {
 
     function min(uint a, uint b)
         private
-        constant
         returns (uint)
     {
         if (a < b) return a;    
