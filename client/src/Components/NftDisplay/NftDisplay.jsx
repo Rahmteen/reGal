@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment} from "react";
 import { Image, Card, Button, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Profile from "../../../assets/images/profile.png";
@@ -16,6 +16,7 @@ const NftDisplay = ({
 }) => {
   return (
     // <Col fluid md={4} className="mb-5 nft-wrapper"></Col>
+    <Fragment>
     <Link className="card-link" to={`/details/${id}`}>
       <Card>
         <Card.Img src={image} />
@@ -85,6 +86,7 @@ const NftDisplay = ({
         </Card.Footer>
       </Card>
     </Link>
+    </Fragment>
   );
 };
 
