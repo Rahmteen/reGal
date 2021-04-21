@@ -2,7 +2,7 @@ import React, { Fragment} from "react";
 import { Image, Card, Button, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Profile from "../../../assets/images/profile.png";
-const NftDisplay = ({
+const ProfileNftDisplay = ({
   likes,
   comments,
   image,
@@ -17,10 +17,10 @@ const NftDisplay = ({
   return (
     // <Col fluid md={4} className="mb-5 nft-wrapper"></Col>
     <Fragment>
-    <Link className="card-link" to={`/details/${id}`}>
-      <Card className="nft-display">
-        <Card.Img className="explore-card-image" src={image} />
-        <div className="nft-overlay">
+    {/* <Link className="card-link" to={`/details/${id}`}> */}
+      <Card className="nft-card">
+        <Card.Img className="profile-card-img"  src={image} style={{borderRadius: "15px"}} />
+        {/* <div className="nft-overlay">
           <div className="d-block mb-1">
             {previous == null ? (
               <div className="text-right">
@@ -48,9 +48,9 @@ const NftDisplay = ({
               </div>
             )}
           </div>
-        </div>
+        </div> */}
 
-        <Card.Body>
+        {/* <Card.Body>
           <Card.Text className="nft-caption">
             <Row className="nft-activity mx-auto">
               <Col className="nft-user">
@@ -83,11 +83,11 @@ const NftDisplay = ({
             {comments}
           </div>
           <span className="">{`Last bid ${bid} mins ago`}</span>
-        </Card.Footer>
+        </Card.Footer> */}
       </Card>
-    </Link>
+    {/* </Link> */}
     </Fragment>
   );
 };
 
-export default NftDisplay;
+export default ProfileNftDisplay;

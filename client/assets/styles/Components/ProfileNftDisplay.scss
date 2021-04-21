@@ -1,11 +1,15 @@
-.nft-display {
 .card-img {
-    &.explore-card-image {
-    border-radius: 15px 15px 0px 0px;
-    padding: 3px;
-    width: 1200px;
+    &.profile-card-img {
+    // border-radius: 15px 15px 0px 0px;
+    padding: 1px;
+    width: 1000px;
     object-fit:cover;
-    height: 400px;
+    height: 250px;  
+    transition: 0.25s ease-in-out;
+    &:hover {
+        opacity: 50%;
+        transition: 0.25s ease-in-out;
+    }
     }
 }
 .card-link {
@@ -14,8 +18,6 @@
         text-decoration: none;
     }
 }
-}
-
 .nft-caption {
 
 

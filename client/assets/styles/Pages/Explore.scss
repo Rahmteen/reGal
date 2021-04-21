@@ -3,7 +3,7 @@
   scroll-behavior:smooth;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 1) 0%,
+    #040404 0%,
     rgb(74, 27, 8) 40%,
     rgb(199, 96, 103) 100%
   ) !important;
@@ -90,7 +90,6 @@
 
 .explore {
   max-width: 85vw !important;
-  padding-top: 50px;
 
   .carousel {
     padding: 5px;
@@ -134,39 +133,6 @@
   }
 
   .premium {
-    background-image: -webkit-linear-gradient(
-      90deg,
-      rgba(255, 136, 124, 1) 0%,
-      rgba(182, 50, 95, 1) 35%,
-      rgba(255, 173, 0, 1) 100%
-    ); /* For Chrome and Safari */
-    background-image: -moz-linear-gradient(
-      90deg,
-      rgba(255, 136, 124, 1) 0%,
-      rgba(182, 50, 95, 1) 35%,
-      rgba(255, 173, 0, 1) 100%
-    ); /* For old Fx (3.6 to 15) */
-    background-image: -ms-linear-gradient(
-      90deg,
-      rgba(255, 136, 124, 1) 0%,
-      rgba(182, 50, 95, 1) 35%,
-      rgba(255, 173, 0, 1) 100%
-    ); /* For pre-releases of IE 10*/
-    background-image: -o-linear-gradient(
-      90deg,
-      rgba(255, 136, 124, 1) 0%,
-      rgba(182, 50, 95, 1) 35%,
-      rgba(255, 173, 0, 1) 100%
-    ); /* For old Opera (11.1 to 12.0) */
-    background-image: linear-gradient(
-      90deg,
-      rgba(255, 136, 124, 1) 0%,
-      rgba(182, 50, 95, 1) 35%,
-      rgba(255, 173, 0, 1) 100%
-    ); /* Standard syntax; must be last */
-    color: transparent !important;
-    -webkit-background-clip: text;
-    background-clip: text;
     font-weight: 900;
     font-size: 30px;
     letter-spacing: 5px;
@@ -202,26 +168,24 @@
 .featured-parallax {
   // margin: 300px 0px 0px 0px;
   // background-color: #cc6c38;
-  background-size: 100vw 100vh;
+  // background-size: 100vw 100vh;
 }
 
 $rotationAmt: -10;
 
 .featured {
-   font-size: 10em;
+   font-size: 8em;
    font-family: $primary-font;
    transform: skew(#{$rotationAmt}deg) rotate(#{$rotationAmt}deg);
    grid-area: text;
    font-family: 'Sarpanch', sans-serif;
    font-size: 20vmin;
-   margin: 0;
-   padding: 30px;
    color: #1d9099;
    text-shadow: 1vmin 1vmin 0 #E79C10, -1vmin -1vmin 0 #D53A33;
 }
 
 .live {
-  font-size: 14em;
+  font-size: 6em;
   color: rgb(255, 255, 255);
   transition: 0.5s ease-in-out;
 	text-shadow: 
