@@ -245,7 +245,7 @@ const Explore = () => {
               <Row className="nft-display-rows pb-5 mb-5">
                 {nfts.length &&
                   nfts.map((nft, index) => (
-                    <Col md={4} sm={6} key={index} className="">
+                    <Col md={4} sm={6} key={index} className="mb-3">
                       <NftDisplay
                         likes={nft.likes}
                         comments={nft.comments}

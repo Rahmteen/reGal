@@ -1,8 +1,9 @@
 //Modules
 import React, { useEffect, useState, Fragment } from 'react';
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Container, Row, Col, Image, Button } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 //Contracts
-import NftDisplay from "../../Components/NftDisplay/NftDisplay";
+import ProfileNftDisplay from "../../Components/ProfileNftDisplay";
 //Media
 import demo from "../../../assets/images/demo-art.jpeg";
 import demo2 from "../../../assets/images/nft-1.jpg";
@@ -149,25 +150,26 @@ const Profile = () => {
         <Container>
         <Row className="nft-display-rows pb-5 mb-5 mt-5">
               <Col md={4} lg={4}>
-              <Col md={12}>
+              <Col md={6}>
             {/* Image will be used in the future..using default circle for testing */}
             <div className="user-profile-image mx-auto"></div>
             {/* <Image fluid className="user-profile-image" src={}/> */}
           </Col>
-          <Col md={12} className="text-center mt-3">
+          <Col md={6} className="text-center mt-3">
             <span className="text-majesti text-white user-profile-name">@deffiedeff</span>
           </Col>
-          <Col md={12} className="text-center mt-1">
+          <Col md={6} className="text-center mt-1">
             <span className="text-primary">0xBb...04b8</span>
           </Col>
-          <Col md={6} className="offset-md-3 mt-4">
-            <p className="pr-5 pl-5 text-center text-white user-profile-bio">This is a bio for this artist. They have the ability to customize this text box up to three lines.</p>
+          <Col md={6} className="mt-4">
+            <p className="text-start text-white user-profile-bio">This is a bio for this artist. They have the ability to customize this text box up to three lines.</p>
           </Col>
+          <Col md={6} className="text-center"><Link to="/minter"><Button className="btn-regal mt-2">Mint</Button></Link></Col>
               </Col>
                 {nfts.length &&
                   nfts.map((nft, index) => (
                     <Col lg={1} md={1} sm={6} key={index} className="">
-                      <NftDisplay
+                      <ProfileNftDisplay
                         likes={nft.likes}
                         comments={nft.comments}
                         image={nft.image}
