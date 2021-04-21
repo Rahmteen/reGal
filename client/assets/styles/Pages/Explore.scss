@@ -1,5 +1,6 @@
 /* JUMBOTRON */
 .background-div {
+  scroll-behavior:smooth;
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 1) 0%,
@@ -18,13 +19,14 @@
   animation-duration: 2s;
 }
 .jumbotron {
+  box-shadow: 1vmin 1vmin 0 #E79C10, -1vmin -1vmin 0 #D53A33;
   position: relative;
   overflow: hidden;
-  height: 500px;
-  width: 150%;
-  margin-left: -300px;
-  border-bottom: solid 3px white;
-  border-top: solid 3px white;
+  height: 22vh;
+  width: 80%;
+  margin-left: 0;
+  // border-bottom: solid 3px white;
+  // border-top: solid 3px white;
   opacity: 0;
   animation: fadeIn linear forwards 1s;
   -webkit-animation: fadeIn linear forwards 1s;
@@ -106,7 +108,7 @@
   .about-section {
     font-size: 70px;
     font-weight: 800;
-    text-align: left;
+    text-align: right;
     &.regal {
       padding-top: 30px;
       font-size: 30px;
@@ -201,4 +203,49 @@
   // margin: 300px 0px 0px 0px;
   // background-color: #cc6c38;
   background-size: 100vw 100vh;
+}
+
+$rotationAmt: -10;
+
+.featured {
+   font-size: 10em;
+   font-family: $primary-font;
+   transform: skew(#{$rotationAmt}deg) rotate(#{$rotationAmt}deg);
+   grid-area: text;
+   font-family: 'Sarpanch', sans-serif;
+   font-size: 20vmin;
+   margin: 0;
+   padding: 30px;
+   color: #1d9099;
+   text-shadow: 1vmin 1vmin 0 #E79C10, -1vmin -1vmin 0 #D53A33;
+}
+
+.live {
+  font-size: 14em;
+  color: rgb(255, 255, 255);
+  transition: 0.5s ease-in-out;
+	text-shadow: 
+         10px 1px 1px #e7bc10,
+			   20px 1px 1px #d5a233, 
+			   30px 1px 1px #d5a233, 
+			   40px 1px 1px #d59433, 
+			   50px 1px 1px #d58733, 
+			   60px 1px 1px #d57133, 
+			   70px 1px 1px #d56333, 
+			   80px 1px 1px #d55e33, 
+			   90px 1px 1px #d54b33;
+    &:hover {
+      transition: 0.5s ease-in-out;
+      text-shadow: 
+      10px 1px 1px #d54b33,
+      20px 1px 1px #d55e32,
+      30px 1px 1px #d56333, 
+      40px 1px 1px #d57133, 
+      50px 1px 1px #d58733, 
+      60px 1px 1px #d59433, 
+      70px 1px 1px #d5a233, 
+      80px 1px 1px #d5a233, 
+      90px 1px 1px #e7bc10,
+
+    }
 }
