@@ -109,7 +109,7 @@ const Explore = () => {
   return (
     <Fragment >
 <div className="background-div">
-       <Parallax className="custom-class" y={[-30, -10]} tagOuter="figure">
+       <Parallax className="custom-class" y={[-30, 0]} tagOuter="figure">
       <div className="scroll-div animate__animated animate__fadeOutDown pl-5">
         <h2 className="scroll animate__animated animate__fadeInDown text-white h4">
           scroll <br />
@@ -168,7 +168,7 @@ const Explore = () => {
         </Parallax>
         <Container className="nft-container">
        <Row className="nft-grid-flex">
-          <Parallax className="featured-parallax" y={[-20, 0]} tagOuter="figure">
+          <Parallax className="featured-parallax" y={[20, 40]} tagOuter="figure">
           <Jumbotron style={{ position: "relative" }}>
             <div className="video-overlay">
               <div className="d-block mb-1">
@@ -194,7 +194,7 @@ const Explore = () => {
           </Jumbotron> 
           </Parallax>
           {/* <Row className="h3 text-white text-center">Featured Collectable</Row> */}
-          <Parallax className="custom-class" y={[-5, 15]} tagOuter="figure">
+          <Parallax className="custom-class" y={[30, 10]} tagOuter="figure">
           <Col className="h6 text-white mb-4" md={12}>
             <div className="h1 text-white text-start text-majesti mb-n3">
               Live Activity
@@ -234,7 +234,7 @@ const Explore = () => {
           </Parallax> 
           </Parallax>
         </Row>
-        <Parallax y={[-5, 5]}x={[-20, 0]}>
+        <Parallax y={[0, 0]}x={[-20, 0]}>
         <Row>
           <Col
             md={7}
