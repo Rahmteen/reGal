@@ -17,9 +17,9 @@ const ProfileNftDisplay = ({
   return (
     // <Col fluid md={4} className="mb-5 nft-wrapper"></Col>
     <Fragment>
-    <Link className="card-link" to={`/details/${id}`}>
-      <Card>
-        <Card.Img src={image} style={{borderRadius: "15px"}} />
+    {/* <Link className="card-link" to={`/details/${id}`}> */}
+      <Card className="nft-card">
+        <Card.Img  src={image} style={{borderRadius: "15px"}} />
         {/* <div className="nft-overlay">
           <div className="d-block mb-1">
             {previous == null ? (
@@ -85,7 +85,7 @@ const ProfileNftDisplay = ({
           <span className="">{`Last bid ${bid} mins ago`}</span>
         </Card.Footer> */}
       </Card>
-    </Link>
+    {/* </Link> */}
     </Fragment>
   );
 };

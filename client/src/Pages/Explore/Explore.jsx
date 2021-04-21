@@ -123,7 +123,7 @@ const Explore = () => {
           >
             <Row className="mr-auto ml-auto text-end">
               <Col md={6} className="premium-row mt-2 pr-5">
-                <p className="premium text-white ">PREMIUM NFT MARKETPLACE</p>
+                <p className="gradient premium text-white ">PREMIUM NFT MARKETPLACE</p>
                 <h1 className="about-section text-white mb-n2">
                   A platform{" "}
                   <span>
@@ -158,7 +158,7 @@ const Explore = () => {
             <Row className="">
               <Col md={4}>
                 {" "}
-                <h1 className="premium text-start pt-1 mt-n4">
+                <h1 className="gradient premium text-start pt-1 mt-n4">
                   INTRODUCING TOURNAMENTS
                 </h1>
                 <br />
