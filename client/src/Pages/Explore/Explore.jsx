@@ -116,9 +116,13 @@ const Explore = () => {
           </h2>
         </div>
         <Container className="explore">
-          <Parallax className="custom-class" y={[-20, 10]} tagOuter="figure">
-            <Row className="mr-auto ml-auto mb-5 text-end">
-              <Col md={6} className="premium-row mt-2 mb-5 pr-5">
+          <Parallax
+            className="custom-class mb-5 mt-5"
+            y={[0, 0]}
+            tagOuter="figure"
+          >
+            <Row className="mr-auto ml-auto text-end">
+              <Col md={6} className="premium-row mt-2 pr-5">
                 <p className="premium text-white ">PREMIUM NFT MARKETPLACE</p>
                 <h1 className="about-section text-white mb-n2">
                   A platform{" "}
@@ -131,11 +135,7 @@ const Explore = () => {
                   <Button className="btn-regal ml-n1">apply</Button>
                 </div>
               </Col>
-              <Col
-                md={6}
-                lg={6}
-                className="tournament-row mb-5 pb-5 mt-2 pt-5 pl-5"
-              >
+              <Col md={6} lg={6} className="tournament-row mt-2 pt-5 pl-5">
                 <p className="about-section regal text-white text-start mt-5 mb-n2 pr-3">
                   Regal was founded to <br />
                   <span style={{ color: "#ed7779" }}>
@@ -149,8 +149,13 @@ const Explore = () => {
               </Col>
             </Row>
           </Parallax>
-          <Parallax className="custom-class" y={[10, 30]} x={[20, 0]}  tagOuter="figure">
-            <Row className="mt-5">
+          <Parallax
+            className="custom-class mb-n4 mt-5 mb-5 pt-5 pb-5"
+            y={[10, 25]}
+            x={[20, 10]}
+            tagOuter="figure"
+          >
+            <Row className="">
               <Col md={4}>
                 {" "}
                 <h1 className="premium text-start pt-1 mt-n4">
@@ -170,7 +175,7 @@ const Explore = () => {
               <Col md={8}>
                 {" "}
                 <div className="text-center">
-                  <Image src={Tour} width="80%"></Image>
+                  <Image src={Tour} width="50%"></Image>
                 </div>
               </Col>
             </Row>
@@ -180,12 +185,13 @@ const Explore = () => {
         <Container className="nft-container">
           <Row className="nft-grid-flex">
             <Parallax
-              className="featured-parallax"
-              y={[30,10]}
+              className="featured-parallax mt-2 mb-2"
+              y={[15, 20]}
               x={[-10, 0]}
               tagOuter="figure"
             >
               <div className="featured text-white">
+                FEATURED <br />
                 FEATURED <br />
                 FEATURED <br />
                 <Jumbotron style={{ position: "relative" }}>
@@ -219,7 +225,7 @@ const Explore = () => {
               </div>
             </Parallax>
             {/* <Row className="h3 text-white text-center">Featured Collectable</Row> */}
-            <Parallax className="custom-class" y={[20, 0]} tagOuter="figure">
+            <Parallax className="custom-class" y={[20, -5]} tagOuter="figure">
               <Col className="h6 text-white mb-4" md={12}>
                 <div className="text-start text-majesti live">
                   Live Activity
@@ -236,25 +242,25 @@ const Explore = () => {
               </Col>
               {/* </Parallax> */}
               {/* <Parallax className="custom-class" y={[-10, 5]} tagOuter="figure"> */}
-                <Row className="nft-display-rows pb-5 mb-5">
-                  {nfts.length &&
-                    nfts.map((nft, index) => (
-                      <Col md={4} sm={6} key={index} className="">
-                        <NftDisplay
-                          likes={nft.likes}
-                          comments={nft.comments}
-                          image={nft.image}
-                          id={nft.id}
-                          bid={nft.bid}
-                          title={nft.title}
-                          creator={nft.creator}
-                          date_mint={nft.date_mint}
-                          current={nft.current}
-                          previous={nft.previous}
-                        />
-                      </Col>
-                    ))}
-                </Row>
+              <Row className="nft-display-rows pb-5 mb-5">
+                {nfts.length &&
+                  nfts.map((nft, index) => (
+                    <Col md={4} sm={6} key={index} className="">
+                      <NftDisplay
+                        likes={nft.likes}
+                        comments={nft.comments}
+                        image={nft.image}
+                        id={nft.id}
+                        bid={nft.bid}
+                        title={nft.title}
+                        creator={nft.creator}
+                        date_mint={nft.date_mint}
+                        current={nft.current}
+                        previous={nft.previous}
+                      />
+                    </Col>
+                  ))}
+              </Row>
             </Parallax>
           </Row>
         </Container>

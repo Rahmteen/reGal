@@ -3,7 +3,7 @@
   scroll-behavior:smooth;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 1) 0%,
+    #040404 0%,
     rgb(74, 27, 8) 40%,
     rgb(199, 96, 103) 100%
   ) !important;
@@ -90,7 +90,6 @@
 
 .explore {
   max-width: 85vw !important;
-  padding-top: 50px;
 
   .carousel {
     padding: 5px;
@@ -202,26 +201,24 @@
 .featured-parallax {
   // margin: 300px 0px 0px 0px;
   // background-color: #cc6c38;
-  background-size: 100vw 100vh;
+  // background-size: 100vw 100vh;
 }
 
 $rotationAmt: -10;
 
 .featured {
-   font-size: 10em;
+   font-size: 8em;
    font-family: $primary-font;
    transform: skew(#{$rotationAmt}deg) rotate(#{$rotationAmt}deg);
    grid-area: text;
    font-family: 'Sarpanch', sans-serif;
    font-size: 20vmin;
-   margin: 0;
-   padding: 30px;
    color: #1d9099;
    text-shadow: 1vmin 1vmin 0 #E79C10, -1vmin -1vmin 0 #D53A33;
 }
 
 .live {
-  font-size: 14em;
+  font-size: 6em;
   color: rgb(255, 255, 255);
   transition: 0.5s ease-in-out;
 	text-shadow: 
