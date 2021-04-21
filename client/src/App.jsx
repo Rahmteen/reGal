@@ -9,6 +9,7 @@ import NftMinter from './Pages/NftMinter';
 import DetailedView from "./Pages/DetailedView";
 import ComponentWrapper from './Components/ComponentWrapper';
 import Whitepaper from "./Pages/Whitepaper"
+import SignUp from "./Pages/SignUp"
 //CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -18,6 +19,7 @@ const App = () => {
         <Switch>
             <Route exact path='/' component={Landing}/>
             <ComponentWrapper>
+                <Route exact path='/signup' component={SignUp}/>
                 <Route exact path='/profile' component={Profile}/>
                 <Route exact path='/explore' component={Explore}/>
                 <Route exact path='/whitepaper' component={Whitepaper} />
