@@ -2,12 +2,15 @@
   // padding: 15px 10px 15px 10px;
   background: transparent;
   font-family: "Majesti-Banner-BoldItalic", sans-serif;
+  padding: 50px 0px 50px 0px;
   margin: 0% 8% 0% 8%;
   animation: fadeIn linear forwards 2s;
     -webkit-animation: fadeIn linear forwards 2s;
     -moz-animation: fadeIn linear forwards 2s;
     -o-animation: fadeIn linear forwards 2s;
     -ms-animation: fadeIn linear forwards 2s;
+
+
 
   &:hover {
     .nav-animation {
@@ -34,27 +37,27 @@
     &:hover {
       color: $primary !important;
     }
-    &:nth-child(1) {
-      animation-delay: 0.5s;
-      color: $light-grey !important;
-      &:hover {
-        color: $secondary !important;
-      }
-    }
-    &:nth-child(1) {
-      animation-delay: 1s;
-      color: $primary !important;
-      &:hover {
-        color: $light-grey !important;
-      }
-    }
-    &:nth-child(1) {
-      animation-delay: 1.5s;
-      color: $secondary !important;
-      &:hover {
-        color: $white !important;
-      }
-    }
+    // &:nth-child(0) {
+    //   animation-delay: 0.5s;
+    //   color: $light-grey !important;
+    //   &:hover {
+    //     color: $secondary !important;
+    //   }
+    // }
+    // &:nth-child(1) {
+    //   animation-delay: 1s;
+    //   color: $primary !important;
+    //   &:hover {
+    //     color: $light-grey !important;
+    //   }
+    // }
+    // &:nth-child(1) {
+    //   animation-delay: 1.5s;
+    //   color: $secondary !important;
+    //   &:hover {
+    //     color: $white !important;
+    //   }
+    // }
   }
 }
 
@@ -69,5 +72,5 @@
 }
 
 .nav-top {
-  align-items: center;
+  align-items: left;
 }

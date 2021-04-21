@@ -11,6 +11,7 @@ import {
 } from "react-bootstrap";
 import { observer } from "mobx-react-lite";
 import { Link } from "react-router-dom";
+import { Parallax } from "react-scroll-parallax";
 //Components
 import NftDisplay from "../../Components/NftDisplay/NftDisplay";
 //Media
@@ -107,130 +108,171 @@ const Explore = () => {
   //the main page after landing for relevant material - this will morph into a trending section as userbase increases.
   return (
     <Fragment>
-      <div className="scroll-div animate__animated animate__fadeOutDown pl-5">
-        <h2 className="scroll animate__animated animate__fadeInDown text-white h4">
-          scroll <br />
-          <i class="fas fa-angle-double-down pl-4"></i>
-        </h2>
-      </div>
-      <Container className="explore">
-        <Row className="mr-auto ml-auto mb-5 ">
-          <Col md={6} className="premium-row mt-2 mb-5  pr-5">
-            <p className="premium text-white">PREMIUM NFT MARKETPLACE</p>
-            <h1 className="about-section text-white mb-n2">
-              A platform{" "}
-              <span>
-                <br /> for artists
-              </span>{" "}
-              <br /> by artists
-            </h1>
-            <div className="">
-              <Button className="btn-regal ml-n1">apply</Button>
-            </div>
-            <p className="about-section regal text-white mt-n5 mb-n2 pr-3">
-              Regal was founded to <br />
-              <span style={{ color: "#ed7779" }}>
-                disrupt the power imbalances <br />
-              </span>{" "}
-              that exist in the art industry today. <br /> We do not take a cut
-              from <br />
-              your work, and{" "}
-              <span style={{ color: "#ed7779" }}>we never will.</span>
-            </p>
-            {/* <div className="text-end">
-              <Button className="btn-regal">whitepaper</Button>
-            </div> */}
-          </Col>
-          <Col
-            md={6}
-            lg={6}
-            className="tournament-row mb-5 pb-5 mt-2 pt-5 pl-5"
+      <div className="background-div ">
+        <div className="scroll-div animate__animated animate__fadeOutDown pl-5 pt-5 mt-5">
+          <h2 className="scroll animate__animated animate__fadeInDown text-white h4">
+            scroll <br />
+            <i className="fas fa-angle-double-down pl-4"></i>
+          </h2>
+        </div>
+        <Container className="explore">
+          <Parallax
+            className="custom-class mb-5 mt-5"
+            y={[0, 0]}
+            tagOuter="figure"
           >
-            <div className="text-end">
-              <Image src={Tour} width="45%"></Image>
-            </div>
-            <h1 className="premium text-start pt-1 mt-n4">
-              INTRODUCING TOURNAMENTS
-            </h1>
-            <br />
-            <h2 className="tour-section text-white text-start">
-              Compete with your art <br />
-              Show the world your creations
-              <br />
-              Collect unique, curated pieces
-            </h2>
-            <div className="text-start mt-n2 mr-n3 mb-n5">
-              <Button className="btn-regal">learn more</Button>
-            </div>
-          </Col>
-        </Row>
+            <Row className="mr-auto ml-auto text-end">
+              <Col md={6} className="premium-row mt-2 pr-5">
+                <p className="gradient premium text-white ">PREMIUM NFT MARKETPLACE</p>
+                <h1 className="about-section text-white mb-n2">
+                  A platform{" "}
+                  <span>
+                    <br /> for artists
+                  </span>{" "}
+                  <br /> by artists
+                </h1>
+                <div className="">
+                  <Button className="btn-regal ml-n1">apply</Button>
+                </div>
+              </Col>
+              <Col md={6} lg={6} className="tournament-row mt-2 pt-5 pl-5">
+                <p className="about-section regal text-white text-start mt-5 mb-n2 pr-3">
+                  Regal was founded to <br />
+                  <span style={{ color: "#ed7779" }}>
+                    disrupt the power imbalances <br />
+                  </span>{" "}
+                  that exist in the art industry today. <br /> We do not take a
+                  cut from <br />
+                  your work, and{" "}
+                  <span style={{ color: "#ed7779" }}>we never will.</span>
+                </p>
+              </Col>
+            </Row>
+          </Parallax>
+          <Parallax
+            className="custom-class mb-n4 mt-5 mb-5 pt-5 pb-5"
+            y={[10, 25]}
+            x={[20, 10]}
+            tagOuter="figure"
+          >
+            <Row className="">
+              <Col md={4}>
+                {" "}
+                <h1 className="gradient premium text-start pt-1 mt-n4">
+                  INTRODUCING TOURNAMENTS
+                </h1>
+                <br />
+                <h2 className="tour-section text-white text-start">
+                  Compete with your art <br />
+                  Show the world your creations
+                  <br />
+                  Collect unique, curated pieces
+                </h2>
+                <div className="text-start mt-n2 mr-n3 mb-n5">
+                  <Button className="btn-regal">learn more</Button>
+                </div>
+              </Col>
+              <Col md={8}>
+                {" "}
+                <div className="text-center">
+                  <Image src={Tour} width="50%"></Image>
+                </div>
+              </Col>
+            </Row>
+          </Parallax>
         </Container>
+
         <Container className="nft-container">
-        <Row className="nft-grid-flex">
-          <Jumbotron style={{ position: "relative" }}>
-            <div className="video-overlay">
-              <div className="d-block mb-1">
-                <span className="overlay-text">Current Bid: </span>
-                <span className="overlay-values text-primary">1.02ETH</span>
-              </div>
-              <div className="d-block mb-1">
-                <span className="overlay-text">Author: </span>
-                <span className="overlay-values text-primary">
-                  Deffie Perry x Rahmteen
-                </span>
-              </div>
-              <div className="d-block mb-1">
-                <Link className="overlay-values text-secondary" to="/test">
-                  Place A Bid
-                </Link>
-              </div>
-            </div>
-            <video id="feature-video" loop playsInline autoPlay muted>
-              <source src={sampleVid} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </Jumbotron>
-          <Col className="h6 text-white mb-4" md={12}>
-            <div className="h1 text-white text-start text-majesti mb-n3">
-              Live Activity
-            </div>
-            <div
-              className="pb-2 text-end"
-              style={{
-                borderBottom: "solid 1px white",
-                borderColor: "#ac676a",
-              }}
+          <Row className="nft-grid-flex">
+            <Parallax
+              className="featured-parallax mt-2 mb-2"
+              y={[15, 20]}
+              x={[-10, 0]}
+              tagOuter="figure"
             >
-              view all
-            </div>
-          </Col>
-          <Row className="nft-display-rows pb-5">
-            {nfts.length &&
-              nfts.map((nft, index) => (
-                <Col md={4} sm={6} key={index} className="mb-5">
-                  <NftDisplay
-                    likes={nft.likes}
-                    comments={nft.comments}
-                    image={nft.image}
-                    id={nft.id}
-                    bid={nft.bid}
-                    title={nft.title}
-                    creator={nft.creator}
-                    date_mint={nft.date_mint}
-                    current={nft.current}
-                    previous={nft.previous}
-                  />
-                </Col>
-              ))}
+              <div className="featured text-white">
+                FEATURED <br />
+                FEATURED <br />
+                FEATURED <br />
+                <Jumbotron style={{ position: "relative" }}>
+                  <div className="video-overlay">
+                    <div className="d-block mb-1">
+                      <span className="overlay-text">Current Bid: </span>
+                      <span className="overlay-values text-primary">
+                        1.02ETH
+                      </span>
+                    </div>
+                    <div className="d-block mb-1">
+                      <span className="overlay-text">Author: </span>
+                      <span className="overlay-values text-primary">
+                        Deffie Perry x Rahmteen
+                      </span>
+                    </div>
+                    <div className="d-block mb-1">
+                      <Link
+                        className="overlay-values text-secondary"
+                        to="/test"
+                      >
+                        Place A Bid
+                      </Link>
+                    </div>
+                  </div>
+                  <video id="feature-video" loop playsInline autoPlay muted>
+                    <source src={sampleVid} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </Jumbotron>
+              </div>
+            </Parallax>
+            {/* <Row className="h3 text-white text-center">Featured Collectable</Row> */}
+            <Parallax className="custom-class" y={[20, -5]} tagOuter="figure">
+              <Col className="h6 text-white mb-4" md={12}>
+                <div className="text-start text-majesti live">
+                  Live Activity
+                </div>
+                <div
+                  className="pb-2 text-end"
+                  style={{
+                    borderBottom: "solid 1px white",
+                    borderColor: "#ac676a",
+                  }}
+                >
+                  view all
+                </div>
+              </Col>
+              {/* </Parallax> */}
+              {/* <Parallax className="custom-class" y={[-10, 5]} tagOuter="figure"> */}
+              <Row className="nft-display-rows pb-5 mb-5">
+                {nfts.length &&
+                  nfts.map((nft, index) => (
+                    <Col md={4} sm={6} key={index} className="mb-3">
+                      <NftDisplay
+                        likes={nft.likes}
+                        comments={nft.comments}
+                        image={nft.image}
+                        id={nft.id}
+                        bid={nft.bid}
+                        title={nft.title}
+                        creator={nft.creator}
+                        date_mint={nft.date_mint}
+                        current={nft.current}
+                        previous={nft.previous}
+                      />
+                    </Col>
+                  ))}
+              </Row>
+            </Parallax>
           </Row>
-        </Row>
-        <Row>
-          <Col
-            md={7}
-            className="pb-5 ml-auto mr-auto mt-5 mb-5 text-center"
-          ></Col>
-        </Row>
-        {/* <Row className="mb-5 pb-5">
+        </Container>
+      </div>
+    </Fragment>
+  );
+};
+
+export default observer(Explore);
+
+{
+  /* <Row className="mb-5 pb-5">
           <Col md={4} className="ml-auto mr-auto mt-5 mb-5 text-center pb-5">
             <div className="footer-cube-text">
               <img id="cube-gif" src={cube} />
@@ -242,15 +284,5 @@ const Explore = () => {
               </div>
             </div>
           </Col>
-        </Row> */}
-        <Row>
-          <Col md={12}>
-            <Image className="b4-footer" src={footerImg} fluid></Image>
-          </Col>
-        </Row>
-      </Container>
-    </Fragment>
-  );
-};
-
-export default observer(Explore);
+        </Row> */
+}

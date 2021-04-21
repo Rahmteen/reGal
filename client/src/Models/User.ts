@@ -1,8 +1,6 @@
 export interface IUser {
     _id: string;
     username: string,
-    first_name: string,
-    last_name: string,
     wallet_id: string,
     bio: string,
     profile_image: string,

@@ -1,22 +1,40 @@
 /* JUMBOTRON */
+.background-div {
+  scroll-behavior:smooth;
+  background: linear-gradient(
+    180deg,
+    #040404 0%,
+    rgb(74, 27, 8) 40%,
+    rgb(199, 96, 103) 100%
+  ) !important;
+}
+
 .scroll-div {
-    animation-delay: 10s;
-    position: static;
+  animation-delay: 10s;
+  position: static;
 }
 .scroll {
-    animation-delay: 5s;
-    animation-iteration-count: 2;
-    animation-duration: 2s;
+  animation-delay: 5s;
+  animation-iteration-count: 2;
+  animation-duration: 2s;
 }
 .jumbotron {
+  box-shadow: 1vmin 1vmin 0 #E79C10, -1vmin -1vmin 0 #D53A33;
   position: relative;
   overflow: hidden;
-  height: 310px;
-//   margin-right: 7%;
-//   margin-left: 7%;
-//   border-radius: 10px !important;
-  border: solid 2px black;
-  object-fit: contain;
+  height: 22vh;
+  width: 80%;
+  margin-left: 0;
+  // border-bottom: solid 3px white;
+  // border-top: solid 3px white;
+  opacity: 0;
+  animation: fadeIn linear forwards 1s;
+  -webkit-animation: fadeIn linear forwards 1s;
+  -moz-animation: fadeIn linear forwards 1s;
+  -o-animation: fadeIn linear forwards 1s;
+  -ms-animation: fadeIn linear forwards 1s;
+  border-image: linear-gradient(to bottom, #000000, #cb6367, rgba(0, 0, 0, 0))
+  1 100%;
 
   &:hover {
     .video-overlay {
@@ -89,76 +107,39 @@
   .about-section {
     font-size: 70px;
     font-weight: 800;
-    text-align: left;
+    text-align: right;
     &.regal {
-        padding-top: 30px;
-        font-size: 30px;
-        font-weight: 800;
-        text-align: right;
+      padding-top: 30px;
+      font-size: 30px;
+      font-weight: 800;
+      text-align: right;
     }
   }
+
   .premium-row {
-      border-right: solid 3px white;
-      opacity: 0;
-      animation: fadeIn linear forwards 1s;
-      -webkit-animation: fadeIn linear forwards 1s;
-      -moz-animation: fadeIn linear forwards 1s;
-      -o-animation: fadeIn linear forwards 1s;
-      -ms-animation: fadeIn linear forwards 1s;
-      &:nth-child(1) {
-        animation-delay: 1s;
-        color: $light-grey !important;
+    border-right: solid 3px white;
+    opacity: 0;
+    animation: fadeIn linear forwards 1s;
+    -webkit-animation: fadeIn linear forwards 1s;
+    -moz-animation: fadeIn linear forwards 1s;
+    -o-animation: fadeIn linear forwards 1s;
+    -ms-animation: fadeIn linear forwards 1s;
+    &:nth-child(1) {
+      animation-delay: 1s;
+      color: $light-grey !important;
     }
-      border-image: 
-      linear-gradient(
-        to bottom, 
-        #000000, 
-        #cb6367,
-        rgba(0, 0, 0, 0)
-      ) 1 100%;
+    border-image: linear-gradient(to bottom, #000000, #cb6367, rgba(0, 0, 0, 0))
+      1 100%;
   }
 
   .premium {
-    background-image: -webkit-linear-gradient(
-      90deg,
-      rgba(255, 136, 124, 1) 0%,
-      rgba(182, 50, 95, 1) 35%,
-      rgba(255, 173, 0, 1) 100%
-    ); /* For Chrome and Safari */
-    background-image: -moz-linear-gradient(
-      90deg,
-      rgba(255, 136, 124, 1) 0%,
-      rgba(182, 50, 95, 1) 35%,
-      rgba(255, 173, 0, 1) 100%
-    ); /* For old Fx (3.6 to 15) */
-    background-image: -ms-linear-gradient(
-      90deg,
-      rgba(255, 136, 124, 1) 0%,
-      rgba(182, 50, 95, 1) 35%,
-      rgba(255, 173, 0, 1) 100%
-    ); /* For pre-releases of IE 10*/
-    background-image: -o-linear-gradient(
-      90deg,
-      rgba(255, 136, 124, 1) 0%,
-      rgba(182, 50, 95, 1) 35%,
-      rgba(255, 173, 0, 1) 100%
-    ); /* For old Opera (11.1 to 12.0) */
-    background-image: linear-gradient(
-      90deg,
-      rgba(255, 136, 124, 1) 0%,
-      rgba(182, 50, 95, 1) 35%,
-      rgba(255, 173, 0, 1) 100%
-    ); /* Standard syntax; must be last */
-    color: transparent !important;
-    -webkit-background-clip: text;
-    background-clip: text;
     font-weight: 900;
     font-size: 30px;
     letter-spacing: 5px;
   }
   .btn-regal {
-      font-size: 26px;
-      margin: 40px 15px 40px 0px;
+    font-size: 26px;
+    margin: 40px 15px 40px 0px;
   }
   .tournament-row {
     opacity: 0;
@@ -169,18 +150,66 @@
     -ms-animation: fadeIn linear forwards 1s;
     &:nth-child(2) {
       animation-delay: 2s;
-  }
+    }
   }
 }
 
 .nft-container {
-    max-width: 100vw;
-    .nft-display-rows {
-        justify-content: center;
-    }
-    .nft-grid-flex {
-        justify-content: center;
-    }
+  max-width: 100vw;
+  .nft-display-rows {
+    justify-content: flex-start;
+  }
+  .nft-grid-flex {
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
 
+.featured-parallax {
+  // margin: 300px 0px 0px 0px;
+  // background-color: #cc6c38;
+  // background-size: 100vw 100vh;
+}
 
+$rotationAmt: -10;
+
+.featured {
+   font-size: 8em;
+   font-family: $primary-font;
+   transform: skew(#{$rotationAmt}deg) rotate(#{$rotationAmt}deg);
+   grid-area: text;
+   font-family: 'Sarpanch', sans-serif;
+   font-size: 20vmin;
+   color: #1d9099;
+   text-shadow: 1vmin 1vmin 0 #E79C10, -1vmin -1vmin 0 #D53A33;
+}
+
+.live {
+  font-size: 6em;
+  color: rgb(255, 255, 255);
+  transition: 0.5s ease-in-out;
+	text-shadow: 
+         10px 1px 1px #e7bc10,
+			   20px 1px 1px #d5a233, 
+			   30px 1px 1px #d5a233, 
+			   40px 1px 1px #d59433, 
+			   50px 1px 1px #d58733, 
+			   60px 1px 1px #d57133, 
+			   70px 1px 1px #d56333, 
+			   80px 1px 1px #d55e33, 
+			   90px 1px 1px #d54b33;
+    &:hover {
+      transition: 0.5s ease-in-out;
+      text-shadow: 
+      10px 1px 1px #d54b33,
+      20px 1px 1px #d55e32,
+      30px 1px 1px #d56333, 
+      40px 1px 1px #d57133, 
+      50px 1px 1px #d58733, 
+      60px 1px 1px #d59433, 
+      70px 1px 1px #d5a233, 
+      80px 1px 1px #d5a233, 
+      90px 1px 1px #e7bc10,
+
+    }
+}

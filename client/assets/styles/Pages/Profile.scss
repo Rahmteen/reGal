@@ -1,23 +1,41 @@
-.profile {
-    color: white;
+.profile-featured-nft {
+    .nft-card {
+    	background-image: -webkit-linear-gradient(
+		90deg,
+		rgba(255, 136, 124, 1) 0%,
+		rgba(182, 50, 95, 1) 35%,
+		rgba(255, 173, 0, 1) 100%
+	  ); /* For Chrome and Safari */
+	  background-image: -moz-linear-gradient(
+		90deg,
+		rgba(255, 136, 124, 1) 0%,
+		rgba(182, 50, 95, 1) 35%,
+		rgba(255, 173, 0, 1) 100%
+	  ); /* For old Fx (3.6 to 15) */
+	  background-image: -ms-linear-gradient(
+		90deg,
+		rgba(255, 136, 124, 1) 0%,
+		rgba(182, 50, 95, 1) 35%,
+		rgba(255, 173, 0, 1) 100%
+	  ); /* For pre-releases of IE 10*/
+	  background-image: -o-linear-gradient(
+		90deg,
+		rgba(255, 136, 124, 1) 0%,
+		rgba(182, 50, 95, 1) 35%,
+		rgba(255, 173, 0, 1) 100%
+	  ); /* For old Opera (11.1 to 12.0) */
+	  background-image: linear-gradient(
+		90deg,
+		rgba(255, 136, 124, 1) 0%,
+		rgba(182, 50, 95, 1) 35%,
+		rgba(255, 173, 0, 1) 100%
+	  ); /* Standard syntax; must be last */
+	  color: transparent !important;
+	  background-clip: text;
+    }
 }
 
-.profile-grid {
-    display: grid;
-    grid-template-columns: 320px 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    padding: 50px 300px 50px 300px;
-}
+.banner {
+    width:100%;
 
-#profile-card {
-    align-self:flex-start;
 }
-
-.card {
-    margin-bottom: 50px;
-}
-
-.card-deck {
-    margin: 10px; 
-}
-
