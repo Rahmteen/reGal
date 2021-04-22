@@ -48,6 +48,7 @@
             transition: 0.35s ease-in-out;
         }
     }
+
     .explore-card-image {
         border-radius: 2px 2px 0px 0px;
         object-fit:cover;
@@ -62,6 +63,19 @@
     }
     .card-body {
         padding: 0px 0px 0px 0px ;
+        .creator {
+            font-weight: 600;
+        }
+        .btn-regal {
+            margin-top: 3px;
+            padding: 15px 30px 15px 30px;
+        }
+        .price-col {
+            line-height: 25px;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+
         .nft-overlay {
             span {
                 &.negative {

@@ -68,7 +68,7 @@ const NftDisplay = ({
               </Col>
               <Col
                 lg={12}
-                className="offset-5 text-center mt-1 mb-4 mr-auto ml-auto"
+                className="creator offset-5 text-center mt-1 mb-4 mr-auto ml-auto h6"
               >
                 @{creator}{" "}
               </Col>

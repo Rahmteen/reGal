@@ -180,7 +180,7 @@ const Explore = () => {
         <Container className="explore-featured">
           <Parallax
             className="featured-parallax"
-            y={[0, -5]}
+            y={[-10, -5]}
             x={[-3, 5]}
             tagOuter="figure"
           >
