@@ -20,57 +20,23 @@
       font-weight: bold;
     }
   }
-  a {
-    color: #ffffff !important;
-    font-size: 20px;
-    // font-family: 'Majesti-Banner-BoldItalic', sans-serif;
-  }
-  .nav-link {
-    opacity: 0;
-    margin: 5px 10px 0 10px;
-    font-size: 20px;
-    animation: fadeIn linear forwards 2s;
-    -webkit-animation: fadeIn linear forwards 2s;
-    -moz-animation: fadeIn linear forwards 2s;
-    -o-animation: fadeIn linear forwards 2s;
-    -ms-animation: fadeIn linear forwards 2s;
-    &:hover {
-      color: $primary !important;
+  .nav-top {
+    align-items: left;
+      .nav-link {
+      color: #ffffff !important;
+      opacity: 0;
+      margin: 5px 10px 0 10px;
+      font-size: 20px;
+      animation: fadeIn linear forwards 2s;
+      -webkit-animation: fadeIn linear forwards 2s;
+      -moz-animation: fadeIn linear forwards 2s;
+      -o-animation: fadeIn linear forwards 2s;
+      -ms-animation: fadeIn linear forwards 2s;
+      &:hover {
+        color: $primary !important;
+      }
     }
-    // &:nth-child(0) {
-    //   animation-delay: 0.5s;
-    //   color: $light-grey !important;
-    //   &:hover {
-    //     color: $secondary !important;
-    //   }
-    // }
-    // &:nth-child(1) {
-    //   animation-delay: 1s;
-    //   color: $primary !important;
-    //   &:hover {
-    //     color: $light-grey !important;
-    //   }
-    // }
-    // &:nth-child(1) {
-    //   animation-delay: 1.5s;
-    //   color: $secondary !important;
-    //   &:hover {
-    //     color: $white !important;
-    //   }
-    // }
   }
 }
 
-.nav-container {
-  align-items: flex-end;
-  background-color: transparent;
 
-}
-
-.profile-pic {
-  width: 60px;
-}
-
-.nav-top {
-  align-items: left;
-}

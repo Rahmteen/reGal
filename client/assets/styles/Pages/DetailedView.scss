@@ -11,11 +11,12 @@
 }
 
 .nft-records {
+    color: #000!important;
     border: none!important;
     thead {
-        border: none!important;
         th {
-            border: none!important;
+            border-width: 1px!important;
+            border-color: black;
         }
     }
     tbody {

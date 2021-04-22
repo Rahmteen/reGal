@@ -27,16 +27,16 @@ const Footer = () => {
             </Col>
             </Row>
             <div className="social-icons pt-2 mt-2">
-              <Button className="social-footer" variant="floating">
+              <Button variant="floating">
                 <i className="fab fw fa-twitter"></i>
               </Button>
-              <Button className="social-footer" variant="floating">
+              <Button variant="floating">
                 <i className="fab fw fa-instagram"></i>
               </Button>
-              <Button className="social-footer" variant="floating">
+              <Button variant="floating">
                 <i className="fab fw fa-discord"></i>
               </Button>
-              <Button className="social-footer" variant="floating">
+              <Button variant="floating">
                 <i className="fab fw fa-medium"></i>
               </Button>
             </div>

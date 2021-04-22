@@ -18,7 +18,7 @@ const ProfileNftDisplay = ({
     // <Col fluid md={4} className="mb-5 nft-wrapper"></Col>
     <Fragment>
     {/* <Link className="card-link" to={`/details/${id}`}> */}
-      <Card className="nft-card">
+      <Card className="profile-card">
         <Card.Img className="profile-card-img"  src={image} style={{borderRadius: "15px"}} />
         {/* <div className="nft-overlay">
           <div className="d-block mb-1">
