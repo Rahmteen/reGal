@@ -69,6 +69,10 @@ module.exports = {
             },
           ],
         },
+        {
+          test: /\.sol/,
+          loader: 'truffle-solidity-loader'
+        }
       ]
   },
   resolve: {

@@ -1,5 +1,5 @@
 //Modules
-import React, { useState } from "react";
+import React from "react";
 import { Button, Modal, Container, Row, Col, Image } from "react-bootstrap";
 //Components
 import Web3 from "web3";
@@ -14,11 +14,7 @@ const provider = new WalletConnectProvider({
   infuraId: "27e484dcd9e3efcfd25a83a78777cdf1",
 });
 
-const ConnectWallet = () => {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+const ConnectWallet = ({show, handleClose}) => {
 
   const walletConnect = async () => {
     await provider.enable();
@@ -34,16 +30,7 @@ const ConnectWallet = () => {
   };
 
   return (
-    <>
-      <Button
-        className="btn-regal enableEthereumButton"
-        onClick={handleShow}
-      >
-        connect{"  "}
-        <img src={SignIn} width="20px" style={{marginLeft: "3px", marginBottom: "2px"}}/>
-      </Button>
-
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} centered>
         <Modal.Header closeButton>
           <Modal.Title>Connect Wallet</Modal.Title>
         </Modal.Header>
@@ -92,7 +79,6 @@ const ConnectWallet = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </>
   );
 };
 

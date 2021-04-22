@@ -139,6 +139,8 @@ const Profile = () => {
     //console.log(SimpleContract.methods)
   }, []);
 
+  
+
   return (
     <Fragment>
       <Container>

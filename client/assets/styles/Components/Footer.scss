@@ -1,33 +1,30 @@
 .footer {
-    background: #c75f67!important;
-    padding-bottom: 48px;
+  background: #c75f67!important;
+  padding-bottom: 48px;
 
-
-    .social-footer {
-      margin-bottom: 10px;
-      color: black;
-    }
+  .footer-nav {
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 15px;
+    color: black;
     .footer-logo {
       margin-top: 4px;
     }
-    .footer-nav-social {
-      justify-content: center;
-    }
   }
 
-.footer-nav {
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 15px;
-  color: black;
-}
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    margin-left: -15px;
+    margin-bottom: -30px;
 
-.social-icons {
-  display: flex;
-  justify-content: center;
-  padding-top: 30px;
-  margin-left: -15px;
-  margin-bottom: -30px
+    button {
+      margin-bottom: 10px;
+      color: black;
+    }
+  }
+    
 }
 
 

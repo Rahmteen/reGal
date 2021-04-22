@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from "axios";
 import { INft } from "../Models/Nft";
 import { IUser } from "../Models/User";
 
-const apiURL = process.env.DATE_API_URL || "";
+const apiURL = "";
 
 axios.defaults.baseURL = `${apiURL}/api`;
 

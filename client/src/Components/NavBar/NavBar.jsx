@@ -45,13 +45,13 @@ const Navigation = () => {
             className=""
             style={{ marginTop: "9px", paddingLeft: "0px" }}
           >
-            {window.ethereum.selectedAddress ? (
+            {/* {window.ethereum.selectedAddress ? (
               <Link to="/profile">
-                <img src={Profile} className="profile-pic"></img>
+                <img src={Profile} className="profile-pic" width="2%"></img>
               </Link>
             ) : (
               <ConnectWallet />
-            )}
+            )} */}
           </Nav.Item>
           </Nav>
         </Container>

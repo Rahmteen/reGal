@@ -1,188 +1,189 @@
-/* JUMBOTRON */
-.background-div {
+.gradiant-background {
   scroll-behavior:smooth;
   background: linear-gradient(
     180deg,
     #040404 0%,
     rgb(74, 27, 8) 40%,
     rgb(199, 96, 103) 100%
-  ) !important;
-}
+  );
 
-.scroll-div {
-  animation-delay: 10s;
-  position: static;
-}
-.scroll {
-  animation-delay: 5s;
-  animation-iteration-count: 2;
-  animation-duration: 2s;
-}
-.jumbotron {
-  box-shadow: 1vmin 1vmin 0 #E79C10, -1vmin -1vmin 0 #D53A33;
-  position: relative;
-  overflow: hidden;
-  height: 22vh;
-  width: 80%;
-  margin-left: 0;
-  // border-bottom: solid 3px white;
-  // border-top: solid 3px white;
-  opacity: 0;
-  animation: fadeIn linear forwards 1s;
-  -webkit-animation: fadeIn linear forwards 1s;
-  -moz-animation: fadeIn linear forwards 1s;
-  -o-animation: fadeIn linear forwards 1s;
-  -ms-animation: fadeIn linear forwards 1s;
-  border-image: linear-gradient(to bottom, #000000, #cb6367, rgba(0, 0, 0, 0))
-  1 100%;
+  .scroll-container {
+    animation-delay: 10s;
+    position: static;
 
-  &:hover {
-    .video-overlay {
-      right: 0;
+    h2 {
+      animation-delay: 5s;
+      animation-iteration-count: 2;
+      animation-duration: 2s;
     }
   }
-  .video-overlay {
-    z-index: 2;
-    position: absolute;
-    bottom: 10px;
-    right: -350px;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 15px;
-    -webkit-transition-duration: 0.3s;
-    -moz-transition-duration: 0.3s;
-    -o-transition-duration: 0.3s;
-    transition-duration: 0.3s;
 
-    a {
-      position: relative;
-      z-index: 4;
-    }
+  .about-container {
+    max-width: 85vw !important;
 
-    .overlay-values {
-      font-weight: bold;
-      font-size: 18px;
-    }
-  }
-  .overlay-text {
-    color: #ffffff;
-    font-size: 18px;
-    margin-top: -20px;
-    // font-family: "Majesti-Banner-BoldItalic", sans-serif;
-  }
-  h1 {
-    position: relative;
-    z-index: 2;
-    font-size: 50px !important;
-  }
-  #feature-video {
-    position: absolute;
-    height: auto;
-    width: auto;
-    min-height: 100%;
-    min-width: 100%;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate3d(-50%, -50%, 0);
-    transform: translate3d(-50%, -50%, 0);
-    z-index: 1;
-  }
-}
+    //Section 1
+    .premium-col {
+      border-right: solid 3px white;
+      opacity: 0;
+      animation: fadeIn linear forwards 1s;
+      -webkit-animation: fadeIn linear forwards 1s;
+      -moz-animation: fadeIn linear forwards 1s;
+      -o-animation: fadeIn linear forwards 1s;
+      -ms-animation: fadeIn linear forwards 1s;
+      border-image: linear-gradient(to bottom, #000000, #cb6367, rgba(0, 0, 0, 0)) 1 100%;
 
-.explore {
-  max-width: 85vw !important;
-
-  .carousel {
-    padding: 5px;
-    .carousel-item {
-      &.active {
-        display: flex !important;
-        justify-content: center;
+      &.about-section {
+        h1 {
+          font-size: 70px;
+          font-weight: 800;
+          text-align: right;
+        }
       }
-      img {
-        max-height: 800px;
-        min-width: auto;
+
+      &:nth-child(1) {
+        animation-delay: 1s;
+        color: $light-grey !important;
+      }
+
+      .premium {
+        font-weight: 900;
+        font-size: 30px;
+        letter-spacing: 5px;
+      }
+
+      .btn-regal {
+        font-size: 26px;
+        margin: 40px 15px 40px 0px;
+      }
+    }
+    
+    //Section 2
+    .tournament-col {
+      opacity: 0;
+      animation: fadeIn linear forwards 1s;
+      -webkit-animation: fadeIn linear forwards 1s;
+      -moz-animation: fadeIn linear forwards 1s;
+      -o-animation: fadeIn linear forwards 1s;
+      -ms-animation: fadeIn linear forwards 1s;
+
+      &:nth-child(2) {
+        animation-delay: 2s;
+      }
+      &.about-section {
+        .regal {
+          padding-top: 30px;
+          font-size: 30px;
+          font-weight: 800;
+          text-align: right;
+        }
       }
     }
   }
-  .about-section {
-    font-size: 70px;
-    font-weight: 800;
-    text-align: right;
-    &.regal {
-      padding-top: 30px;
-      font-size: 30px;
-      font-weight: 800;
-      text-align: right;
+
+  .display-container {
+
+    .featured-parallax {
+      transform: skew(#{$rotationAmt}deg) rotate(#{$rotationAmt}deg);
+      grid-area: text;
+      color: #1d9099;
+      text-shadow: 0.5vmin 0.5vmin 0 #E79C10, -0.5vmin -0.5vmin 0 #D53A33;
+      span {
+        font-size: 5em;
+        font-family: $primary-font;
+        font-family: 'Sarpanch', sans-serif;
+      }
+
+      .jumbotron {
+        box-shadow: 1vmin 1vmin 0 #E79C10, -1vmin -1vmin 0 #D53A33;
+        padding: 0px!important;
+        position: relative;
+        overflow: hidden;
+        height: 300px;
+        width: 80%;
+        margin-left: 0;
+        // border-bottom: solid 3px white;
+        // border-top: solid 3px white;
+        opacity: 0;
+        animation: fadeIn linear forwards 1s;
+        -webkit-animation: fadeIn linear forwards 1s;
+        -moz-animation: fadeIn linear forwards 1s;
+        -o-animation: fadeIn linear forwards 1s;
+        -ms-animation: fadeIn linear forwards 1s;
+        border-image: linear-gradient(to bottom, #000000, #cb6367, rgba(0, 0, 0, 0))
+        1 100%;
+      
+        &:hover {
+          .video-overlay {
+            right: 0;
+          }
+        }
+    
+        .video-overlay {
+          z-index: 2;
+          position: absolute;
+          bottom: 10px;
+          right: -350px;
+          background-color: rgba(0, 0, 0, 0.7);
+          padding: 15px;
+          -webkit-transition-duration: 0.3s;
+          -moz-transition-duration: 0.3s;
+          -o-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+      
+          a {
+            text-shadow: none!important;
+            position: relative;
+            z-index: 4;
+            &:hover {
+              color: #fff!important;
+            }
+          }
+      
+          .overlay-values {
+            text-shadow: none!important;
+            font-weight: bold;
+            font-size: 18px;
+          }
+        }
+    
+        .overlay-text {
+          text-shadow: none!important;
+          color: #ffffff;
+          font-size: 18px;
+          margin-top: -20px;
+          // font-family: "Majesti-Banner-BoldItalic", sans-serif;
+        }
+    
+        h1 {
+          position: relative;
+          z-index: 2;
+          font-size: 50px !important;
+        }
+    
+      }
     }
-  }
 
-  .premium-row {
-    border-right: solid 3px white;
-    opacity: 0;
-    animation: fadeIn linear forwards 1s;
-    -webkit-animation: fadeIn linear forwards 1s;
-    -moz-animation: fadeIn linear forwards 1s;
-    -o-animation: fadeIn linear forwards 1s;
-    -ms-animation: fadeIn linear forwards 1s;
-    &:nth-child(1) {
-      animation-delay: 1s;
-      color: $light-grey !important;
+    .nft-container {
+      max-width: 100vw;
+      .nft-display-rows {
+        justify-content: flex-start;
+      }
+      .nft-grid-flex {
+        justify-content: flex-start;
+        align-items: center;
+      }
     }
-    border-image: linear-gradient(to bottom, #000000, #cb6367, rgba(0, 0, 0, 0))
-      1 100%;
+    
   }
 
-  .premium {
-    font-weight: 900;
-    font-size: 30px;
-    letter-spacing: 5px;
-  }
-  .btn-regal {
-    font-size: 26px;
-    margin: 40px 15px 40px 0px;
-  }
-  .tournament-row {
-    opacity: 0;
-    animation: fadeIn linear forwards 1s;
-    -webkit-animation: fadeIn linear forwards 1s;
-    -moz-animation: fadeIn linear forwards 1s;
-    -o-animation: fadeIn linear forwards 1s;
-    -ms-animation: fadeIn linear forwards 1s;
-    &:nth-child(2) {
-      animation-delay: 2s;
-    }
-  }
 }
 
-.nft-container {
-  max-width: 100vw;
-  .nft-display-rows {
-    justify-content: flex-start;
-  }
-  .nft-grid-flex {
-    justify-content: flex-start;
-    align-items: center;
-  }
-}
+// .featured-parallax {
+//   // margin: 300px 0px 0px 0px;
+//   // background-color: #cc6c38;
+//   // background-size: 100vw 100vh;
+// }
 
-.featured-parallax {
-  // margin: 300px 0px 0px 0px;
-  // background-color: #cc6c38;
-  // background-size: 100vw 100vh;
-}
-
-$rotationAmt: -10;
-
-.featured {
-   font-size: 8em;
-   font-family: $primary-font;
-   transform: skew(#{$rotationAmt}deg) rotate(#{$rotationAmt}deg);
-   grid-area: text;
-   font-family: 'Sarpanch', sans-serif;
-   font-size: 20vmin;
-   color: #1d9099;
-   text-shadow: 1vmin 1vmin 0 #E79C10, -1vmin -1vmin 0 #D53A33;
-}
 
 .live {
   font-size: 6em;

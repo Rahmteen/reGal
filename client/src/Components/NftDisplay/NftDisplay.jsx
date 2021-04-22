@@ -20,39 +20,36 @@ const NftDisplay = ({
     <Link className="card-link" to={`/details/${id}`}>
       <Card className="nft-display">
         <Card.Img className="explore-card-image" src={image} />
-
-        <div className="nft-overlay">
-          <div className="d-block mb-1">
-            {previous == null ? (
-              <div className="text-right">
-                <span className="overlay-values text-white ">
-                  {current} Ξ
-                </span>{" "}
-                <br />
-                <span className="overlay-values text-white first">First Sale</span>
-              </div>
-            ) : (
-              <div className="text-right">
-                <span className="overlay-values text-white ">
-                  {current} Ξ
-                </span>{" "}
-                <br />
-                {previous / current > 1 ? (
-                  <span className="overlay-values text-white positive">
-                    + {Number((previous / current).toFixed(4) * 100)} %
-                  </span>
-                ) : (
-                  <span className="overlay-values text-white negative">
-                    - {Number((previous / current).toFixed(4) * 100)} %
-                  </span>
-                )}
-              </div>
-            )}
-          </div>
-        </div>
-
         <Card.Body>
-          <Card.Text className="nft-caption">
+          <div className="nft-overlay">
+            <div className="d-block mb-1">
+              {previous == null ? (
+                <div className="text-right">
+                  <span className="overlay-values text-white ">
+                    {current} Ξ
+                  </span>{" "}
+                  <br />
+                  <span className="overlay-values text-white first">First Sale</span>
+                </div>
+              ) : (
+                <div className="text-right">
+                  <span className="overlay-values text-white ">
+                    {current} Ξ
+                  </span>{" "}
+                  <br />
+                  {previous / current > 1 ? (
+                    <span className="overlay-values text-white positive">
+                      + {Number((previous / current).toFixed(4) * 100)} %
+                    </span>
+                  ) : (
+                    <span className="overlay-values text-white negative">
+                      - {Number((previous / current).toFixed(4) * 100)} %
+                    </span>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
             <Row className="nft-activity mx-auto">
               <Col className="nft-user">
                 <img src={Profile} />
@@ -72,7 +69,6 @@ const NftDisplay = ({
                 </span>
               </Col>
             </Row>
-          </Card.Text>
         </Card.Body>
         <Card.Footer className="nft-footer">
           <div className="pr-3">
