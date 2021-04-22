@@ -17,6 +17,41 @@ body {
 	background-color: $black;
 }
 
+.text-prime {
+
+	@media (min-width: 300px) { font-size: 2.5em }
+	// Small devices (landscape phones, 576px and up)
+	@media (min-width: 576px) { font-size: 2em }
+
+	// Medium devices (tablets, 768px and up)
+	@media (min-width: 768px) { font-size: 2em }
+
+	// Large devices (desktops, 992px and up)
+	@media (min-width: 992px) { font-size: 2em  }
+
+	// Extra large devices (large desktops, 1200px and up)
+	@media (min-width: 1200px) { font-size: 4.5em }
+
+}
+
+.text-second {
+
+	@media (min-width: 300px) { font-size: 2em }
+
+	// Small devices (landscape phones, 576px and up)
+	@media (min-width: 576px) { font-size: 2em }
+
+	// Medium devices (tablets, 768px and up)
+	@media (min-width: 768px) { font-size: 2em }
+
+	// Large devices (desktops, 992px and up)
+	@media (min-width: 992px) { font-size: 2em  }
+
+	// Extra large devices (large desktops, 1200px and up)
+	@media (min-width: 1200px) { font-size: 2.25em }
+
+}
+
 .container {
 	flex: 1 0 auto;
 }

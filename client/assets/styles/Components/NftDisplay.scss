@@ -4,10 +4,40 @@
     border-radius: 7px;
     color: white;
 
+    .nft-activity {
+        border-radius: 2px;
+        display: flex;
+        font-size: 1.30em;
+        font-weight: 600;
+        z-index: 2;
+        position: absolute;
+        bottom: 118px;
+        right: 60px;
+        padding: 10px 0px 10px 0px;
+        text-align: left;
+        color: white;
+        padding-left: auto !important;
+        transition: 0.5s ease-in-out;
+        .nft-details {
+            display: block;
+
+            a {
+                font-size: 18px;
+                font-weight: bold;
+                letter-spacing: 2px;
+
+                &:hover {
+                    color: $primary!important;
+                }
+            }
+        }
+    }
+
     .profile-image {
         width: 25%;
         
     }
+
     .price-nft {
         font-size: 1.85em;
         color: green;
@@ -25,7 +55,6 @@
         width: 1200px;
         object-fit:cover;
         height: 400px;
-
     }
 
     .nft-body {
@@ -60,34 +89,7 @@
             }
         }
 
-        .nft-activity {
-            border-radius: 2px;
-            display: flex;
-            font-size: 1.30em;
-            font-weight: 600;
-            z-index: 2;
-            position: absolute;
-            bottom: 118px;
-            right: 60px;
-            padding: 10px 0px 10px 0px;
-            text-align: left;
-            color: white;
-            padding-left: auto !important;
-            transition: 0.5s ease-in-out;
-            .nft-details {
-                display: block;
 
-                a {
-                    font-size: 18px;
-                    font-weight: bold;
-                    letter-spacing: 2px;
-
-                    &:hover {
-                        color: $primary!important;
-                    }
-                }
-            }
-        }
     }
 
     .nft-footer {

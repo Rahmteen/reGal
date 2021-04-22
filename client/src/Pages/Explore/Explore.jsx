@@ -107,36 +107,36 @@ const Explore = () => {
 
   //the main page after landing for relevant material - this will morph into a trending section as userbase increases.
   return (
+    /* SCROLL ANIMATION */
     <div className="gradiant-background">
-
       <div className="scroll-container animate__animated animate__fadeOutDown pl-5 pt-5">
         <h2 className="scroll animate__animated animate__fadeInDown text-white h4">
           scroll <br />
           <i className="fas fa-angle-double-down pl-4"></i>
         </h2>
       </div>
-
+    {/* CONTAINER FOR PREMIUM NFT MARKETPLACE GRID */}
       <Container className="about-container">
         <Parallax
-          className="mb-5 mt-5"
+          className=""
           y={[0, 0]}
           tagOuter="figure"
         >
           <Row>
-            <Col md={6} className="premium-col mt-2 pr-5 about-section">
+            <Col md={6} className="premium-col mt-2 about-section">
               <p className="gradient premium text-white text-end">PREMIUM NFT MARKETPLACE</p>
-              <h1 className="text-white mb-2">
+              <h1 className="text-white mb-2 text-prime">
                 A platform
                 <span className="d-block">for artists</span>
                 <span className="d-block">by artists</span>
               </h1>
               <Button className="btn-regal float-right">apply</Button>
             </Col>
-            <Col md={6} className="tournament-col mt-5 pl-5 about-section">
-              <p className="regal text-white text-start mt-5 pr-3">
-                Regal was founded to <br />
+            <Col lg={4} md={6} className="tournament-col about-section d-flex align-items-center text-second ">
+              <p className="regal text-white text-start">
+                Regal was founded to{" "} 
                 <span style={{ color: "#ed7779" }}>
-                  disrupt the power imbalances <br />
+                  disrupt the power imbalances{" "}
                 </span>{" "}
                 that exist in the art industry today. 
               </p>
@@ -145,18 +145,19 @@ const Explore = () => {
         </Parallax>
       </Container>
 
+      {/* CONTAINER FOR TOURNAMNETS GRID */}
+    <Container>
       <Parallax
-        className="mb-5 mt-5 mb-5"
-        y={[30, 0]}
-        x={[20, 10]}
+        className=""
+        y={[10, 0]}
+        x={[10, 5]}
         tagOuter="figure"
       >
         <Row>
-          <Col md={4}>
-            <h1 className="gradient premium text-start pt-1">
+          <Col md={6}>
+            <p className="gradient tournament text-start">
               INTRODUCING TOURNAMENTS
-            </h1>
-            <br />
+            </p>
             <h2 className="tour-section text-white text-start">
               Compete with your art <br />
               Show the world your creations
@@ -167,12 +168,12 @@ const Explore = () => {
               <Button className="btn-regal">learn more</Button>
             </div>
           </Col>
-          <Col md={8} className="text-center">
+          <Col md={6} className="text-start">
               <Image src={Tour} width="50%" />
           </Col>
         </Row>
       </Parallax>
-
+      </Container>
 
       <Container className="display-container">
           <Parallax
