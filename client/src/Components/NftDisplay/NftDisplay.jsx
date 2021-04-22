@@ -20,6 +20,7 @@ const NftDisplay = ({
     <Link className="card-link" to={`/details/${id}`}>
       <Card className="nft-display">
         <Card.Img className="explore-card-image" src={image} />
+
         <div className="nft-overlay">
           <div className="d-block mb-1">
             {previous == null ? (
@@ -86,6 +87,7 @@ const NftDisplay = ({
         </Card.Footer>
       </Card>
     </Link>
+
     </Fragment>
   );
 };

@@ -108,6 +108,7 @@ const Explore = () => {
   //the main page after landing for relevant material - this will morph into a trending section as userbase increases.
   return (
     <Fragment>
+
       <div className="background-div ">
         <div className="scroll-div animate__animated animate__fadeOutDown pl-5 pt-5 mt-5">
           <h2 className="scroll animate__animated animate__fadeInDown text-white h4">
@@ -166,7 +167,7 @@ const Explore = () => {
                   Compete with your art <br />
                   Show the world your creations
                   <br />
-                  Collect unique, curated pieces
+                  Collect signature pieces
                 </h2>
                 <div className="text-start mt-n2 mr-n3 mb-n5">
                   <Button className="btn-regal">learn more</Button>
