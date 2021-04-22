@@ -8,7 +8,7 @@
   );
   // GLOBAL PADDING FOR ALL CONTAINERS
   .explore-premium {
-    margin-bottom: 150px !important;
+    margin-bottom: 250px !important;
     margin-top: 150px !important;
   }
   .explore-tour {
@@ -50,13 +50,13 @@
     max-width: 85vw !important;
     //Section 1
     .premium-col {
-      border-right: solid 3px white;
       opacity: 0;
       animation: fadeIn linear forwards 1s;
       -webkit-animation: fadeIn linear forwards 1s;
       -moz-animation: fadeIn linear forwards 1s;
       -o-animation: fadeIn linear forwards 1s;
       -ms-animation: fadeIn linear forwards 1s;
+      border-right: solid 3px white;
       border-image: linear-gradient(to bottom, #000000, #cb6367, rgba(0, 0, 0, 0)) 1 100%;
       &.about-section {
         h1 {
