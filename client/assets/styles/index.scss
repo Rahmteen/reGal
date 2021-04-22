@@ -17,35 +17,35 @@ body {
 	background-color: $black;
 }
 
-.text-prime {
+.font-primary {
 
-	@media (min-width: 300px) { font-size: 2.5em }
+	@media (min-width: 300px) { font-size: 3em }
 	// Small devices (landscape phones, 576px and up)
-	@media (min-width: 576px) { font-size: 2em }
+	@media (min-width: 576px) { font-size: 3.5em }
 
 	// Medium devices (tablets, 768px and up)
-	@media (min-width: 768px) { font-size: 2em }
+	@media (min-width: 768px) { font-size: 3.75em }
 
 	// Large devices (desktops, 992px and up)
-	@media (min-width: 992px) { font-size: 2em  }
+	@media (min-width: 992px) { font-size: 4.25em  }
 
 	// Extra large devices (large desktops, 1200px and up)
 	@media (min-width: 1200px) { font-size: 4.5em }
 
 }
 
-.text-second {
+.font-secondary {
 
-	@media (min-width: 300px) { font-size: 2em }
+	@media (min-width: 300px) { font-size: 1.5em }
 
 	// Small devices (landscape phones, 576px and up)
-	@media (min-width: 576px) { font-size: 2em }
+	@media (min-width: 576px) { font-size: 1.75em }
 
 	// Medium devices (tablets, 768px and up)
-	@media (min-width: 768px) { font-size: 2em }
+	@media (min-width: 768px) { font-size: 1.95em }
 
 	// Large devices (desktops, 992px and up)
-	@media (min-width: 992px) { font-size: 2em  }
+	@media (min-width: 992px) { font-size: 2.1em  }
 
 	// Extra large devices (large desktops, 1200px and up)
 	@media (min-width: 1200px) { font-size: 2.25em }

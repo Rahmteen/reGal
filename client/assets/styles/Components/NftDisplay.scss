@@ -1,18 +1,16 @@
 .nft-display {
     background-color: #151515;
-    box-shadow: rgb(97, 30, 30) 10px 10px 8px;
-    border-radius: 7px;
+    box-shadow: rgb(97, 30, 30) 3px 3px 8px;
+    border-radius: 2px;
     color: white;
-
+    height: auto;
+    width: 500px;
     .nft-activity {
-        border-radius: 2px;
         display: flex;
         font-size: 1.30em;
         font-weight: 600;
         z-index: 2;
         position: absolute;
-        bottom: 118px;
-        right: 60px;
         padding: 10px 0px 10px 0px;
         text-align: left;
         color: white;
@@ -32,7 +30,6 @@
             }
         }
     }
-
     .profile-image {
         width: 25%;
         
@@ -51,31 +48,19 @@
         }
     }
     .explore-card-image {
-        padding: 35px 40px 0px 40px;
-        width: 1200px;
+        border-radius: 2px 2px 0px 0px;
         object-fit:cover;
+        margin-right: auto;
+        margin-left: auto;
         height: 400px;
+        overflow: hidden;
     }
-
     .nft-body {
         font-size: 1.25em;
         line-height: 20px;
     }
-
     .card-body {
-
         .nft-overlay {
-
-            // font-size: 14px;
-            // font-weight: 600;
-            // z-index: 2;
-            // position: absolute;
-            // bottom: 200px;
-            // right: 0px;
-            // background-color: white;
-            // padding: 10px 20px 25px 15px;
-            // transition: 0.5s;
-            // border-radius: 10px;
             span {
                 &.negative {
                     color: red !important;
@@ -88,21 +73,11 @@
                 }
             }
         }
-
-
     }
-
     .nft-footer {
         font-size: 1em;
         display: flex;
         // display: flex;
         justify-content:center;
     }
-    
-    // .card-link {
-    //     a:hover, a:visited, a:link, a:active
-    //     {
-    //         text-decoration: none;
-    //     }
-    // }
 }

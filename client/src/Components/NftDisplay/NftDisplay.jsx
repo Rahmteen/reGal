@@ -19,7 +19,7 @@ const NftDisplay = ({
   return (
     // <Col fluid md={4} className="mb-5 nft-wrapper"></Col>
     <Fragment>
-      <Link className="card-link" to={`/details/${id}`}>
+      <Link className="card-link" >
         <Card className="nft-display mb-3">
           <Card.Img className="explore-card-image" src={image} />
           <Card.Body>
@@ -58,13 +58,15 @@ const NftDisplay = ({
               <Col className="nft-user">
                 {/* <img src={Profile} className="profile-image"/> */}
               </Col>
-            <Col className="text-right">
+
+            </Row>
+            <Row>
+            <Col lg={12} className="text-center price-nft">{current} Ξ</Col>
+            <Col lg={6} className="text-end mt-3 "><Link to={`/details/${id}`}><Button className="btn-regal ">Bid</Button></Link></Col>
+            <Col lg={6} className="text-start mt-3 d-flex align-items-center">
                 @{creator} <br/>
                 {title}
             </Col>
-            </Row>
-            <Row>
-            <Col className="text-center price-nft">{current} Ξ</Col>
             </Row>
           </Card.Body>
           <Card.Footer className="nft-footer">

@@ -120,19 +120,20 @@ const Explore = () => {
         <Parallax
           className=""
           y={[0, 0]}
+          x={[0, 5]}
           tagOuter="figure"
         >
-          <Row>
-            <Col md={6} className="premium-col mt-2 about-section">
+          <Row className="explore-premium">
+            <Col xm={8} sm={6} md={5} lg={5} className="premium-col mt-2 about-section">
               <p className="gradient premium text-white text-end">PREMIUM NFT MARKETPLACE</p>
-              <h1 className="text-white mb-2 text-prime">
+              <h1 className="text-white mb-2 font-primary">
                 A platform
                 <span className="d-block">for artists</span>
                 <span className="d-block">by artists</span>
               </h1>
               <Button className="btn-regal float-right">apply</Button>
             </Col>
-            <Col lg={4} md={6} className="tournament-col about-section d-flex align-items-center text-second ">
+            <Col xs={8} sm={4} lg={4} md={6} className="tournament-col about-section d-flex align-items-center font-secondary mt-xs-2">
               <p className="regal text-white text-start">
                 Regal was founded to{" "} 
                 <span style={{ color: "#ed7779" }}>
@@ -146,26 +147,26 @@ const Explore = () => {
       </Container>
 
       {/* CONTAINER FOR TOURNAMNETS GRID */}
-    <Container>
+    <Container className="explore-tour">
       <Parallax
         className=""
-        y={[10, 0]}
-        x={[10, 5]}
+        y={[5, 0]}
+        x={[15, 5]}
         tagOuter="figure"
       >
-        <Row>
+        <Row >
           <Col md={6}>
             <p className="gradient tournament text-start">
               INTRODUCING TOURNAMENTS
             </p>
-            <h2 className="tour-section text-white text-start">
+            <h2 className="tour-section text-white text-start font-secondary">
               Compete with your art <br />
               Show the world your creations
               <br />
               Collect unique, curated pieces
             </h2>
             <div className="text-start">
-              <Button className="btn-regal">learn more</Button>
+              <Button className="btn-regal mt-3">learn more</Button>
             </div>
           </Col>
           <Col md={6} className="text-start">
@@ -175,14 +176,17 @@ const Explore = () => {
       </Parallax>
       </Container>
 
-      <Container className="display-container">
+      <Container className="display-container mt-3">
+        <Container className="explore-featured">
           <Parallax
-            className="featured-parallax mt-3 mb-2"
-            y={[10, 0]}
-            x={[-10, 5]}
+            className="featured-parallax"
+            y={[0, -5]}
+            x={[-3, 5]}
             tagOuter="figure"
           >
-            <span className="featured-header text-white">FEATURED</span>
+            <span className="featured-header text-white font-primary">FEATURED</span><br/>
+            <span className="featured-header text-white font-primary">FEATURED</span><br/>
+            <span className="featured-header text-white font-primary">FEATURED</span>
             <Jumbotron style={{ position: "relative" }}>
               <div className="video-overlay">
                 <div className="d-block mb-1">
@@ -199,7 +203,7 @@ const Explore = () => {
                 </div>
                 <div className="d-block mb-1">
                   <Link
-                    className="overlay-values text-secondary"
+                    className="overlay-values font-secondaryary"
                     to="/test"
                   >
                     Place A Bid
@@ -212,11 +216,12 @@ const Explore = () => {
               </video>
             </Jumbotron>
           </Parallax>
+          </Container>
           {/* <Row className="h3 text-white text-center">Featured Collectable</Row> */}
-          <Parallax y={[20, -20]} tagOuter="figure">
-            <Row>
+          <Parallax y={[0, 5]} tagOuter="figure">
+            <Row className="explore-nfts">
               <Col className="h6 text-white mb-4" md={12}>
-                <div className="text-start text-majesti live">
+                <div className="text-start text-majesti live font-primary">
                   Live Activity
                 </div>
                 <div
@@ -235,7 +240,7 @@ const Explore = () => {
             <Row className="pb-5">
               {nfts.length &&
                 nfts.map((nft, index) => (
-                  <Col md={4} sm={6} key={index} className="mb-3">
+                  <Col lg={4} md={6} sm={12} key={index} className="pb-3">
                     <NftDisplay
                       likes={nft.like}
                       comments={nft.comments}
