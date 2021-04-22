@@ -8,14 +8,18 @@
   );
 
   .scroll-container {
-    animation-delay: 10s;
+    animation-delay: 5.5s;
     position: static;
 
     h2 {
-      animation-delay: 5s;
+      animation-delay: 1.5s;
       animation-iteration-count: 2;
       animation-duration: 2s;
     }
+  }
+
+  .parallax-outer {
+    margin: 0;
   }
 
   .about-container {
@@ -83,6 +87,7 @@
   .display-container {
 
     .featured-parallax {
+      margin-top: 30px;
       transform: skew(#{$rotationAmt}deg) rotate(#{$rotationAmt}deg);
       grid-area: text;
       color: #1d9099;

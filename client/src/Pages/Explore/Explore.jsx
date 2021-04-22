@@ -50,7 +50,7 @@ const Explore = () => {
       comments: 56,
       bid: 27,
       title: "dilip",
-      creator: "lucid monday",
+      creator: "lucidmonday",
       date_mint: "01/17/2021",
       current: 4.32,
       previous: null,
@@ -61,7 +61,7 @@ const Explore = () => {
       likes: 89,
       comments: 17,
       bid: 2,
-      title: "late year",
+      title: "lateyear",
       creator: "othello",
       date_mint: "02/01/2021",
       current: 0.9,
@@ -85,7 +85,7 @@ const Explore = () => {
       likes: 32,
       comments: 10,
       bid: 60,
-      title: "prince kong",
+      title: "princekong",
       creator: "cgYoda",
       date_mint: "02/01/2021",
       current: 1.3,
@@ -97,7 +97,7 @@ const Explore = () => {
       likes: 49,
       comments: 16,
       bid: 32,
-      title: "dead space",
+      title: "deadspace",
       creator: "elon",
       date_mint: "01/17/2021",
       current: 10.92,
@@ -124,7 +124,7 @@ const Explore = () => {
         >
           <Row>
             <Col md={6} className="premium-col mt-2 pr-5 about-section">
-              <p className="gradient premium text-white ">PREMIUM NFT MARKETPLACE</p>
+              <p className="gradient premium text-white text-end">PREMIUM NFT MARKETPLACE</p>
               <h1 className="text-white mb-2">
                 A platform
                 <span className="d-block">for artists</span>
@@ -132,16 +132,13 @@ const Explore = () => {
               </h1>
               <Button className="btn-regal float-right">apply</Button>
             </Col>
-            <Col md={6} className="tournament-col mt-2 pl-5 about-section">
+            <Col md={6} className="tournament-col mt-5 pl-5 about-section">
               <p className="regal text-white text-start mt-5 pr-3">
                 Regal was founded to <br />
                 <span style={{ color: "#ed7779" }}>
                   disrupt the power imbalances <br />
                 </span>{" "}
-                that exist in the art industry today. <br /> We do not take a
-                cut from <br />
-                your work, and{" "}
-                <span style={{ color: "#ed7779" }}>we never will.</span>
+                that exist in the art industry today. 
               </p>
             </Col>
           </Row>
@@ -150,7 +147,7 @@ const Explore = () => {
 
       <Parallax
         className="mb-5 mt-5 mb-5"
-        y={[0, 0]}
+        y={[30, 0]}
         x={[20, 10]}
         tagOuter="figure"
       >
@@ -179,9 +176,9 @@ const Explore = () => {
 
       <Container className="display-container">
           <Parallax
-            className="featured-parallax mt-2 mb-2"
-            y={[15, 0]}
-            x={[-10, 0]}
+            className="featured-parallax mt-3 mb-2"
+            y={[10, 0]}
+            x={[-10, 5]}
             tagOuter="figure"
           >
             <span className="featured-header text-white">FEATURED</span>
@@ -215,7 +212,7 @@ const Explore = () => {
             </Jumbotron>
           </Parallax>
           {/* <Row className="h3 text-white text-center">Featured Collectable</Row> */}
-          <Parallax y={[20, 0]} tagOuter="figure">
+          <Parallax y={[20, -20]} tagOuter="figure">
             <Row>
               <Col className="h6 text-white mb-4" md={12}>
                 <div className="text-start text-majesti live">
