@@ -25,12 +25,12 @@ export const particle_params = {
       opacity: {
         value: 1,
         random: true,
-        anim: { enable: true, speed: 1, opacity_min: 0, sync: false },
+        anim: { enable: true, speed: 2, opacity_min: 0, sync: false },
       },
       size: {
         value: 1,
         random: true,
-        anim: { enable: false, speed: 1, size_min: 0.3, sync: false },
+        anim: { enable: false, speed: 2, size_min: 0.3, sync: false },
       },
       line_linked: {
         enable: false,
