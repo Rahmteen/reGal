@@ -1,26 +1,82 @@
 .nft-display {
-    border-radius: 15px;
+    background-color: #151515;
+    box-shadow: rgb(97, 30, 30) 3px 3px 8px;
+    border-radius: 2px;
+    color: white;
+    height: auto;
+    width: 500px;
+    .nft-activity {
+        display: flex;
+        font-size: 1.30em;
+        font-weight: 600;
+        z-index: 2;
+        position: absolute;
+        padding: 0px 0px 0px 0px;
+        text-align: left;
+        color: white;
+        padding-left: auto !important;
+        transition: 0.5s ease-in-out;
+        .nft-details {
+            display: block;
 
-    .explore-card-image {
-        border-radius: 15px 15px 0px 0px;
-        padding: 3px;
-        width: 1200px;
-        object-fit:cover;
-        height: 400px;
+            a {
+                font-size: 18px;
+                font-weight: bold;
+                letter-spacing: 2px;
+
+                &:hover {
+                    color: $primary!important;
+                }
+            }
+        }
+    }
+    .profile-image {
+        width: 25%;
+        
     }
 
+    .price-nft {
+        font-size: 1.85em;
+        color: green;
+        font-weight: 700;
+    }
+
+
+    &:hover {
+        .nft-activity {
+            background-color: #151515 !important;
+            transition: 0.35s ease-in-out;
+        }
+    }
+
+    .explore-card-image {
+        border-radius: 2px 2px 0px 0px;
+        object-fit:cover;
+        margin-right: auto;
+        margin-left: auto;
+        height: 400px;
+        overflow: hidden;
+    }
+    .nft-body {
+        font-size: 1.25em;
+        line-height: 20px;
+    }
     .card-body {
+        padding: 0px 0px 0px 0px ;
+        .creator {
+            font-weight: 600;
+        }
+        .btn-regal {
+            margin-top: 3px;
+            padding: 15px 30px 15px 30px;
+        }
+        .price-col {
+            line-height: 25px;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
 
         .nft-overlay {
-            font-size: 14px;
-            font-weight: 600;
-            z-index: 2;
-            position: absolute;
-            bottom: 250px;
-            right: 8px;
-            background-color: rgb(0, 0, 0);
-            border-radius: 4px 4px 0px 4px;
-            padding: 10px 15px 10px 15px;
             span {
                 &.negative {
                     color: red !important;
@@ -29,43 +85,15 @@
                     color: green !important;
                 }
                 &.first {
-                    color: yellow !important;
-                }
-            }
-        }
-
-        .nft-activity {
-            display: flex;
-            color: black;
-            width: 100%;
-
-            .nft-details {
-                display: block;
-
-                a {
-                    font-size: 18px;
-                    font-weight: bold;
-                    letter-spacing: 2px;
-
-                    &:hover {
-                        color: $primary!important;
-                    }
+                    color: rgb(187, 115, 33) !important;
                 }
             }
         }
     }
-
     .nft-footer {
-        font-size: 10px;
+        font-size: 1em;
         display: flex;
         // display: flex;
-        justify-content:flex-start;
+        justify-content:center;
     }
-    
-    // .card-link {
-    //     a:hover, a:visited, a:link, a:active
-    //     {
-    //         text-decoration: none;
-    //     }
-    // }
 }

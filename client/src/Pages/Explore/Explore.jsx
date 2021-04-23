@@ -50,7 +50,7 @@ const Explore = () => {
       comments: 56,
       bid: 27,
       title: "dilip",
-      creator: "lucid monday",
+      creator: "lucidmonday",
       date_mint: "01/17/2021",
       current: 4.32,
       previous: null,
@@ -61,7 +61,7 @@ const Explore = () => {
       likes: 89,
       comments: 17,
       bid: 2,
-      title: "late year",
+      title: "lateyear",
       creator: "othello",
       date_mint: "02/01/2021",
       current: 0.9,
@@ -85,7 +85,7 @@ const Explore = () => {
       likes: 32,
       comments: 10,
       bid: 60,
-      title: "prince kong",
+      title: "princekong",
       creator: "cgYoda",
       date_mint: "02/01/2021",
       current: 1.3,
@@ -97,7 +97,7 @@ const Explore = () => {
       likes: 49,
       comments: 16,
       bid: 32,
-      title: "dead space",
+      title: "deadspace",
       creator: "elon",
       date_mint: "01/17/2021",
       current: 10.92,
@@ -107,84 +107,86 @@ const Explore = () => {
 
   //the main page after landing for relevant material - this will morph into a trending section as userbase increases.
   return (
+    /* SCROLL ANIMATION */
     <div className="gradiant-background">
-
       <div className="scroll-container animate__animated animate__fadeOutDown pl-5 pt-5">
         <h2 className="scroll animate__animated animate__fadeInDown text-white h4">
           scroll <br />
           <i className="fas fa-angle-double-down pl-4"></i>
         </h2>
       </div>
-
+    {/* CONTAINER FOR PREMIUM NFT MARKETPLACE GRID */}
       <Container className="about-container">
         <Parallax
-          className="mb-5 mt-5"
+          className=""
           y={[0, 0]}
+          x={[0, 5]}
           tagOuter="figure"
         >
-          <Row>
-            <Col md={6} className="premium-col mt-2 pr-5 about-section">
-              <p className="gradient premium text-white ">PREMIUM NFT MARKETPLACE</p>
-              <h1 className="text-white mb-2">
+          <Row className="explore-premium">
+            <Col xm={8} sm={6} md={5} lg={5} className="premium-col mt-2 about-section">
+              <p className="gradient premium text-white text-end">PREMIUM NFT MARKETPLACE</p>
+              <h1 className="text-white mb-2 font-primary">
                 A platform
                 <span className="d-block">for artists</span>
                 <span className="d-block">by artists</span>
               </h1>
               <Button className="btn-regal float-right">apply</Button>
             </Col>
-            <Col md={6} className="tournament-col mt-2 pl-5 about-section">
-              <p className="regal text-white text-start mt-5 pr-3">
-                Regal was founded to <br />
+            <Col xs={8} sm={4} lg={4} md={6} className="tournament-col about-section d-flex align-items-center font-secondary mt-xs-2">
+              <p className="regal text-white text-start">
+                Regal was founded to{" "} 
                 <span style={{ color: "#ed7779" }}>
-                  disrupt the power imbalances <br />
+                  disrupt the power imbalances{" "}
                 </span>{" "}
-                that exist in the art industry today. <br /> We do not take a
-                cut from <br />
-                your work, and{" "}
-                <span style={{ color: "#ed7779" }}>we never will.</span>
+                that exist in the art industry today. 
               </p>
             </Col>
           </Row>
         </Parallax>
       </Container>
 
+      {/* CONTAINER FOR TOURNAMNETS GRID */}
+    <Container className="explore-tour">
       <Parallax
-        className="mb-5 mt-5 mb-5"
-        y={[0, 0]}
-        x={[20, 10]}
+        className=""
+        y={[5, 0]}
+        x={[15, 5]}
         tagOuter="figure"
       >
-        <Row>
-          <Col md={4}>
-            <h1 className="gradient premium text-start pt-1">
+        <Row >
+          <Col md={6}>
+            <p className="gradient tournament text-start">
               INTRODUCING TOURNAMENTS
-            </h1>
-            <br />
-            <h2 className="tour-section text-white text-start">
+            </p>
+            <h2 className="tour-section text-white text-start font-secondary">
               Compete with your art <br />
               Show the world your creations
               <br />
               Collect unique, curated pieces
             </h2>
             <div className="text-start">
-              <Button className="btn-regal">learn more</Button>
+              <Button className="btn-regal mt-3">learn more</Button>
             </div>
           </Col>
-          <Col md={8} className="text-center">
+          <Col md={6} className="text-start">
               <Image src={Tour} width="50%" />
           </Col>
         </Row>
       </Parallax>
+      </Container>
 
-
-      <Container className="display-container">
+      <Container className="display-container mt-3">
+        <Container className="explore-featured">
           <Parallax
-            className="featured-parallax mt-2 mb-2"
-            y={[15, 0]}
-            x={[-10, 0]}
+            className="featured-parallax"
+            y={[-10, -5]}
+            x={[-3, 5]}
             tagOuter="figure"
           >
-            <span className="featured-header text-white">FEATURED</span>
+            <span className="featured-header text-white font-primary">FEATURED</span><br/>
+            <span className="featured-header text-white font-primary">FEATURED</span><br/>
+            <span className="featured-header text-white font-primary">FEATURED</span>
             <Jumbotron style={{ position: "relative" }}>
               <div className="video-overlay">
                 <div className="d-block mb-1">
@@ -201,7 +203,7 @@ const Explore = () => {
                 </div>
                 <div className="d-block mb-1">
                   <Link
-                    className="overlay-values text-secondary"
+                    className="overlay-values font-secondaryary"
                     to="/test"
                   >
                     Place A Bid
@@ -214,11 +216,12 @@ const Explore = () => {
               </video>
             </Jumbotron>
           </Parallax>
+          </Container>
           {/* <Row className="h3 text-white text-center">Featured Collectable</Row> */}
-          <Parallax y={[20, 0]} tagOuter="figure">
-            <Row>
+          <Parallax y={[0, 5]} tagOuter="figure">
+            <Row className="explore-nfts">
               <Col className="h6 text-white mb-4" md={12}>
-                <div className="text-start text-majesti live">
+                <div className="text-start text-majesti live font-primary">
                   Live Activity
                 </div>
                 <div
@@ -237,9 +240,9 @@ const Explore = () => {
             <Row className="pb-5">
               {nfts.length &&
                 nfts.map((nft, index) => (
-                  <Col md={4} sm={6} key={index} className="mb-3">
+                  <Col lg={4} md={6} sm={12} key={index} className="pb-3">
                     <NftDisplay
-                      likes={nft.likes}
+                      likes={nft.like}
                       comments={nft.comments}
                       image={nft.image}
                       id={nft.id}

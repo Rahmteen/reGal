@@ -6,57 +6,77 @@
     rgb(74, 27, 8) 40%,
     rgb(199, 96, 103) 100%
   );
+  // GLOBAL PADDING FOR ALL CONTAINERS
+  .explore-premium {
+    margin-bottom: 250px !important;
+    margin-top: 150px !important;
+  }
+  .explore-tour {
+    margin-bottom: 150px !important;
+    margin-top: 150px !important;
+  }
+  .explore-featured {
+    margin-top: 150px !important;
+  }
+  .explore-nfts {
+    margin-bottom: 50px !important;
+  }
 
+
+
+  .tournament {
+    font-weight: 900;
+    font-size: 2.2em !important;
+    letter-spacing: 5px;
+  }
   .scroll-container {
-    animation-delay: 10s;
+    animation-delay: 5.5s;
     position: static;
-
+    z-index: 2;
+    position: absolute;
+    bottom: 1500px; // fix @media
+    right: 1000px; // fix @media
     h2 {
-      animation-delay: 5s;
+      animation-delay: 1.5s;
       animation-iteration-count: 2;
       animation-duration: 2s;
     }
   }
-
+  .parallax-outer {
+    margin: 0;
+  }
   .about-container {
     max-width: 85vw !important;
-
     //Section 1
     .premium-col {
-      border-right: solid 3px white;
       opacity: 0;
       animation: fadeIn linear forwards 1s;
       -webkit-animation: fadeIn linear forwards 1s;
       -moz-animation: fadeIn linear forwards 1s;
       -o-animation: fadeIn linear forwards 1s;
       -ms-animation: fadeIn linear forwards 1s;
+      border-right: solid 3px white;
       border-image: linear-gradient(to bottom, #000000, #cb6367, rgba(0, 0, 0, 0)) 1 100%;
-
       &.about-section {
         h1 {
-          font-size: 70px;
           font-weight: 800;
           text-align: right;
         }
       }
-
       &:nth-child(1) {
         animation-delay: 1s;
         color: $light-grey !important;
       }
-
       .premium {
         font-weight: 900;
-        font-size: 30px;
+        font-size: 2.2em !important;
         letter-spacing: 5px;
       }
-
       .btn-regal {
-        font-size: 26px;
+        // font-size: 26px;
         margin: 40px 15px 40px 0px;
       }
     }
-    
     //Section 2
     .tournament-col {
       opacity: 0;
@@ -65,14 +85,11 @@
       -moz-animation: fadeIn linear forwards 1s;
       -o-animation: fadeIn linear forwards 1s;
       -ms-animation: fadeIn linear forwards 1s;
-
       &:nth-child(2) {
         animation-delay: 2s;
       }
       &.about-section {
         .regal {
-          padding-top: 30px;
-          font-size: 30px;
           font-weight: 800;
           text-align: right;
         }
@@ -80,29 +97,25 @@
     }
   }
 
-  .display-container {
 
+
+  .display-container {
     .featured-parallax {
       transform: skew(#{$rotationAmt}deg) rotate(#{$rotationAmt}deg);
       grid-area: text;
       color: #1d9099;
       text-shadow: 0.5vmin 0.5vmin 0 #E79C10, -0.5vmin -0.5vmin 0 #D53A33;
       span {
-        font-size: 5em;
         font-family: $primary-font;
         font-family: 'Sarpanch', sans-serif;
       }
 
       .jumbotron {
         box-shadow: 1vmin 1vmin 0 #E79C10, -1vmin -1vmin 0 #D53A33;
-        padding: 0px!important;
         position: relative;
         overflow: hidden;
-        height: 300px;
         width: 80%;
         margin-left: 0;
-        // border-bottom: solid 3px white;
-        // border-top: solid 3px white;
         opacity: 0;
         animation: fadeIn linear forwards 1s;
         -webkit-animation: fadeIn linear forwards 1s;
@@ -111,10 +124,40 @@
         -ms-animation: fadeIn linear forwards 1s;
         border-image: linear-gradient(to bottom, #000000, #cb6367, rgba(0, 0, 0, 0))
         1 100%;
+
+        // ** media queries to adjust height of featured video on all screens
+        @media (min-width: 300px) { height: 15vh; }
+
+        // Small devices (landscape phones, 576px and up)
+        @media (min-width: 576px) { height: 21vh; }
+      
+        // Medium devices (tablets, 768px and up)
+        @media (min-width: 768px) { height: 27vh; }
+      
+        // Large devices (desktops, 992px and up)
+        @media (min-width: 992px) { height: 35vh;  }
+      
+        // Extra large devices (large desktops, 1200px and up)
+        @media (min-width: 1200px) { height: 40vh; }
+        #feature-video {
+          position: absolute;
+          height: auto;
+          width: auto;
+          min-height: 100%;
+          min-width: 100%;
+          left: 50%;
+          top: 50%;
+          -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+          z-index: 1;
+          
+     }
       
         &:hover {
           .video-overlay {
-            right: 0;
+            // prevent overlay overlap on mobile screens
+            @media (min-width: 300px) { height: -450px; }
+            @media (min-width: 576px) { right: -450px }
           }
         }
     
@@ -122,7 +165,7 @@
           z-index: 2;
           position: absolute;
           bottom: 10px;
-          right: -350px;
+          right: -450px;
           background-color: rgba(0, 0, 0, 0.7);
           padding: 15px;
           -webkit-transition-duration: 0.3s;
@@ -142,22 +185,19 @@
           .overlay-values {
             text-shadow: none!important;
             font-weight: bold;
-            font-size: 18px;
           }
         }
     
         .overlay-text {
           text-shadow: none!important;
           color: #ffffff;
-          font-size: 18px;
           margin-top: -20px;
-          // font-family: "Majesti-Banner-BoldItalic", sans-serif;
         }
     
         h1 {
           position: relative;
           z-index: 2;
-          font-size: 50px !important;
+
         }
     
       }
@@ -178,15 +218,7 @@
 
 }
 
-// .featured-parallax {
-//   // margin: 300px 0px 0px 0px;
-//   // background-color: #cc6c38;
-//   // background-size: 100vw 100vh;
-// }
-
-
 .live {
-  font-size: 6em;
   color: rgb(255, 255, 255);
   transition: 0.5s ease-in-out;
 	text-shadow: 

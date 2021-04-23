@@ -18,7 +18,7 @@ const SignUp = () => {
     <Container>
       <Row>
         <Col className="text-center mb-5 pb-5" md={6} lg={6} sm={0}>
-          <Image src={Circle} width="300px"></Image>
+          <Image src={Circle} width="40px"></Image>
         </Col>
         <Col md={6} lg={6} sm={12}>
           <Form>

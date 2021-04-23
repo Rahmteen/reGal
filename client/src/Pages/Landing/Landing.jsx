@@ -15,11 +15,10 @@ const Landing = () => {
   const [connected, setConnected] = useState(false)
   const [show, setShow] = useState(false);
 
-
-  useEffect(() => {
+  useEffect(async ()  => {
     //get wallet id
     //pass to load user
-    loadUser();
+    await console.log( loadUser("0x0f17dC202D879979b6017243d127F50B3C3075b5"));
   }, []);
 
   const handleClose = () => setShow(false);
