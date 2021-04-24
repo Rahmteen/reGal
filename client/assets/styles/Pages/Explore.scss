@@ -7,6 +7,13 @@
     rgb(199, 96, 103) 100%
   );
 
+  .live-activity {
+    margin: 0 0.5rem;
+    animation: headShake; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 3s; /* don't forget to set a duration! */
+    animation-iteration-count: infinite;
+  }
+
   .card-group {
     justify-content: center;
   }
@@ -49,6 +56,10 @@
     );
     background-color: transparent;
     box-shadow: none;
+    .title {
+      color: rgb(255, 255, 255) !important;
+
+    }
     .explore-card-image {
       height: 350px;
     }  
@@ -96,8 +107,8 @@
 
 
     .footer-cube-text {
-        font-family:monospace;
-        font-size: 1.25em;
+        font-family: $primary;
+
     }
     #cube-gif {
       width: 40vw;
@@ -107,7 +118,9 @@
       z-index: 2;
       position: absolute;
       bottom: 40%;
-      right: 19% // fix @media
+      right: 19%; // fix @media
+      font-size: 1.45em;
+      font-weight: 700 !important;
 
     }
 

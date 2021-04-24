@@ -127,7 +127,7 @@ const Explore = () => {
         <Container className="nft-container">
         <Row>
         <Col lg={6} className="artist-cube text-end">
-            <p className="gradient premium text-white text-start font-secondary">
+            <p className="gradient premium text-white text-start font-secondary live-activity pb-2">
               LIVE ACTIVITY
             </p>
           </Col>

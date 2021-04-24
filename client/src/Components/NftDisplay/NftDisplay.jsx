@@ -31,7 +31,7 @@ const NftDisplay = ({
             <Row >
               <Col
                 lg={12}
-                className="font-secondary text-center mt-3 text-uppercase text-primary font-italic"
+                className="title font-secondary text-center mt-3 text-uppercase text-primary font-italic"
               >
                 {title}
               </Col>
