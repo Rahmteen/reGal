@@ -19,10 +19,11 @@
   }
 
  .live-activity-row {
-  align-items: center !important;
-  justify-content: center;
+  align-items: flex-end !important;
+  justify-content: flex-start;
  .featured-nft-explore {
    .nft-display {
+     width: unset !important;
      background-image: -webkit-linear-gradient(
 		90deg,
 		rgb(67, 17, 13) 0%,
@@ -61,7 +62,7 @@
 
     }
     .explore-card-image {
-      height: 350px;
+      height: 400px !important;
     }  
   }
 }
@@ -101,10 +102,26 @@
   //  .btn-regal {
   //    color: black;
   //  }
+  .explore-card-image {
+    height: 430px;
+    width: 100%;
+   }  
   }
  }
 }
 
+.nft-container {
+    max-width: 75% !important;
+ .nft-display-rows {
+   justify-content: center;
+ }
+ .nft-grid-flex {
+   justify-content: center;
+   align-items: center;
+ }
+}
+
+}
 
     .footer-cube-text {
         font-family: $primary;
@@ -314,18 +331,7 @@
       }
     }
 
-    .nft-container {
-      max-width: 100%;
-      .nft-display-rows {
-        justify-content: center;
-      }
-      .nft-grid-flex {
-        justify-content: center;
-        align-items: center;
-      }
-    }
-    
-  }
+
 
 }
 

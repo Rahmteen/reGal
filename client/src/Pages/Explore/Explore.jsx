@@ -123,66 +123,70 @@ const Explore = () => {
           <i className="fas fa-angle-double-down pl-4"></i>
         </h2>
       </div> */}
+      {/* <Col lg={8} className="artist-cube text-end mb-3 mt-3">
+                  <p className="gradient premium text-white font-secondary pb-2">
+                  {  `${nft.title} - @${nft.creator}`}
+                  </p>
+                </Col> */}
       <Parallax className="" y={[10, -10]} x={[0, 0]} tagOuter="figure">
         <Container className="nft-container">
-        <Row>
-        <Col lg={6} className="artist-cube text-end">
-            <p className="gradient premium text-white text-start font-secondary live-activity pb-2">
-              LIVE ACTIVITY
-            </p>
-          </Col>
-          </Row> 
+        
           <Row className="live-activity-row">
             {nfts.length &&
               nfts.map((nft, index) =>
                 nft.featured === true ? (
-                  <Col className="featured-nft-explore mb-3" lg={8}>
-                    <div style={{ position: "relative" }}>
-                      <CornerRibbon
-                        position="top-right"
-                        fontColor="white"
-                        backgroundColor="orange"
-                      >
-                        Featured
-                      </CornerRibbon>
-                      <NftDisplay
-                        likes={nft.likes}
-                        comments={nft.comments}
-                        image={nft.image}
-                        id={nft.id}
-                        bid={nft.bid}
-                        title={nft.title}
-                        creator={nft.creator}
-                        date_mint={nft.date_mint}
-                        current={nft.current}
-                        previous={nft.previous}
-                      />
-                    </div>
-                  </Col>
+                  <Fragment>
+                    <Col className="featured-nft-explore mb-5" lg={7}>
+                    <Parallax className="" y={[10, -10]} x={[0, 0]} tagOuter="figure">
+                      <div style={{ position: "relative" }}>
+                        <CornerRibbon
+                          position="top-right"
+                          fontColor="white"
+                          backgroundColor="orange"
+                        >
+                          Featured
+                        </CornerRibbon>
+                        <NftDisplay
+                          likes={nft.likes}
+                          comments={nft.comments}
+                          image={nft.image}
+                          id={nft.id}
+                          bid={nft.bid}
+                          title={nft.title}
+                          creator={nft.creator}
+                          date_mint={nft.date_mint}
+                          current={nft.current}
+                          previous={nft.previous}
+                        />
+                      </div>
+                      </Parallax>
+                    </Col>
+                    
+                    <Col lg={3} className="mb-5">
+                    <Parallax className="" y={[10, -15]} x={[0, 0]} tagOuter="figure">
+                      <p className="text-white font-secondary">@{nft.creator}</p>
+                      <p className="text-white">
+                     {nft.description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quisnostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat. Duis aute irure dolorinreprehenderitin voluptate velit esse cillum dolore eufugiat nulla pariatur. Excepteur sint occaecat cupidatatnon proident, suntin culpa qui officia deserunt mollitanim id est laborum."}
+                      </p>
+                      </Parallax>
+                    </Col>
+                    
+                  </Fragment>
                 ) : null
               )}
-            
-   
-            <Col lg={4} md={8} sm={12} className="">
-            <Parallax className="" y={[-30, 20]} x={[1, -1]} tagOuter="figure">   
-            <div className="footer-cube-text pb-5 text-center ">
-              <img id="cube-gif" className=" mb-n5 " src={cube}/>
-              <div className="cube-overlay-text text-center">
-                <p className="h3 text-white ">$69,420</p>
-                <p className="h6 text-white ">
-                  TOTAL VALUE ($USD) PAID TO ARTISTS
+              
+            <Row>
+              <Col lg={6} className="artist-cube text-end mb-3 mt-3">
+                <p className="gradient premium text-white text-start font-primary live-activity pb-2">
+                  LIVE ACTIVITY
                 </p>
-              </div>
-            </div>
-            </Parallax>
-          </Col>
-               
-              </Row>
-              <Row>
+              </Col>
+            </Row>
             {nfts.length &&
               nfts.map((nft, index) =>
                 nft.featured !== true ? (
-                  <Col className="nft-explore mb-3" lg={4}>
+                  <Col className="nft-explore mb-3" lg={3} md={6} md={12}>
+                    <Parallax className="" y={[index, index * -1]} x={[0, 0]} tagOuter="figure">
                     <CardGroup>
                       <div style={{ position: "relative" }}>
                         <CornerRibbon
@@ -204,16 +208,29 @@ const Explore = () => {
                           current={nft.current}
                           previous={nft.previous}
                         />
+                        
                       </div>
                     </CardGroup>
+                    </Parallax>
                   </Col>
                 ) : null
               )}
           </Row>
         </Container>
-
       </Parallax>
-
+      {/* <Col lg={4} md={8} sm={12} className="">
+            <Parallax className="" y={[-30, 20]} x={[1, -1]} tagOuter="figure">   
+            <div className="footer-cube-text pb-5 text-center ">
+              <img id="cube-gif" className=" mb-n5 " src={cube}/>
+              <div className="cube-overlay-text text-center">
+                <p className="h3 text-white ">$69,420</p>
+                <p className="h6 text-white ">
+                  TOTAL VALUE ($USD) PAID TO ARTISTS
+                </p>
+              </div>
+            </div>
+            </Parallax>
+          </Col> */}
     </div>
   );
 };
