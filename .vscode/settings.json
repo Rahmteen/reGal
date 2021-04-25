@@ -1,9 +1,6 @@
+
 {
-<<<<<<< HEAD
-    "git.ignoreLimitWarning": true
-=======
     "git.ignoreLimitWarning": true,
-    "solidity.compileUsingRemoteVersion": "v0.4.3+commit.2353da71",
+    "solidity.compileUsingRemoteVersion": "v0.4.3+commit.2353da71'",
     "solidity.enableLocalNodeCompiler": false,
->>>>>>> c71896e3d74ede6ef5bc6190021844cfda005a8b
 }

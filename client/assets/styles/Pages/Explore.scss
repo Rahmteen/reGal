@@ -9,9 +9,9 @@
 
   .live-activity {
     margin: 0 0.5rem;
-    animation: headShake; /* referring directly to the animation's @keyframe declaration */
-    animation-duration: 3s; /* don't forget to set a duration! */
-    animation-iteration-count: infinite;
+    animation: fadeInDown; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s; /* don't forget to set a duration! */
+    // animation-iteration-count: infinite;
   }
 
   .card-group {
@@ -62,7 +62,7 @@
 
     }
     .explore-card-image {
-      height: 400px !important;
+      height: 300px !important;
     }  
   }
 }
@@ -103,7 +103,7 @@
   //    color: black;
   //  }
   .explore-card-image {
-    height: 430px;
+    height: 250px;
     width: 100%;
    }  
   }

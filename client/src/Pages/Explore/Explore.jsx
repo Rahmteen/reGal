@@ -45,6 +45,8 @@ const Explore = () => {
       current: 1.3,
       previous: 1.0,
       featured: false,
+      ending: "29 Apr, 2021 12:00:00 PST",
+      ended: false
     },
     {
       id: 2,
@@ -58,6 +60,8 @@ const Explore = () => {
       current: 4.32,
       previous: null,
       featured: false,
+      ending: "1 May, 2021 06:00:00 PST",
+      ended: false
     },
     {
       id: 3,
@@ -71,6 +75,8 @@ const Explore = () => {
       current: 0.9,
       previous: 2.4,
       featured: false,
+      ending: "24 Apr, 2021 12:00:00 PST",
+      ended: true
     },
     {
       id: 4,
@@ -84,6 +90,8 @@ const Explore = () => {
       current: 3.12,
       previous: null,
       featured: false,
+      ending: "2 May, 2021 18:00:00 PST",
+      ended: false
     },
     {
       id: 5,
@@ -97,6 +105,8 @@ const Explore = () => {
       current: 1.3,
       previous: 1.0,
       featured: false,
+      ending: "5 May, 2021 06:00:00 PST",
+      ended: false
     },
     {
       id: 6,
@@ -110,33 +120,25 @@ const Explore = () => {
       current: 10.92,
       previous: null,
       featured: true,
+      ending: "27 Apr, 2021 12:00:00 PST",
+      ended: false
     },
   ]);
 
+
+
   //the main page after landing for relevant material - this will morph into a trending section as userbase increases.
   return (
-    /* SCROLL ANIMATION */
     <div className="gradiant-background">
-      {/* <div className="scroll-container animate__animated animate__fadeOutDown pl-5 pt-5">
-        <h2 className="scroll animate__animated animate__fadeInDown text-white h4">
-          scroll <br />
-          <i className="fas fa-angle-double-down pl-4"></i>
-        </h2>
-      </div> */}
-      {/* <Col lg={8} className="artist-cube text-end mb-3 mt-3">
-                  <p className="gradient premium text-white font-secondary pb-2">
-                  {  `${nft.title} - @${nft.creator}`}
-                  </p>
-                </Col> */}
-      <Parallax className="" y={[10, -10]} x={[0, 0]} tagOuter="figure">
+      <Parallax className="" y={[-5, 10]} x={[0, 0]} tagOuter="figure">
         <Container className="nft-container">
         
-          <Row className="live-activity-row">
+          <Row className="live-activity-row mb-5">
             {nfts.length &&
               nfts.map((nft, index) =>
                 nft.featured === true ? (
                   <Fragment>
-                    <Col className="featured-nft-explore mb-5" lg={7}>
+                    <Col className="featured-nft-explore mb-2" lg={6}>
                     <Parallax className="" y={[10, -10]} x={[0, 0]} tagOuter="figure">
                       <div style={{ position: "relative" }}>
                         <CornerRibbon
@@ -157,6 +159,8 @@ const Explore = () => {
                           date_mint={nft.date_mint}
                           current={nft.current}
                           previous={nft.previous}
+                          ending={nft.ending}
+                          ended={nft.ending}
                         />
                       </div>
                       </Parallax>
@@ -164,8 +168,8 @@ const Explore = () => {
                     
                     <Col lg={3} className="mb-5">
                     <Parallax className="" y={[10, -15]} x={[0, 0]} tagOuter="figure">
-                      <p className="text-white font-secondary">@{nft.creator}</p>
-                      <p className="text-white">
+                      <p className="text-white font-secondary animate__animated animate__fadeInDown">@{nft.creator}</p>
+                      <p className="text-white animate__animated animate__fadeInDown">
                      {nft.description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quisnostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat. Duis aute irure dolorinreprehenderitin voluptate velit esse cillum dolore eufugiat nulla pariatur. Excepteur sint occaecat cupidatatnon proident, suntin culpa qui officia deserunt mollitanim id est laborum."}
                       </p>
                       </Parallax>
@@ -185,8 +189,8 @@ const Explore = () => {
             {nfts.length &&
               nfts.map((nft, index) =>
                 nft.featured !== true ? (
-                  <Col className="nft-explore mb-3" lg={3} md={6} md={12}>
-                    <Parallax className="" y={[index, index * -1]} x={[0, 0]} tagOuter="figure">
+                  <Col className="nft-explore mb-2" lg={3} md={4} md={12}>
+                    <Parallax className="" y={[0, -5]} x={[0, 0]} tagOuter="figure">
                     <CardGroup>
                       <div style={{ position: "relative" }}>
                         <CornerRibbon
@@ -207,6 +211,8 @@ const Explore = () => {
                           date_mint={nft.date_mint}
                           current={nft.current}
                           previous={nft.previous}
+                          ending={nft.ending}
+                          ended={nft.ending}
                         />
                         
                       </div>
@@ -218,19 +224,6 @@ const Explore = () => {
           </Row>
         </Container>
       </Parallax>
-      {/* <Col lg={4} md={8} sm={12} className="">
-            <Parallax className="" y={[-30, 20]} x={[1, -1]} tagOuter="figure">   
-            <div className="footer-cube-text pb-5 text-center ">
-              <img id="cube-gif" className=" mb-n5 " src={cube}/>
-              <div className="cube-overlay-text text-center">
-                <p className="h3 text-white ">$69,420</p>
-                <p className="h6 text-white ">
-                  TOTAL VALUE ($USD) PAID TO ARTISTS
-                </p>
-              </div>
-            </div>
-            </Parallax>
-          </Col> */}
     </div>
   );
 };
