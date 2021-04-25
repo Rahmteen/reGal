@@ -17,8 +17,8 @@ const App = ({web3}) => {
 
     return (
         <Switch>
-            <Route exact path='/' component={Landing}/>
             <ComponentWrapper>
+            <Route exact path='/' component={Explore}/>
                 <Route exact path='/signup' component={SignUp}/>
                 <Route exact path='/profile' component={Profile}/>
                 <Route exact path='/explore' component={Explore}/>

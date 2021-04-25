@@ -8,6 +8,7 @@ import {
   Container,
   Row,
   Col,
+  Button
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ConnectWallet from "../../Components/ConnectWallet";
@@ -41,17 +42,13 @@ const Navigation = () => {
             <Nav.Link href="/whitepaper">whitepaper</Nav.Link>
           </Nav>
           <Nav>
+
+
           <Nav.Item
             className=""
             style={{ marginTop: "9px", paddingLeft: "0px" }}
           >
-            {/* {window.ethereum.selectedAddress ? (
-              <Link to="/profile">
-                <img src={Profile} className="profile-pic" width="2%"></img>
-              </Link>
-            ) : (
-              <ConnectWallet />
-            )} */}
+            <Button className="btn-regal">Connect</Button>
           </Nav.Item>
           </Nav>
         </Container>
