@@ -1,13 +1,17 @@
 //Modules
 import React, { useEffect, useState } from "react";
-import { Container, Col, Row, Image, Form, Button, FormFile } from "react-bootstrap";
-import Circle from "../../../assets/images/crcle.gif";
-
-// username: string,
-// wallet_id: string,
-// bio: string,
-// profile_image: string,
-// email_address: string,
+import {
+  Container,
+  Col,
+  Row,
+  Image,
+  Form,
+  Button,
+  FormFile,
+} from "react-bootstrap";
+import MetaMask from "../../../assets/images/metamask.svg";
+import { Link } from "react-router-dom";
+import WalletSupport from "../../Components/WalletSupport/WalletSupport";
 
 const SignUp = () => {
   useEffect(() => {
@@ -15,41 +19,37 @@ const SignUp = () => {
   }, []);
 
   return (
-    <Container>
-      <Row>
-        <Col className="text-center mb-5 pb-5" md={6} lg={6} sm={0}>
-          <Image src={Circle} width="40px"></Image>
-        </Col>
-        <Col md={6} lg={6} sm={12}>
-          <Form>
-          <Form.Group controlId="formWalletID">
-              <Form.Label className="text-white" >WalletID</Form.Label>
-              <Form.Control type="text" disable={true} placeholder="0xA760f51e900E5BaF1Be30836ab72373fA08BB906" />
-              <Form.Text className="text-white">
-                You're creating an account associated with this Wallet Address!
-              </Form.Text>
-            </Form.Group>
-            <Form.Group controlId="formDisplayName">
-              <Form.Label className="text-white" >Display Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter display name" />
-              <Form.Text className="text-white">
-                The name that you will display to the world.
-              </Form.Text>
-            </Form.Group>
-            <Form.Group controlId="formEmail">
-              <Form.Label className="text-white">Email</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
-              <Form.Text className="text-white">
-                We'll never share your email with anyone else.
-              </Form.Text>
-            </Form.Group>
-            <Button className="btn-regal" type="submit">
-              Submit
-            </Button>
-          </Form>
-        </Col>
-      </Row>
-    </Container>
+    <div className="signup-container">
+      {/* CONTAINER FOR STEP 1 => CONNECT WALLET */}
+      <Container className="connect-1">
+        <Row>
+          <Col
+            className="text-white font-primary text-center mb-2 pb-2 pt-3"
+            md={12}
+            lg={12}
+          >
+            <span>CONNECT WALLET</span>
+          </Col>
+        </Row>
+        <Row>
+          <Col className="text-center" lg={12}>
+            <Col>
+              <Image
+                className="metamask-logo text-center"
+                src={MetaMask}
+                width="5%"
+              ></Image>
+            </Col>
+            <Col>
+              <Button className="btn-regal h3 mt-5 mb-2">MetaMask</Button>
+            </Col>
+          </Col>
+          <Col className="text-center mt-3" lg={12}>
+            <WalletSupport/>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 };
 

@@ -133,7 +133,7 @@ const Explore = () => {
       <Parallax className="" y={[-5, 10]} x={[0, 0]} tagOuter="figure">
         <Container className="nft-container">
         
-          <Row className="live-activity-row mb-5">
+          <Row className="live-activity-row mb-5 mt-3">
             {nfts.length &&
               nfts.map((nft, index) =>
                 nft.featured === true ? (
