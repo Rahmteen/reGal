@@ -31,24 +31,38 @@ class UserStore {
     }
 
     @action createUser = async (user: IUser) => {
-        this.loadingInitial = true;
-        if(this.user) {
-            return this.user;
-        }
+        this.submitting = true;
         try {
-            let newuser = await agent.User.create(user);
+            let response = await agent.User.create(user);
             runInAction(() => {
-                if(newuser) {
-                    this.user = user;
-                    this.loadingInitial = false;
+                if(response) {
+                    this.submitting = false;
                 }
             })
-            return user;
+            return response;
         } catch (error) {
             runInAction(() => {
-                this.loadingInitial = false;
+                this.submitting = false;
             });
-            console.log("Error: internal", error);
+            return error.message;
+        }
+    }
+
+    @action updateUser = async (user: IUser) => {
+        this.submitting = true;
+        try {
+            let response = await agent.User.update(user);
+            runInAction(() => {
+                if(response) {
+                    this.submitting = false;
+                }
+            })
+            return response;
+        } catch (error) {
+            runInAction(() => {
+                this.submitting = false;
+            });
+            return error.message;
         }
     }
 }
