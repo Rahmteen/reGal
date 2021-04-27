@@ -17,6 +17,6 @@
     "experimentalDecorators": true,
     "suppressImplicitAnyIndexErrors": true
   },
-  "include": ["src/Api", "src/Stores"],
+  "include": ["src"],
   "exclude": ["node_modules", "build"]
 }
