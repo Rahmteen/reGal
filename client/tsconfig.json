@@ -17,6 +17,6 @@
     "experimentalDecorators": true,
     "suppressImplicitAnyIndexErrors": true
   },
-  "include": ["src", "./typings-custom/**/*.ts"],
+  "include": ["src/Api", "src/Stores"],
   "exclude": ["node_modules", "build"]
 }
