@@ -48,7 +48,7 @@ const Navigation = () => {
             className=""
             style={{ marginTop: "9px", paddingLeft: "0px" }}
           >
-            <Button className="btn-regal">Connect</Button>
+            <Link to="signup"><Button className="btn-regal">CONNECT</Button></Link>
           </Nav.Item>
           </Nav>
         </Container>

@@ -1,5 +1,5 @@
 //Modules
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useContext, useEffect } from "react";
 import {
   Carousel,
   Col,
@@ -29,7 +29,37 @@ import demo4 from "../../../assets/images/nft-3.jpg";
 import demo5 from "../../../assets/images/nft-5.jpg";
 import demo6 from "../../../assets/images/nft-6.jpg";
 
-const Explore = () => {
+import UserStore from "../../Stores/UserStore";
+
+const Explore = (web3) => {
+  const userStore = useContext(UserStore);
+  const { loadUser, user } = userStore;
+  const [connected, setConnected] = useState(false)
+  const [show, setShow] = useState(false);
+
+  // currently our set up for a secure request to the ethereum network and the 
+  // user accounts that exist in the metamask wallet associated to the window
+  useEffect(async ()  => {
+    if (window.ethereum) {
+      await window.ethereum
+      .request({ method: 'eth_requestAccounts' })
+      .then((res) => console.log(res))
+      .catch((error) => {
+        if (error.code === 4001) {
+          // EIP-1193 userRejectedRequest error
+          console.log('Please connect to MetaMask.');
+        } else {
+          console.error(error);
+        }
+      });
+      // window.web3 = new Web3(window.ethereum);
+      // return res;
+    }
+    return false;
+    //get wallet id
+    //pass to load user
+    // loadUser();
+  }, []);
   //Sample data for testing will be set dynamically in the future;
   //Statically set for testing purposes only;
   const [nfts, setNfts] = useState([
@@ -125,23 +155,21 @@ const Explore = () => {
     },
   ]);
 
-
-
-  //the main page after landing for relevant material - this will morph into a trending section as userbase increases.
   return (
     <div className="gradiant-background">
-      <Parallax className="" y={[-5, 10]} x={[0, 0]} tagOuter="figure">
-        <Container className="nft-container">
+      <Parallax className="" y={[-5, 10]} x={[0, 0]} tagOuter="figure" key={'parallax-outer'}>
+        <Container className="nft-container" key={'container-explore'}>
         
-          <Row className="live-activity-row mb-5">
+          <Row className="live-activity-row mb-5 mt-3">
             {nfts.length &&
               nfts.map((nft, index) =>
                 nft.featured === true ? (
-                  <Fragment>
-                    <Col className="featured-nft-explore mb-2" lg={6}>
-                    <Parallax className="" y={[10, -10]} x={[0, 0]} tagOuter="figure">
-                      <div style={{ position: "relative" }}>
+                  <Fragment key={'fragment-featured'}>
+                    <Col className="featured-nft-explore mb-2" lg={6} key={index + '_nft-featured'}>
+                    <Parallax className="" y={[10, -10]} x={[0, 0]} tagOuter="figure" key={index + '_parallax-featured'}>
+                      <div style={{ position: "relative" }} key={index + 'feat-div'}>
                         <CornerRibbon
+                          key={index + '_feat-ribbon'}
                           position="top-right"
                           fontColor="white"
                           backgroundColor="orange"
@@ -149,6 +177,7 @@ const Explore = () => {
                           Featured
                         </CornerRibbon>
                         <NftDisplay
+                          key={index + '_nft-feat'}
                           likes={nft.likes}
                           comments={nft.comments}
                           image={nft.image}
@@ -166,10 +195,10 @@ const Explore = () => {
                       </Parallax>
                     </Col>
                     
-                    <Col lg={3} className="mb-5">
-                    <Parallax className="" y={[10, -15]} x={[0, 0]} tagOuter="figure">
-                      <p className="text-white font-secondary animate__animated animate__fadeInDown">@{nft.creator}</p>
-                      <p className="text-white animate__animated animate__fadeInDown">
+                    <Col lg={3} className="mb-5" key={index + '_feat-col'}>
+                    <Parallax className="" y={[10, -15]} x={[0, 0]} tagOuter="figure" key={index + '_feat-col-parallax'}>
+                      <p className="text-white font-secondary animate__animated animate__fadeInDown" key={index + '_feat-p-1'}>@{nft.creator}</p>
+                      <p className="text-white animate__animated animate__fadeInDown" key={index + '_feat-p-2'}>
                      {nft.description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quisnostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat. Duis aute irure dolorinreprehenderitin voluptate velit esse cillum dolore eufugiat nulla pariatur. Excepteur sint occaecat cupidatatnon proident, suntin culpa qui officia deserunt mollitanim id est laborum."}
                       </p>
                       </Parallax>
@@ -189,11 +218,12 @@ const Explore = () => {
             {nfts.length &&
               nfts.map((nft, index) =>
                 nft.featured !== true ? (
-                  <Col className="nft-explore mb-2" lg={3} md={4} md={12}>
-                    <Parallax className="" y={[0, -5]} x={[0, 0]} tagOuter="figure">
-                    <CardGroup>
-                      <div style={{ position: "relative" }}>
+                  <Col className="nft-explore mb-2" lg={4} md={6} md={12} key={index}>
+                    <Parallax className="" y={[0, -5]} x={[0, 0]} tagOuter="figure" key={index + '_parallax'}>
+                    <CardGroup key={index + '_card'}>
+                      <div style={{ position: "relative" }} key={index + 'div'}>
                         <CornerRibbon
+                        key={index + '_ribbon'}
                           position="top-right"
                           fontColor="white"
                           backgroundColor={nft.previous ? "green" : "red"}
@@ -201,6 +231,7 @@ const Explore = () => {
                           {nft.previous ? "first" : "hot"}
                         </CornerRibbon>
                         <NftDisplay
+                          key={index + '_nft'}
                           likes={nft.likes}
                           comments={nft.comments}
                           image={nft.image}

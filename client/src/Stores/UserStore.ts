@@ -29,6 +29,42 @@ class UserStore {
             console.log("Error: ", error);
         }
     }
+
+    @action createUser = async (user: IUser) => {
+        this.submitting = true;
+        try {
+            let response = await agent.User.create(user);
+            runInAction(() => {
+                if(response) {
+                    this.submitting = false;
+                }
+            })
+            return response;
+        } catch (error) {
+            runInAction(() => {
+                this.submitting = false;
+            });
+            return error.message;
+        }
+    }
+
+    @action updateUser = async (user: IUser) => {
+        this.submitting = true;
+        try {
+            let response = await agent.User.update(user);
+            runInAction(() => {
+                if(response) {
+                    this.submitting = false;
+                }
+            })
+            return response;
+        } catch (error) {
+            runInAction(() => {
+                this.submitting = false;
+            });
+            return error.message;
+        }
+    }
 }
 
 export default createContext( new UserStore());
