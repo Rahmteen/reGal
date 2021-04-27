@@ -34,9 +34,10 @@ const UserSchema = new Schema({
     },
     email_list: {
         type: Boolean,
-        require: true
+        require: false,
+        default: false
     },
-    collection: [
+    collections: [
         new Schema({
             title: {
                 type: String,

@@ -125,6 +125,10 @@ const Explore = () => {
     },
   ]);
 
+  // does metamask exist?
+  // has the user connected? check the selected addresses if so
+  // 
+  // do a request to our db, and check to see if the address is registered.
 
 
   //the main page after landing for relevant material - this will morph into a trending section as userbase increases.
@@ -189,7 +193,7 @@ const Explore = () => {
             {nfts.length &&
               nfts.map((nft, index) =>
                 nft.featured !== true ? (
-                  <Col className="nft-explore mb-2" lg={3} md={4} md={12}>
+                  <Col className="nft-explore mb-2" lg={4} md={6} md={12}>
                     <Parallax className="" y={[0, -5]} x={[0, 0]} tagOuter="figure">
                     <CardGroup>
                       <div style={{ position: "relative" }}>

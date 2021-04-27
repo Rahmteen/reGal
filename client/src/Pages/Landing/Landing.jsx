@@ -18,7 +18,7 @@ const Landing = () => {
   useEffect(async ()  => {
     //get wallet id
     //pass to load user
-    await console.log( loadUser("0x0f17dC202D879979b6017243d127F50B3C3075b5"));
+    loadUser();
   }, []);
 
   const handleClose = () => setShow(false);

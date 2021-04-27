@@ -21,7 +21,7 @@ const SignUp = () => {
   return (
     <div className="signup-container">
       {/* CONTAINER FOR STEP 1 => CONNECT WALLET */}
-      <Container className="connect-1">
+      <Container className="connect-1 pt-3">
         <Row>
           <Col
             className="text-white font-primary text-center mb-2 pb-2 pt-3"

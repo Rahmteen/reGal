@@ -26,15 +26,15 @@ const WalletSupport = () => {
         ?
       </Button>
 
-      <Modal centered={true} size={'xl'} show={show} onHide={handleClose}>
+      <Modal centered={true} size={'md'} show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Wallet FAQ</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <h4>What is a wallet?</h4>
-          <p>Our transactions are made on the blockchain. A wallet will allow you to store and spend cryptocurrency.</p>
+          <p>A wallet is basically a bank account that represents your money on the blockchain. You can use a wallet to interact with blockchain-based website and use cryptocurrency. </p>
           <h4>Why do I need one?</h4>
-          <p>Your wallet is your username and password and will automatically log you into Regal.</p>
+          <p>Each wallet has a unique number/id that represents you. This is how we will recognize you on our platform. Your wallet is very similar to logging to a platform with "Google, Facebook, etc..."</p>
           <h4>Is it free?</h4>
           <p>Yes, 100% free</p>
           <h4>What do I do?</h4>

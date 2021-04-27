@@ -3,9 +3,9 @@
     box-shadow: rgb(0, 0, 0) 1px 1px 4px;
     border-radius: 2px;
     color: white;
-    width: 100%;
+    // width: auto;
+    // height: auto;
     .nft-activity {
-        display: flex;
         font-size: 1.30em;
         font-weight: 600;
         z-index: 2;
@@ -53,7 +53,7 @@
         object-fit:cover;
         margin-right: auto;
         margin-left: auto;
-        height: 325px;
+        height: auto;
         overflow: hidden;
     }
     .nft-body {

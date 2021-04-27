@@ -16,12 +16,12 @@
   }
 
   .card-group {
-    justify-content: center;
+    // justify-content: center;
   }
 
  .live-activity-row {
   align-items: flex-end !important;
-  justify-content: flex-start;
+  // justify-content:space-between;
  .featured-nft-explore {
    .nft-display {
      width: unset !important;
@@ -104,7 +104,7 @@
   //    color: black;
   //  }
   .explore-card-image {
-    height: 250px;
+    height: 300px;
     width: 100%;
    }  
   }
@@ -114,11 +114,11 @@
 .nft-container {
     max-width: 75% !important;
  .nft-display-rows {
-   justify-content: center;
+   justify-content: flex-end;
  }
  .nft-grid-flex {
    justify-content: center;
-   align-items: center;
+   align-items: flex-start;
  }
 }
 
