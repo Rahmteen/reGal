@@ -124,7 +124,7 @@ const Explore = () => {
         >
           <Row>
             <Col md={6} className="premium-col mt-2 pr-5 about-section">
-              <p className="gradient premium text-white ">PREMIUM NFT MARKETPLACE</p>
+              <p className="gradient premium text-white text-right">PREMIUM NFT MARKETPLACE</p>
               <h1 className="text-white mb-2">
                 A platform
                 <span className="d-block">for artists</span>
@@ -133,7 +133,7 @@ const Explore = () => {
               <Button className="btn-regal float-right">apply</Button>
             </Col>
             <Col md={6} className="tournament-col mt-2 pl-5 about-section">
-              <p className="regal text-white text-start mt-5 pr-3">
+              <p className="regal text-white text-left mt-5 pr-3">
                 Regal was founded to <br />
                 <span style={{ color: "#ed7779" }}>
                   disrupt the power imbalances <br />
@@ -148,44 +148,49 @@ const Explore = () => {
         </Parallax>
       </Container>
 
-      <Parallax
-        className="mb-5 mt-5 mb-5"
-        y={[0, 0]}
-        x={[20, 10]}
-        tagOuter="figure"
-      >
+      <Container>
         <Row>
-          <Col md={4}>
-            <h1 className="gradient premium text-start pt-1">
-              INTRODUCING TOURNAMENTS
-            </h1>
-            <br />
-            <h2 className="tour-section text-white text-start">
-              Compete with your art <br />
-              Show the world your creations
+          <Col md={6} className="text-left">
+          <Parallax
+              className="mb-5 mt-5 mb-5"
+              y={[0, 0]}
+              x={[-5, 10]}
+              tagOuter="figure"
+            >
+              <h1 className="gradient premiumpt-1">
+                INTRODUCING TOURNAMENTS
+              </h1>
               <br />
-              Collect unique, curated pieces
-            </h2>
-            <div className="text-start">
+              <h2 className="tour-section text-white">
+                Compete with your art <br />
+                Show the world your creations
+                <br />
+                Collect unique, curated pieces
+              </h2>
               <Button className="btn-regal">learn more</Button>
-            </div>
+            </Parallax>
           </Col>
-          <Col md={8} className="text-center">
-              <Image src={Tour} width="50%" />
+          <Col md={6} className="text-center">
+            <Parallax
+              className="mb-5 mt-5 mb-5"
+              y={[-10, -10]}
+              x={[10, -5]}
+              tagOuter="figure"
+            >
+              <Image src={Tour} width="70%" />
+            </Parallax>
           </Col>
         </Row>
-      </Parallax>
-
-
+      </Container>
+    
       <Container className="display-container">
           <Parallax
-            className="featured-parallax mt-2 mb-2"
-            y={[15, 0]}
-            x={[-10, 0]}
+            className="featured-parallax mt-2 mb-5"
+            y={[10, -10]}
             tagOuter="figure"
           >
             <span className="featured-header text-white">FEATURED</span>
-            <Jumbotron style={{ position: "relative" }}>
+            <Jumbotron>
               <div className="video-overlay">
                 <div className="d-block mb-1">
                   <span className="overlay-text">Current Bid: </span>
@@ -214,46 +219,42 @@ const Explore = () => {
               </video>
             </Jumbotron>
           </Parallax>
-          {/* <Row className="h3 text-white text-center">Featured Collectable</Row> */}
-          <Parallax y={[20, 0]} tagOuter="figure">
-            <Row>
-              <Col className="h6 text-white mb-4" md={12}>
-                <div className="text-start text-majesti live">
-                  Live Activity
-                </div>
-                <div
-                  className="pb-2 text-end"
-                  style={{
-                    borderBottom: "solid 1px white",
-                    borderColor: "#ac676a",
-                  }}
-                >
-                  view all
-                </div>
-              </Col>
-            </Row>
-            {/* </Parallax> */}
-            {/* <Parallax className="custom-class" y={[-10, 5]} tagOuter="figure"> */}
-            <Row className="pb-5">
-              {nfts.length &&
-                nfts.map((nft, index) => (
-                  <Col md={4} sm={6} key={index} className="mb-3">
-                    <NftDisplay
-                      likes={nft.likes}
-                      comments={nft.comments}
-                      image={nft.image}
-                      id={nft.id}
-                      bid={nft.bid}
-                      title={nft.title}
-                      creator={nft.creator}
-                      date_mint={nft.date_mint}
-                      current={nft.current}
-                      previous={nft.previous}
-                    />
-                  </Col>
-                ))}
-            </Row>
-          </Parallax>
+          <Row>
+            <Col className="h6 text-white mb-4 header-underline" md={12}>
+                <span className="text-start text-majesti live">Live Activity</span>
+                <Link to="" className="text-white float-right" >view all</Link>
+              {/* <div
+                className="pb-2 text-right"
+                style={{
+                  borderBottom: "solid 1px white",
+                  borderColor: "#ac676a",
+                }}
+              >
+                view all
+              </div> */}
+            </Col>
+          </Row>
+          {/* </Parallax> */}
+          {/* <Parallax className="custom-class" y={[-10, 5]} tagOuter="figure"> */}
+          <Row className="pb-5">
+            {nfts.length &&
+              nfts.map((nft, index) => (
+                <Col md={4} sm={12} key={index} className="mb-3">
+                  <NftDisplay
+                    likes={nft.likes}
+                    comments={nft.comments}
+                    image={nft.image}
+                    id={nft.id}
+                    bid={nft.bid}
+                    title={nft.title}
+                    creator={nft.creator}
+                    date_mint={nft.date_mint}
+                    current={nft.current}
+                    previous={nft.previous}
+                  />
+                </Col>
+              ))}
+          </Row>
       </Container>
     </div>
 
