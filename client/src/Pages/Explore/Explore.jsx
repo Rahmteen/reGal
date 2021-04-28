@@ -1,5 +1,5 @@
 //Modules
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useContext, useEffect } from "react";
 import {
   Carousel,
   Col,
@@ -8,8 +8,10 @@ import {
   Jumbotron,
   Row,
   Button,
+  CardGroup,
 } from "react-bootstrap";
 import { observer } from "mobx-react-lite";
+import CornerRibbon from "react-corner-ribbon";
 import { Link } from "react-router-dom";
 import { Parallax } from "react-scroll-parallax";
 //Components
@@ -27,7 +29,37 @@ import demo4 from "../../../assets/images/nft-3.jpg";
 import demo5 from "../../../assets/images/nft-5.jpg";
 import demo6 from "../../../assets/images/nft-6.jpg";
 
-const Explore = () => {
+import UserStore from "../../Stores/UserStore";
+
+const Explore = (web3) => {
+  const userStore = useContext(UserStore);
+  const { loadUser, user } = userStore;
+  const [connected, setConnected] = useState(false)
+  const [show, setShow] = useState(false);
+
+  // currently our set up for a secure request to the ethereum network and the 
+  // user accounts that exist in the metamask wallet associated to the window
+  useEffect(async ()  => {
+    if (window.ethereum) {
+      await window.ethereum
+      .request({ method: 'eth_requestAccounts' })
+      .then((res) => console.log(res))
+      .catch((error) => {
+        if (error.code === 4001) {
+          // EIP-1193 userRejectedRequest error
+          console.log('Please connect to MetaMask.');
+        } else {
+          console.error(error);
+        }
+      });
+      // window.web3 = new Web3(window.ethereum);
+      // return res;
+    }
+    return false;
+    //get wallet id
+    //pass to load user
+    // loadUser();
+  }, []);
   //Sample data for testing will be set dynamically in the future;
   //Statically set for testing purposes only;
   const [nfts, setNfts] = useState([
@@ -42,6 +74,9 @@ const Explore = () => {
       date_mint: "02/01/2021",
       current: 1.3,
       previous: 1.0,
+      featured: false,
+      ending: "29 Apr, 2021 12:00:00 PST",
+      ended: false
     },
     {
       id: 2,
@@ -50,10 +85,13 @@ const Explore = () => {
       comments: 56,
       bid: 27,
       title: "dilip",
-      creator: "lucid monday",
+      creator: "lucidmonday",
       date_mint: "01/17/2021",
       current: 4.32,
       previous: null,
+      featured: false,
+      ending: "1 May, 2021 06:00:00 PST",
+      ended: false
     },
     {
       id: 3,
@@ -61,11 +99,14 @@ const Explore = () => {
       likes: 89,
       comments: 17,
       bid: 2,
-      title: "late year",
+      title: "lateyear",
       creator: "othello",
       date_mint: "02/01/2021",
       current: 0.9,
       previous: 2.4,
+      featured: false,
+      ending: "24 Apr, 2021 12:00:00 PST",
+      ended: true
     },
     {
       id: 4,
@@ -78,6 +119,9 @@ const Explore = () => {
       date_mint: "01/17/2021",
       current: 3.12,
       previous: null,
+      featured: false,
+      ending: "2 May, 2021 18:00:00 PST",
+      ended: false
     },
     {
       id: 5,
@@ -85,11 +129,14 @@ const Explore = () => {
       likes: 32,
       comments: 10,
       bid: 60,
-      title: "prince kong",
+      title: "princekong",
       creator: "cgYoda",
       date_mint: "02/01/2021",
       current: 1.3,
       previous: 1.0,
+      featured: false,
+      ending: "5 May, 2021 06:00:00 PST",
+      ended: false
     },
     {
       id: 6,
@@ -97,184 +144,119 @@ const Explore = () => {
       likes: 49,
       comments: 16,
       bid: 32,
-      title: "dead space",
+      title: "deadspace",
       creator: "elon",
       date_mint: "01/17/2021",
       current: 10.92,
       previous: null,
+      featured: true,
+      ending: "27 Apr, 2021 12:00:00 PST",
+      ended: false
     },
   ]);
 
-  //the main page after landing for relevant material - this will morph into a trending section as userbase increases.
   return (
     <div className="gradiant-background">
-
-      <div className="scroll-container animate__animated animate__fadeOutDown pl-5 pt-5">
-        <h2 className="scroll animate__animated animate__fadeInDown text-white h4">
-          scroll <br />
-          <i className="fas fa-angle-double-down pl-4"></i>
-        </h2>
-      </div>
-
-      <Container className="about-container">
-        <Parallax
-          className="mb-5 mt-5"
-          y={[0, 0]}
-          tagOuter="figure"
-        >
-          <Row>
-            <Col md={6} className="premium-col mt-2 pr-5 about-section">
-              <p className="gradient premium text-white text-right">PREMIUM NFT MARKETPLACE</p>
-              <h1 className="text-white mb-2">
-                A platform
-                <span className="d-block">for artists</span>
-                <span className="d-block">by artists</span>
-              </h1>
-              <Button className="btn-regal float-right">apply</Button>
-            </Col>
-            <Col md={6} className="tournament-col mt-2 pl-5 about-section">
-              <p className="regal text-white text-left mt-5 pr-3">
-                Regal was founded to <br />
-                <span style={{ color: "#ed7779" }}>
-                  disrupt the power imbalances <br />
-                </span>{" "}
-                that exist in the art industry today. <br /> We do not take a
-                cut from <br />
-                your work, and{" "}
-                <span style={{ color: "#ed7779" }}>we never will.</span>
-              </p>
-            </Col>
-          </Row>
-        </Parallax>
-      </Container>
-
-      <Container>
-        <Row>
-          <Col md={6} className="text-left">
-          <Parallax
-              className="mb-5 mt-5 mb-5"
-              y={[0, 0]}
-              x={[-5, 10]}
-              tagOuter="figure"
-            >
-              <h1 className="gradient premiumpt-1">
-                INTRODUCING TOURNAMENTS
-              </h1>
-              <br />
-              <h2 className="tour-section text-white">
-                Compete with your art <br />
-                Show the world your creations
-                <br />
-                Collect unique, curated pieces
-              </h2>
-              <Button className="btn-regal">learn more</Button>
-            </Parallax>
-          </Col>
-          <Col md={6} className="text-center">
-            <Parallax
-              className="mb-5 mt-5 mb-5"
-              y={[-10, -10]}
-              x={[10, -5]}
-              tagOuter="figure"
-            >
-              <Image src={Tour} width="70%" />
-            </Parallax>
-          </Col>
-        </Row>
-      </Container>
-    
-      <Container className="display-container">
-          <Parallax
-            className="featured-parallax mt-2 mb-5"
-            y={[10, -10]}
-            tagOuter="figure"
-          >
-            <span className="featured-header text-white">FEATURED</span>
-            <Jumbotron>
-              <div className="video-overlay">
-                <div className="d-block mb-1">
-                  <span className="overlay-text">Current Bid: </span>
-                  <span className="overlay-values text-primary">
-                    1.02ETH
-                  </span>
-                </div>
-                <div className="d-block mb-1">
-                  <span className="overlay-text">Author: </span>
-                  <span className="overlay-values text-primary">
-                    Deffie Perry x Rahmteen
-                  </span>
-                </div>
-                <div className="d-block mb-1">
-                  <Link
-                    className="overlay-values text-secondary"
-                    to="/test"
-                  >
-                    Place A Bid
-                  </Link>
-                </div>
-              </div>
-              <video id="feature-video" loop playsInline autoPlay muted>
-                <source src={sampleVid} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </Jumbotron>
-          </Parallax>
-          <Row>
-            <Col className="h6 text-white mb-4 header-underline" md={12}>
-                <span className="text-start text-majesti live">Live Activity</span>
-                <Link to="" className="text-white float-right" >view all</Link>
-              {/* <div
-                className="pb-2 text-right"
-                style={{
-                  borderBottom: "solid 1px white",
-                  borderColor: "#ac676a",
-                }}
-              >
-                view all
-              </div> */}
-            </Col>
-          </Row>
-          {/* </Parallax> */}
-          {/* <Parallax className="custom-class" y={[-10, 5]} tagOuter="figure"> */}
-          <Row className="pb-5">
+      <Parallax className="" y={[-5, 10]} x={[0, 0]} tagOuter="figure" key={'parallax-outer'}>
+        <Container className="nft-container" key={'container-explore'}>
+        
+          <Row className="live-activity-row mb-5 mt-3">
             {nfts.length &&
-              nfts.map((nft, index) => (
-                <Col md={4} sm={12} key={index} className="mb-3">
-                  <NftDisplay
-                    likes={nft.likes}
-                    comments={nft.comments}
-                    image={nft.image}
-                    id={nft.id}
-                    bid={nft.bid}
-                    title={nft.title}
-                    creator={nft.creator}
-                    date_mint={nft.date_mint}
-                    current={nft.current}
-                    previous={nft.previous}
-                  />
-                </Col>
-              ))}
+              nfts.map((nft, index) =>
+                nft.featured === true ? (
+                  <Fragment key={'fragment-featured'}>
+                    <Col className="featured-nft-explore mb-2" lg={6} key={index + '_nft-featured'}>
+                    <Parallax className="" y={[10, -10]} x={[0, 0]} tagOuter="figure" key={index + '_parallax-featured'}>
+                      <div style={{ position: "relative" }} key={index + 'feat-div'}>
+                        <CornerRibbon
+                          key={index + '_feat-ribbon'}
+                          position="top-right"
+                          fontColor="white"
+                          backgroundColor="orange"
+                        >
+                          Featured
+                        </CornerRibbon>
+                        <NftDisplay
+                          key={index + '_nft-feat'}
+                          likes={nft.likes}
+                          comments={nft.comments}
+                          image={nft.image}
+                          id={nft.id}
+                          bid={nft.bid}
+                          title={nft.title}
+                          creator={nft.creator}
+                          date_mint={nft.date_mint}
+                          current={nft.current}
+                          previous={nft.previous}
+                          ending={nft.ending}
+                          ended={nft.ending}
+                        />
+                      </div>
+                      </Parallax>
+                    </Col>
+                    
+                    <Col lg={3} className="mb-5" key={index + '_feat-col'}>
+                    <Parallax className="" y={[10, -15]} x={[0, 0]} tagOuter="figure" key={index + '_feat-col-parallax'}>
+                      <p className="text-white font-secondary animate__animated animate__fadeInDown" key={index + '_feat-p-1'}>@{nft.creator}</p>
+                      <p className="text-white animate__animated animate__fadeInDown" key={index + '_feat-p-2'}>
+                     {nft.description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quisnostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat. Duis aute irure dolorinreprehenderitin voluptate velit esse cillum dolore eufugiat nulla pariatur. Excepteur sint occaecat cupidatatnon proident, suntin culpa qui officia deserunt mollitanim id est laborum."}
+                      </p>
+                      </Parallax>
+                    </Col>
+                    
+                  </Fragment>
+                ) : null
+              )}
+              
+            <Row>
+              <Col lg={6} className="artist-cube text-end mb-3 mt-3">
+                <p className="gradient premium text-white text-start font-primary live-activity pb-2">
+                  LIVE ACTIVITY
+                </p>
+              </Col>
+            </Row>
+            {nfts.length &&
+              nfts.map((nft, index) =>
+                nft.featured !== true ? (
+                  <Col className="nft-explore mb-2" lg={4} md={6} md={12} key={index}>
+                    <Parallax className="" y={[0, -5]} x={[0, 0]} tagOuter="figure" key={index + '_parallax'}>
+                    <CardGroup key={index + '_card'}>
+                      <div style={{ position: "relative" }} key={index + 'div'}>
+                        <CornerRibbon
+                        key={index + '_ribbon'}
+                          position="top-right"
+                          fontColor="white"
+                          backgroundColor={nft.previous ? "green" : "red"}
+                        >
+                          {nft.previous ? "first" : "hot"}
+                        </CornerRibbon>
+                        <NftDisplay
+                          key={index + '_nft'}
+                          likes={nft.likes}
+                          comments={nft.comments}
+                          image={nft.image}
+                          id={nft.id}
+                          bid={nft.bid}
+                          title={nft.title}
+                          creator={nft.creator}
+                          date_mint={nft.date_mint}
+                          current={nft.current}
+                          previous={nft.previous}
+                          ending={nft.ending}
+                          ended={nft.ending}
+                        />
+                        
+                      </div>
+                    </CardGroup>
+                    </Parallax>
+                  </Col>
+                ) : null
+              )}
           </Row>
-      </Container>
+        </Container>
+      </Parallax>
     </div>
-
   );
 };
 
 export default observer(Explore);
-
-{
-  /* <Row className="mb-5 pb-5">
-          <Col md={4} className="ml-auto mr-auto mt-5 mb-5 text-center pb-5">
-            <div className="footer-cube-text">
-              <img id="cube-gif" src={cube} />
-              <div className="cube-overlay-text">
-                <p className="h3 text-white text-center">$69,420</p>
-                <p className="h6 text-white text-center">
-                  TOTAL VALUE ($USD) PAID TO ARTISTS
-                </p>
-              </div>
-            </div>
-          </Col>
-        </Row> */
-}

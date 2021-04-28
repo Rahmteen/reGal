@@ -17,11 +17,13 @@ const App = ({web3}) => {
 
     return (
         <Switch>
-            <Route exact path='/' component={Landing}/>
             <ComponentWrapper>
+            <Route exact path='/' component={Explore}/>
                 <Route exact path='/signup' component={SignUp}/>
                 <Route exact path='/profile' component={Profile}/>
-                <Route exact path='/explore' component={Explore}/>
+                <Route exact path='/explore'>
+                    <Explore web3={web3} />
+                </Route>
                 <Route exact path='/whitepaper' component={Whitepaper} />
                 <Route exact path="/details/:id" component={DetailedView} />
                 <Route exact path='/minter'>

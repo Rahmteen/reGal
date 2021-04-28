@@ -4,29 +4,64 @@ const Schema = mongoose.Schema;
 //const Tag = require("./Tag");
 
 const NftSchema = new Schema({
-    name: {
+    title: {
         type: String,
         required: true
     },
-    artist: {
+    creator: {
         type: String,
         required: true
     },
-    description: {
+    nft_description: {
         type: String,
         required: true
     },
-    token_id: {
-        type: String,
+    nft_id: {
+        type: Number,
         required: true
-    },
-    raw_image: {
-        type: String,
-        required: false
     },
     thumbnail_image: {
         type: String,
         required: true
+    },
+    date_mint: {
+        type: Date,
+        default: Date.now
+    },
+    likes: {
+        type: Number,
+        default: 0,
+        required: true
+    },
+    asking_bid: {
+        type: Number,
+        default: null,
+        require: true
+    },
+    previous_sold: {
+        type: [Number],
+        defaut: null,
+        require: true
+    },
+    auction_duraction: {
+        type: String,
+        default: null,
+        require: true
+    },
+    auction_startDate: {
+        type: String,
+        default: null,
+        require: true
+    },
+    auction_mode: {
+        type: Boolean,
+        default: false,
+        require: true
+    },
+    auction_started: {
+        type: Boolean,
+        default: false,
+        require: true
     },
     tags: [
         new Schema({
@@ -40,10 +75,6 @@ const NftSchema = new Schema({
             }
         })
     ],
-    timestamp: {
-        type: Date,
-        default: Date.now
-    }
 })
 
 module.exports = Nft = mongoose.model("Nfts", NftSchema);

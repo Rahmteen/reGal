@@ -15,8 +15,7 @@ const Landing = () => {
   const [connected, setConnected] = useState(false)
   const [show, setShow] = useState(false);
 
-
-  useEffect(() => {
+  useEffect(async ()  => {
     //get wallet id
     //pass to load user
     loadUser();
