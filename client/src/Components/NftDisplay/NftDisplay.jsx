@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, useRef } from "react";
 import {
   Image,
   Card,
@@ -13,6 +13,28 @@ import { Link } from "react-router-dom";
 import Profile from "../../../assets/images/profile.png";
 import mint from "../../../assets/images/mint.png";
 import portrait from "../../../assets/images/portrait.png";
+
+//USE THIS FOR INTERVALS
+
+// function useInterval(callback, delay) {
+  //   const savedCallback = useRef();
+  
+  //   // Remember the latest callback.
+  //   useEffect(() => {
+  //     savedCallback.current = callback;
+  //   }, [callback]);
+  
+  //   // Set up the interval.
+  //   useEffect(() => {
+  //     function tick() {
+  //       savedCallback.current();
+  //     }
+  //     if (delay !== null) {
+  //       let id = setInterval(tick, delay);
+  //       return () => clearInterval(id);
+  //     }
+  //   }, [delay]);
+  // }
 
 const NftDisplay = ({
   likes,
@@ -29,6 +51,7 @@ const NftDisplay = ({
 }) => {
 
   let timeLeft = new Date(ending).getTime() - new Date().getTime();
+
   const [auctionTimer, setAuctionTimer] = useState([{
       days: Math.floor(timeLeft / (86400000)),
       hours: Math.floor((timeLeft % (86400000)) / (3600000)),

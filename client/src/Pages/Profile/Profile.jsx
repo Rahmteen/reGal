@@ -142,9 +142,7 @@ const Profile = () => {
 
 
   useEffect(() => {
-    loadUser(window.ethereum.selectedAddress)
-    .then((res) => console.log('user', res))
-    .finally(console.log(user))
+    loadUser(window.ethereum.selectedAddress);
   }, []);
 
   useEffect(() => {
@@ -168,7 +166,7 @@ const Profile = () => {
               </span>
             </Col>
             <Col md={6} className="text-center mt-1">
-              <span className="text-primary">0xBb...04b8</span>
+              <span className="text-primary">{user ? user.wallet_id : "noid"}</span>
             </Col>
             <Col md={6} className="mt-4">
               <p className="text-start text-white user-profile-bio">
