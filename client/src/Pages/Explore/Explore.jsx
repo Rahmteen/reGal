@@ -40,10 +40,11 @@ const Explore = (web3) => {
   // currently our set up for a secure request to the ethereum network and the 
   // user accounts that exist in the metamask wallet associated to the window
   useEffect(async ()  => {
+    let userAddress
     if (window.ethereum) {
       await window.ethereum
-      .request({ method: 'eth_requestAccounts' })
-      .then((res) => console.log(res))
+      .request({ method: 'eth_accounts' })
+      .then((res) => { userAddress = res; loadUser(userAddress[0])})
       .catch((error) => {
         if (error.code === 4001) {
           // EIP-1193 userRejectedRequest error
@@ -52,13 +53,8 @@ const Explore = (web3) => {
           console.error(error);
         }
       });
-      // window.web3 = new Web3(window.ethereum);
-      // return res;
     }
-    return false;
-    //get wallet id
-    //pass to load user
-    // loadUser();
+    return;
   }, []);
   //Sample data for testing will be set dynamically in the future;
   //Statically set for testing purposes only;
