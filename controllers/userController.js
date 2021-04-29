@@ -23,7 +23,7 @@ module.exports = {
                 User.create( req.body, function(err, response) {
                     if(err)
                     {
-                        res.status(500).send(err);
+                        res.status(500).send({ message: "Something went wrong" });
                     } else {
                         res.status(200).send(response);
                     }
@@ -32,7 +32,7 @@ module.exports = {
         })
     },
     update: function(req, res, next) {
-        User.findByIdAndUpdate( req.params.id, req.body, {new: true}, (err, response) => {
+        User.findByIdAndUpdate( req.body._id, req.body, {new: true}, (err, response) => {
             if(err) {
                 return res.status(500).send(err);
             }

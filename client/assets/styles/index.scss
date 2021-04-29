@@ -73,6 +73,12 @@ footer {
 	/* font-family: 'Majesti-Banner-BoldItalic', sans-serif; */
 	color: $secondary!important;
 }
+
+.text-tertiary {
+	/* font-family: 'Majesti-Banner-BoldItalic', sans-serif; */
+	color: $tertiary!important;
+}
+
 .text-black {
 	/* font-family: 'Majesti-Banner-BoldItalic', sans-serif; */
 	color: $black!important;
@@ -84,6 +90,10 @@ footer {
 
 .text-green {
 	color: $green!important;
+}
+
+.text-red {
+	color: $red!important;
 }
 
 .btn-circle {
@@ -121,7 +131,7 @@ footer {
 .btn-regal {
 	background-color: transparent;
 	border-radius: 10px;
-	border: solid 1px $primary;
+	border: solid 2px $primary;
 	color: white;
 	padding: 10px 18px 10px 18px;
 	&:hover {
