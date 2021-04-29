@@ -1,9 +1,11 @@
 //Modules
-import React, { useEffect, useState, Fragment } from "react";
+import React, { useEffect, useState, Fragment, useContext } from "react";
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 //Contracts
 import ProfileNftDisplay from "../../Components/ProfileNftDisplay";
+import UserStore from "../../Stores/UserStore";
+import { observer } from "mobx-react-lite";
 //Media
 import demo from "../../../assets/images/demo-art.jpeg";
 import demo2 from "../../../assets/images/nft-1.jpg";
@@ -60,6 +62,8 @@ const initialState = {
 };
 
 const Profile = () => {
+  const userStore = useContext(UserStore);
+  const { loadUser, user, loadingInitial } = userStore;
   const [nfts, setNfts] = useState([
     {
       id: 1,
@@ -135,10 +139,17 @@ const Profile = () => {
     },
   ]);
 
+
+
   useEffect(() => {
-    //console.log(SimpleContract.methods)
+    loadUser(window.ethereum.selectedAddress)
+    .then((res) => console.log('user', res))
+    .finally(console.log(user))
   }, []);
 
+  useEffect(() => {
+    console.log(loadingInitial)
+  }, [loadingInitial]);
   
 
   return (
@@ -147,9 +158,9 @@ const Profile = () => {
         <Row className="nft-display-rows pb-5 mb-5 mt-5">
           <Col md={4} lg={4}>
             <Col md={6}>
-              {/* Image will be used in the future..using default circle for testing */}
-              <div className="user-profile-image mx-auto"></div>
-              {/* <Image fluid className="user-profile-image" src={}/> */}
+            {/* Image will be used in the future..using default circle for testing */}
+              {/* <div className="user-profile-image mx-auto"></div> */}
+            {/* {user ? <div className="user-profile-image mx-auto"></div> : <Image fluid className="user-profile-image" src={user}/>} */}
             </Col>
             <Col md={6} className="text-center mt-3">
               <span className="text-majesti text-white user-profile-name">
@@ -166,9 +177,7 @@ const Profile = () => {
               </p>
             </Col>
             <Col md={6} className="text-center">
-              <Link to="/minter">
-                <Button className="btn-regal mt-2 mb-3">Mint</Button>
-              </Link>
+                <Link to="/profile-edit"><Button className="btn-regal mt-2 mb-3">EDIT</Button></Link>
             </Col>
           </Col>
           <Col className="mt-5">
@@ -215,4 +224,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default observer(Profile);

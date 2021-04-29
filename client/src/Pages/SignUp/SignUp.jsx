@@ -8,12 +8,11 @@ import {
   Form,
   Button,
   Modal,
-  FormFile,
+  FormFile, 
 } from "react-bootstrap";
 import MetaMask from "../../../assets/images/metamask.svg";
 import { Link, Redirect } from "react-router-dom";
 import WalletSupport from "../../Components/WalletSupport/WalletSupport";
-import Web3 from "web3";
 import UserStore from "../../Stores/UserStore";
 
 const SignUp = () => {

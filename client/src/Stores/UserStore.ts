@@ -1,5 +1,5 @@
 import { observable, action, configure, runInAction, computed } from "mobx";
-import { createContext, SyntheticEvent, ChangeEvent } from "react";
+import { createContext, SyntheticEvent, ChangeEvent, useReducer } from "react";
 import { IUser } from "../Models/User";
 import agent from "../Api/agent";
 
@@ -14,14 +14,14 @@ class UserStore {
             return this.user;
         }
         try {
-            let user = await agent.User.get(id);
+            let res = await agent.User.get(id);
             runInAction(() => {
-                if(user) {
-                    this.user = user;
+                if(res) {
+                    this.user = res;
                     this.loadingInitial = false;
                 }
             })
-            return user;
+            return res;
         } catch (error) {
             runInAction(() => {
                 this.loadingInitial = false;
@@ -35,8 +35,9 @@ class UserStore {
         try {
             let response = await agent.User.create(user);
             runInAction(() => {
-                if(response) {
+                if(response) {    
                     this.submitting = false;
+                    this.user = {...response}
                 }
             })
             return response;

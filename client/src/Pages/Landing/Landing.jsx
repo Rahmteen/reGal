@@ -5,7 +5,6 @@ import { Row, Col, Button } from "react-bootstrap";
 import UserStore from "../../Stores/UserStore";
 
 import { particle_params } from './particle_params'
-import ConnectWallet from '../../Components/ConnectWallet'
 import { observer } from "mobx-react-lite";
 
 
@@ -49,7 +48,6 @@ const Landing = () => {
                 >
                   Connect
                 </Button>
-                <ConnectWallet handleClose={handleClose} show={show}/>
               </Fragment>
               : null
             }
