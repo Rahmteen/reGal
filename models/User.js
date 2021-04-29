@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-//const Nft = require("./Nft");
+
+const Nft = require("./Nft");
 
 const UserSchema = new Schema({
     wallet_id: {

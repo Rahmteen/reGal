@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import Landing from './Pages/Landing';
 import Explore from './Pages/Explore';
 import Profile from './Pages/Profile';
+import ProfileEdit from './Pages/ProfileEdit';
 import NftMinter from './Pages/NftMinter';
 import DetailedView from "./Pages/DetailedView";
 import ComponentWrapper from './Components/ComponentWrapper';
@@ -21,6 +22,7 @@ const App = ({web3}) => {
             <Route exact path='/' component={Explore}/>
                 <Route exact path='/signup' component={SignUp}/>
                 <Route exact path='/profile' component={Profile}/>
+                <Route exact path='/profile-edit' component={ProfileEdit}/>
                 <Route exact path='/explore'>
                     <Explore web3={web3} />
                 </Route>
