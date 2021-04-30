@@ -157,21 +157,20 @@ const Profile = () => {
           <Col md={4} lg={4}>
             <Col md={6}>
             {/* Image will be used in the future..using default circle for testing */}
-              {/* <div className="user-profile-image mx-auto"></div> */}
+              <div className="user-profile-image mx-auto"></div>
             {/* {user ? <div className="user-profile-image mx-auto"></div> : <Image fluid className="user-profile-image" src={user}/>} */}
             </Col>
-            <Col md={6} className="text-center mt-3">
-              <span className="text-majesti text-white user-profile-name">
-                @deffiedeff
+            <Col md={6} className=" mt-3">
+              <span className="text-majesti text-white user-profile-name font-secondary">
+                {user ? "@" + user.display_name : "@displayname"}
               </span>
             </Col>
-            <Col md={6} className="text-center mt-1">
-              <span className="text-primary">{user ? user.wallet_id : "noid"}</span>
+            <Col md={6} className="mt-1">
+              <span className="text-primary">{user ? user.wallet_id : "0000"}</span>
             </Col>
             <Col md={6} className="mt-4">
               <p className="text-start text-white user-profile-bio">
-                This is a bio for this artist. They have the ability to
-                customize this text box up to three lines.
+                Artist Bio...
               </p>
             </Col>
             <Col md={6} className="text-center">
