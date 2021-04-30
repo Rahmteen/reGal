@@ -39,19 +39,38 @@ const headers = {
   "Content-Type": "application/json",
 };
 
+const sleep = (ms: number) => (response: AxiosResponse) =>
+  new Promise<AxiosResponse>(resolve =>
+    setTimeout(() => resolve(response), ms)
+  );
+
 const requests = {
-  get: (url: string) => axios.get(url, { headers }).then(responseBody),
+  get: (url: string) => 
+    axios
+      .get(url, { headers })
+      .then(sleep(1000))
+      .then(responseBody),
   post: (url: string, body: {}) =>
-    axios.post(url, body, { headers }).then(responseBody),
+    axios
+      .post(url, body, { headers })
+      .then(sleep(1000))
+      .then(responseBody),
   put: (url: string, body: {}) =>
-    axios.put(url, body, { headers }).then(responseBody),
-  del: (url: string) => axios.delete(url, { headers }).then(responseBody),
+    axios
+      .put(url, body, { headers })
+      .then(sleep(1000))
+      .then(responseBody),
+  del: (url: string) => 
+    axios
+      .delete(url, { headers })
+      .then(sleep(1000))
+      .then(responseBody),
 };
 
 const User = {
   get: (id: number) => requests.get(`/user/get/${id}`),
   create: (user: IUser) => requests.post("/user/create", user),
-  update: (user: IUser) => requests.put("/user/update", user),
+  update: (user: IUser) => requests.put(`/user/update`, user),
   delete: (id: number) => requests.del(`/user/delete?id=${id}`)
 }
 

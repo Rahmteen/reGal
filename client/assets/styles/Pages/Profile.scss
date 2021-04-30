@@ -1,4 +1,13 @@
-.profile-featured-nft {
+.profile-container {
+
+	.profile-image {
+		border-radius: 10px;
+		border: solid 2px white;
+		box-shadow: 0px 0px 20px rgb(97, 97, 97);
+	}
+
+	.profile-featured-nft {
+
     .nft-card {
     	background-image: -webkit-linear-gradient(
 		90deg,
@@ -32,10 +41,10 @@
 	  ); /* Standard syntax; must be last */
 	  color: transparent !important;
 	  background-clip: text;
-    }
-}
-
-.banner {
-    width:100%;
-
+    	}
+	}
+	.choose-file-button {
+		color: white;
+		padding-top: 8px;
+	}
 }

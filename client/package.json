@@ -40,6 +40,7 @@
     "react-corner-ribbon": "0.0.3",
     "react-device-detect": "^1.17.0",
     "react-dom": "^17.0.1",
+    "react-image-crop": "^8.6.9",
     "react-particles-js": "^3.4.1",
     "react-router-dom": "^5.2.0",
     "react-scroll-parallax": "^2.3.5",

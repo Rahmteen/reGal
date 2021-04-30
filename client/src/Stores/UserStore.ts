@@ -55,6 +55,7 @@ class UserStore {
             let response = await agent.User.update(user);
             runInAction(() => {
                 if(response) {
+                    this.user = response
                     this.submitting = false;
                 }
             })

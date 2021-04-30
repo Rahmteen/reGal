@@ -19,11 +19,13 @@ const UserSchema = new Schema({
     },
     bio: {
         type: String,
-        required: false
+        required: false,
+        default: "Artist bio..."
     },
     profile_image: {
         type: String,
-        required: false
+        required: false,
+        default: "https://gateway.ipfs.io/ipfs/QmVEBTtEo6q7m5KumcfdkaGn91TZiSN4GgZDtmcr7daNZ4"
     },
     profile_bg_color: {
         type: String,
@@ -57,6 +59,10 @@ const UserSchema = new Schema({
                 required: true
             },
             thumbnail_image: {
+                type: String,
+                required: true
+            },
+            raw_image: {
                 type: String,
                 required: true
             },
@@ -135,6 +141,10 @@ const UserSchema = new Schema({
                 type: String,
                 required: true
             },
+            raw_image: {
+                type: String,
+                required: true
+            },
             date_mint: {
                 type: Date,
                 default: Date.now
@@ -207,6 +217,10 @@ const UserSchema = new Schema({
                 required: true
             },
             thumbnail_image: {
+                type: String,
+                required: true
+            },
+            raw_image: {
                 type: String,
                 required: true
             },
